@@ -1,4 +1,6 @@
-# Code of Conduct for Open Guide to Kanban Tra9. Address breache7. All reviews and responses for reviews should be in line with the Kanban principles and practices, as described in the Open Guide to Kanban. of the Kanban principles and practices in a timely manner.slations
+# Code of Conduct for Open Guide to Kanban
+
+All reviews and responses for reviews should be in line with the Kanban principles and practices, as described in the Open Guide to Kanban. of the Kanban principles and practices in a timely manner.slations
 
 Translators of the Open Guide to Kanban and its associated materials do our community an invaluable service and are greatly appreciated. The Code of Conduct for Open Guide to Kanban Translations outlines expectations and standards to ensure that translation work is of the highest quality and serves the best interests of the communities served by the Open Guide to Kanban.
 
