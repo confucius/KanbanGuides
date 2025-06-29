@@ -1,0 +1,15 @@
+baseURL: https://kanbanguides.org
+Environment: "production"
+minifyOutput: true
+
+languages:
+  tlh:
+    disabled: true
+  fa:
+    disabled: true
+  pl:
+    disabled: true
+  nl:
+    disabled: true
+  de:
+    disabled: true

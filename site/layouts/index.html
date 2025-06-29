@@ -1,0 +1,100 @@
+{{- define "main" }}
+  {{- $guidePage := .Site.GetPage "/guide" }}
+  {{- $isComingSoon := and $guidePage $guidePage.Date (lt now $guidePage.Date) (eq hugo.Environment "production") }}
+  <section class="section container-fluid main-header">
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-12 col-xl-4 p-3">
+          <div class="card card-dark h-100">
+            <div class="card-body text-center d-flex flex-column">
+              <i class="header-icon fa-solid fa-newspaper"></i>
+              <h5 class="card-title">{{ i18n "read_online_title" . }}</h5>
+              <p class="card-text flex-grow-1">{{ i18n "read_online_description" . }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{ $guidePage.RelPermalink }}" class="btn btn-primary">{{ i18n "read_online_button" }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-4 p-3">
+          <div class="card card-dark h-100">
+            <div class="card-body text-center d-flex flex-column">
+              <i class="header-icon fa-solid fa-download"></i>
+              <h5 class="card-title">{{ i18n "download_title" . }}</h5>
+              <p class="card-text flex-grow-1">{{ i18n "download_description" . }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{ (.Site.GetPage "/translations").Permalink }}" class="btn btn-primary">{{ i18n "nav_translations" . }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-4 p-3">
+          <div class="card card-dark h-100">
+            <div class="card-body text-center d-flex flex-column">
+              <i class="header-icon fa-solid fa-comments"></i>
+              <h5 class="card-title">{{ i18n "join_discussion_title" . }}</h5>
+              <p class="card-text flex-grow-1">{{ i18n "join_discussion_description" . }}</p>
+            </div>
+            <div class="card-footer">
+              {{ if $isComingSoon }}
+                <a href="#" class="btn btn-primary disabled">coming soon</a>
+              {{ else }}
+                <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary" target="_blank">{{ i18n "join_discussion_button" }}</a>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section container-fluid">
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-12 col-lg-4 col-xl-6">
+          <div class="row d-none d-xl-flex">
+            <div class="col-2"></div>
+            {{- $pages := .Site.RegularPages }}
+            {{- range .Site.Home.Translations }}
+              {{- $pages = $pages | lang.Merge .Site.RegularPages }}
+            {{- end }}
+            {{- range where $pages "Section" "creators" }}
+              {{- if ne .Title "Creators" }}
+                <div class="col-3">
+                  <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </div>
+              {{- end }}
+            {{- end }}
+          </div>
+          <a href="{{ (.Site.GetPage "/creators").Permalink }}"><img src="/images/open-guide-to-kanban-logo.png" class="img-fluid mb-3" alt="{{ .Site.Title }} Creators" /></a>
+        </div>
+        <div class="col-12 col-lg-8 col-xl-6">
+          <div>
+            <div class="col-12">
+              <h2 class="text-center">{{ i18n "what_is_guide_title" . }}</h2>
+              <div class="lead text-center">
+                {{- $guidePage := .Site.GetPage "/guide" }}
+                {{- $guideWhatis := partial "functions/get-page-param-with-default.html" (dict "page" $guidePage "param" "guide_whatis" "context" .) }}
+                {{- if $guideWhatis }}
+                  {{ $guideWhatis | markdownify }}
+                {{- else }}
+                  {{ i18n "guide_content_not_found" | markdownify }}
+                {{- end }}
+              </div>
+            </div>
+            <div class="col-12">
+              <h2 class="text-center">{{ i18n "open_source_title" }}</h2>
+              <p class="lead text-center">
+                {{ i18n "open_source_description" . }}
+              </p>
+              {{ if $isComingSoon }}
+                <a href="#" class="btn btn-primary disabled">{{ i18n "join_discussion_button" }}</a>
+              {{ else }}
+                <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary d-block mx-auto" target="_blank">{{ i18n "join_discussion_button" }}</a>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{- end }}

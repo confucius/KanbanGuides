@@ -1,0 +1,21 @@
+{{/* Main JSON-LD wrapper that determines which schema type to render */}}
+{{- $pageType := "" -}}
+{{- $isHomePage := eq .RelPermalink "/" -}}
+{{- $isCreatorsSection := hasPrefix .RelPermalink "/creators/" -}}
+{{- $isCreatorsIndex := eq .RelPermalink "/creators/" -}}
+{{- $isDownloadPage := eq .RelPermalink "/download/" -}}
+{{- $isGuidePage := hasPrefix .RelPermalink "/open-guide-to-kanban/" -}}
+
+{{- if $isHomePage -}}
+  {{/* Home page gets WebSite schema */}}
+  {{- partial "JSON-LD/website.html" . -}}
+{{- else if and $isCreatorsSection (not $isCreatorsIndex) -}}
+  {{/* Individual creator pages get Person schema */}}
+  {{- partial "JSON-LD/person.html" . -}}
+{{- else if or $isGuidePage -}}
+  {{/* Guide pages get CreativeWork schema */}}
+  {{- partial "JSON-LD/creativework.html" . -}}
+{{- else -}}
+  {{/* All other pages get WebPage schema */}}
+  {{- partial "JSON-LD/webpage.html" . -}}
+{{- end -}}
