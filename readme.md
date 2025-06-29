@@ -7,7 +7,7 @@ The Open Guide to Kanban is a free, community-driven reference for applying Kanb
 ### 🌐 Live Sites
 
 - **Production**: [kanbanguides.org](https://kanbanguides.org) - **Start reading now!**
-- **Preview**: [red-pond-0d8225910-preview.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/) - **Test latest changes before production**
+- **Preview**: [red-pond-0d8225910-preview.centralus.2.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.2.azurestaticapps.net/) - **Test latest changes before production**
 
 ## What is This?
 
@@ -48,7 +48,7 @@ Making Kanban knowledge accessible globally is essential.
 ### 📖 Read Online
 
 - **Production**: [kanbanguides.org](https://kanbanguides.org)
-- **Preview**: [red-pond-0d8225910-preview.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/)
+- **Preview**: [red-pond-0d8225910-preview.centralus.2.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.2.azurestaticapps.net/)
 
 ### 📄 Download Options
 
@@ -104,7 +104,7 @@ See [LICENSE](./LICENSE) for complete terms.
 ## Getting Started
 
 1. **[Read the guide](https://kanbanguides.org)** - Production site
-2. **[Test latest changes](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/)** - Preview site
+2. **[Test latest changes](https://red-pond-0d8225910-preview.centralus.2.azurestaticapps.net/)** - Preview site
 3. **[Engage with the community](https://github.com/KanbanGuides/OpenGuideToKanban/discussions)**
 4. **[Support translations](https://github.com/KanbanGuides/OpenGuideToKanban/discussions)**
 5. **[Review contribution guidelines](./docs/contributing.md)**

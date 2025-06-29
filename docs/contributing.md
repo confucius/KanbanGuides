@@ -5,7 +5,7 @@ We welcome and appreciate contributions from the community! This guide outlines 
 ## 🌐 Live Sites
 
 - **Production**: [kanbanguides.org](https://kanbanguides.org) - **Live production site**
-- **Preview**: [red-pond-0d8225910-preview.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/) - **Test your contributions here before they go live**
+- **Preview**: [red-pond-0d8225910-preview.centralus.2.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.2.azurestaticapps.net/) - **Test your contributions here before they go live**
 
 ## Table of Contents
 
@@ -82,7 +82,7 @@ Follow the [Getting Started Guide](./getting-started.md) to set up your developm
 ### 4. Test Your Ideas
 
 - **Review the live site**: [kanbanguides.org](https://kanbanguides.org)
-- **Test contributions on preview**: [red-pond-0d8225910-preview.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/) - See how your changes will look before they go to production
+- **Test contributions on preview**: [red-pond-0d8225910-preview.centralus.2.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.2.azurestaticapps.net/) - See how your changes will look before they go to production
 
 ## Contribution Workflow
 
