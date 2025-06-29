@@ -36,6 +36,8 @@ guide_whatis: |
   The Open Guide to Kanban is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems. Built on the foundations of the Kanban Guide (2025), this guide expands its applicability across industries and team contexts, while remaining open and adaptable. It is intended to support organisations seeking clarity, consistency, and effectiveness in how they manage the flow of value
 sitemap:
   priority: 1.0
+aliases:
+  - /english/
 ---
 
 TBA
