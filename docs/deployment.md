@@ -5,7 +5,7 @@ This guide covers the deployment process for the Open Guide to Kanban using Azur
 ## 🌐 Live Sites
 
 - **Production**: [kanbanguides.org](https://kanbanguides.org) - **Live production site**
-- **Preview**: [agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/) - **Test environment for pre-production changes**
+- **Preview**: [red-pond-0d8225910-preview.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/) - **Test environment for pre-production changes**
 
 ## Deployment Overview
 
@@ -22,14 +22,14 @@ The project uses **Azure Static Web Apps** for hosting with automated deployment
 
 ### 🔄 Preview Environment
 
-- **URL**: [agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/) - **Test environment for pre-production changes**
+- **URL**: [red-pond-0d8225910-preview.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/) - **Test environment for pre-production changes**
 - **Branch**: `preview`
 - **Configuration**: `staticwebapp.config.preview.json`
 - **Hugo Config**: `hugo.preview.yaml`
 
 ### 🐤 Canary Environment
 
-- **URL**: [https://agreeable-island-0c966e810-{PullRequestId}.centralus.6.azurestaticapps.net](https://agreeable-island-0c966e810-{PullRequestId}.centralus.6.azurestaticapps.net)
+- **URL**: [https://red-pond-0d8225910-{PullRequestId}.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-{PullRequestId}.centralus.6.azurestaticapps.net)
 - **Branch**: `canary`
 - **Configuration**: `staticwebapp.config.canary.json`
 - **Hugo Config**: `hugo.canary.yaml`
@@ -39,16 +39,16 @@ The project uses **Azure Static Web Apps** for hosting with automated deployment
 ### Environment URLs
 
 - **Production**: Uses custom domain `https://kanbanguides.org`
-- **Preview**: Azure Static Web Apps URL `https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net`
-- **Pull Request Environments**: Dynamic URLs `https://agreeable-island-0c966e810-{PullRequestId}.centralus.6.azurestaticapps.net`
+- **Preview**: Azure Static Web Apps URL `https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net`
+- **Pull Request Environments**: Dynamic URLs `https://red-pond-0d8225910-{PullRequestId}.centralus.6.azurestaticapps.net`
 
 > **Note**: The baseURL in Hugo configuration files is typically set dynamically during the build process. Azure Static Web Apps automatically provides the correct URLs for each environment.
 
 ### URL Pattern Explanation
 
-- **agreeable-island-0c966e810**: Azure-generated unique identifier for this Static Web App
+- **red-pond-0d8225910**: Azure-generated unique identifier for this Static Web App
 - **preview**: Dedicated preview environment for testing pre-production changes
-- **{PullRequestId}**: Replaced with actual PR number (e.g., `agreeable-island-0c966e810-42.centralus.6.azurestaticapps.net` for PR #42)
+- **{PullRequestId}**: Replaced with actual PR number (e.g., `red-pond-0d8225910-42.centralus.6.azurestaticapps.net` for PR #42)
 - **centralus.6.azurestaticapps.net**: Azure region and domain suffix
 
 ### Static Web App Configurations
@@ -189,7 +189,7 @@ security:
 #### Preview (`hugo.preview.yaml`)
 
 ```yaml
-baseURL: "https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net"
+baseURL: "https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net"
 languageCode: "en-us"
 title: "Open Guide to Kanban - Preview"
 
@@ -205,7 +205,7 @@ googleAnalytics: ""
 #### Canary (`hugo.canary.yaml`)
 
 ```yaml
-baseURL: "https://agreeable-island-0c966e810-{PullRequestId}.centralus.6.azurestaticapps.net"
+baseURL: "https://red-pond-0d8225910-{PullRequestId}.centralus.6.azurestaticapps.net"
 languageCode: "en-us"
 title: "Open Guide to Kanban - Canary"
 
@@ -263,8 +263,8 @@ gh run list --workflow=deploy.yml
 CNAME kanbanguides.org -> <static-web-app-url>
 
 # Development environments use Azure Static Web Apps URLs:
-# Preview: https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net
-# PR environments: https://agreeable-island-0c966e810-{PullRequestId}.centralus.6.azurestaticapps.net
+# Preview: https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net
+# PR environments: https://red-pond-0d8225910-{PullRequestId}.centralus.6.azurestaticapps.net
 ```
 
 ## Performance Optimization

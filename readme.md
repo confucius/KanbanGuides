@@ -1,15 +1,17 @@
-# Open Guide to KaThThe motivation wasn't to add more rules or make Kanban heavier. Quite the opposite: it was to clarify the spirit of Kanban, especially around flow, continuous improvement, and collaborative delivery. Kanban has always been about enabling teams to optimize flow, reduce waste, and deliver value. This guide helps modern teams keep that spirit alive—especially in environments shaped by uncertainty, acceleration, and new technology.s guide is a response to those questions. It's not a replacement of existing Kanban literature. It's an open companion—a way to support people who already use Kanban but feel they need more guidance to navigate today's realities.ban
+# Open Guide to Kanban
+
+The Open Guide to Kanban is a free, community-driven reference for applying Kanban in knowledge work. It defines the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches.
 
 ## Visit the Guide
 
 ### 🌐 Live Sites
 
 - **Production**: [kanbanguides.org](https://kanbanguides.org) - **Start reading now!**
-- **Preview**: [agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/) - **Test latest changes before production**
+- **Preview**: [red-pond-0d8225910-preview.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/) - **Test latest changes before production**
 
 ## What is This?
 
-The Open Guide to Kanban ...
+The Open Guide to Kanban is a living document that aims to provide clear, actionable guidance for implementing Kanban in knowledge work. It is designed to evolve over time, incorporating feedback and insights from the community.
 
 ## Encouraged Contribution Workflow
 
@@ -46,7 +48,7 @@ Making Kanban knowledge accessible globally is essential.
 ### 📖 Read Online
 
 - **Production**: [kanbanguides.org](https://kanbanguides.org)
-- **Preview**: [agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/)
+- **Preview**: [red-pond-0d8225910-preview.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/)
 
 ### 📄 Download Options
 
@@ -102,7 +104,7 @@ See [LICENSE](./LICENSE) for complete terms.
 ## Getting Started
 
 1. **[Read the guide](https://kanbanguides.org)** - Production site
-2. **[Test latest changes](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/)** - Preview site
+2. **[Test latest changes](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/)** - Preview site
 3. **[Engage with the community](https://github.com/KanbanGuides/OpenGuideToKanban/discussions)**
 4. **[Support translations](https://github.com/KanbanGuides/OpenGuideToKanban/discussions)**
 5. **[Review contribution guidelines](./docs/contributing.md)**

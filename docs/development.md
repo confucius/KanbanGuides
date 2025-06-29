@@ -5,7 +5,7 @@ This guide provides detailed information for developers working on the Open Guid
 ## 🌐 Live Sites for Reference
 
 - **Production**: [kanbanguides.org](https://kanbanguides.org) - **Live production site**
-- **Preview**: [agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/) - **Test environment with latest changes**
+- **Preview**: [red-pond-0d8225910-preview.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/) - **Test environment with latest changes**
 
 ## Development Environment Setup
 

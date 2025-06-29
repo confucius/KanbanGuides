@@ -113,7 +113,7 @@ The repository has several branch protection rules configured to ensure code qua
 
 **To find out what version to use next:**
 
-1. Go to the [preview site](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/)
+1. Go to the [preview site](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/)
 2. Look at the version number at the top (like "v1.1.0-preview.166")
 3. Use that number but remove the "-preview" part
 4. OR if your changes are bigger, increase the number appropriately
@@ -195,7 +195,7 @@ The project uses GitVersion with these settings:
 
 1. **Check Current State**:
 
-   - Visit [preview site](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/)
+   - Visit [preview site](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/)
    - Look at the version in the header (e.g., "v1.2.0-preview.156")
 
 2. **Assess Changes Since Last Release**:
@@ -276,7 +276,7 @@ A: Yes, but interpret "breaking changes" as content that would confuse existing 
 
 1. **Find the version number:**
 
-   - Go to [preview site](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/)
+   - Go to [preview site](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/)
    - Look at the version at the top (like "v1.1.0-preview.166")
    - Your release will be `v1.1.0` (remove the "-preview" part)
    - OR increase the number if you made big changes (see Version Numbering above)
@@ -305,7 +305,7 @@ Follow these detailed steps to create a new version release:
 
 #### 1. Determine the Next Version
 
-1. **Check the preview site**: Visit [preview site](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/)
+1. **Check the preview site**: Visit [preview site](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/)
 2. **Look at the header** for the current preview version (e.g., "v1.1.0-preview.166")
 3. **Calculate next release version**:
    - If preview shows `v1.1.0-preview.X`, next release is `v1.1.0`
@@ -976,7 +976,7 @@ enhances the guide's value.
 
 1. Make your commit with the directive
 2. Wait for GitHub Actions to complete
-3. Check the [preview site](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/) header
+3. Check the [preview site](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/) header
 4. Verify the version number matches your expectation
 
 **In GitHub Actions:**

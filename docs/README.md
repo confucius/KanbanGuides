@@ -5,7 +5,7 @@ Welcome to the documentation for the **Open Guide to Kanban** project. This docu
 ## 🌐 Live Sites
 
 - **Production**: [kanbanguides.org](https://kanbanguides.org) - **Live production site**
-- **Preview**: [agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net](https://agreeable-island-0c966e810-preview.centralus.6.azurestaticapps.net/) - **Test your contributions here before they go live**
+- **Preview**: [red-pond-0d8225910-preview.centralus.6.azurestaticapps.net](https://red-pond-0d8225910-preview.centralus.6.azurestaticapps.net/) - **Test your contributions here before they go live**
 
 ## Quick Navigation
 
