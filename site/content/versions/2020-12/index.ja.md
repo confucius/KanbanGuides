@@ -9,7 +9,7 @@ author:
   - John Coleman
   - Daniel Vacanti
 date: 2025-06-11T09:00:00Z
-slug: kanban-guide-2025-05
+slug: kanban-guide-2020
 type: guide
 lang: ja
 mainfont: "Times New Roman"
