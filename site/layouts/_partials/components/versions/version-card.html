@@ -65,6 +65,38 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
             </div>
           </div>
         {{ end }}
+        {{- $pdfPattern := "pdf/*.*.pdf" }}
+        {{- $pdfResources := .Resources.Match $pdfPattern }}
+        {{ if gt (len $pdfResources) 0 }}
+          <div class="mb-3">
+            <div class="text-muted small mb-2">
+              <i class="fas fa-file-pdf me-1"></i>
+              PDF Downloads:
+            </div>
+            <div class="d-flex flex-wrap gap-1">
+              {{/* PDF language buttons */}}
+              {{ range $pdfResources }}
+                {{- $filename := .Name }}
+                {{- $langCode := "" }}
+                {{- $displayName := "" }}
+                {{/* Extract language code from filename like "kanban-guide.ja.pdf" */}}
+                {{- $parts := split $filename "." }}
+                {{- if ge (len $parts) 3 }}
+                  {{- $langCode = index $parts (sub (len $parts) 2) }}
+                {{ end }}
+                {{/* Skip if no language code found */}}
+                {{- if eq $langCode "" }}
+                  {{- continue }}
+                {{ end }}
+                {{ $displayName = partial "functions/get-language-display-name.html" $langCode }}
+                <a href="{{ .Permalink }}" class="btn btn-outline-secondary btn-sm" title="Download {{ $displayName }} PDF">
+                  <i class="fas fa-file-pdf me-1"></i>
+                  {{ $displayName }}
+                </a>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
 
 
         <div class="d-flex justify-content-between align-items-center">

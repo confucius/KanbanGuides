@@ -1,0 +1,42 @@
+{{/* Map language codes to display names */}}
+{{- $langCode := . | default "en" -}}
+{{- $displayName := "unknown" -}}
+
+{{- if eq $langCode "ja" }}
+  {{- $displayName = "Japanese" }}
+{{- else if eq $langCode "zh-Hans" }}
+  {{- $displayName = "Chinese (Simplified)" }}
+{{- else if eq $langCode "zh-Hant" }}
+  {{- $displayName = "Chinese (Traditional)" }}
+{{- else if eq $langCode "en" }}
+  {{- $displayName = "English" }}
+{{- else if eq $langCode "es" }}
+  {{- $displayName = "Spanish" }}
+{{- else if eq $langCode "fr" }}
+  {{- $displayName = "French" }}
+{{- else if eq $langCode "de" }}
+  {{- $displayName = "German" }}
+{{- else if eq $langCode "pt" }}
+  {{- $displayName = "Portuguese" }}
+{{- else if eq $langCode "it" }}
+  {{- $displayName = "Italian" }}
+{{- else if eq $langCode "ru" }}
+  {{- $displayName = "Russian" }}
+{{- else if eq $langCode "ko" }}
+  {{- $displayName = "Korean" }}
+{{- else if eq $langCode "ar" }}
+  {{- $displayName = "Arabic" }}
+{{- else if eq $langCode "hi" }}
+  {{- $displayName = "Hindi" }}
+{{- else if eq $langCode "nl" }}
+  {{- $displayName = "Dutch" }}
+{{- else if eq $langCode "pl" }}
+  {{- $displayName = "Polish" }}
+{{- else if eq $langCode "tlh" }}
+  {{- $displayName = "Klingon" }}
+{{- else if eq $langCode "fa" }}
+  {{- $displayName = "Persian" }}
+{{- else }}
+  {{- $displayName = $langCode | title }}
+{{- end }}
+{{ return $displayName }}
