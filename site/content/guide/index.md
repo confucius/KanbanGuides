@@ -46,7 +46,7 @@ contributors:
   - name: Martin Hinshelwood
     gravatarHash: a9a55b4384e0420e376f441384d0c13fdadb9d39e72892ac60c3e89c3079d10d
     githubUsername: mrhinsh
-    url: https://www.linkedin.com/in/martinhinshelwood/
+    url: https://nkdagility.com/company/people/martin-hinshelwood/
   - name: Jim Benson
     url: https://www.linkedin.com/in/jimbenson/
   - name: Magdalena Firlit
