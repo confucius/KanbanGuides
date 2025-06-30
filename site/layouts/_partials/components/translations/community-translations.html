@@ -74,16 +74,16 @@
           </h6>
           <p class="card-text text-muted mb-3">
             <small>{{ i18n "download_table_translations_by" $ }}:</small><br />
-            {{- if .Params.contributors }}
-              {{- range $index, $contributor := .Params.contributors }}
+            {{- if .Params.translators }}
+              {{- range $index, $translator := .Params.translators }}
                 {{- if $index }},{{ end }}
-                {{- if $contributor.link }}
-                  <a href="{{ $contributor.link }}" target="_blank" rel="noopener" class="text-decoration-none">
-                    {{ $contributor.name }}
-                    <i class="fa-solid fa-external-link-alt ms-1"></i>
+                {{- if $translator.url }}
+                  <a href="{{ $translator.url }}" target="_blank" rel="noopener" class="text-decoration-none">
+                    {{ $translator.name }}
+                    <i class="fa-solid fa-external-link-alt ms-1" style="font-size: 0.6em;"></i>
                   </a>
                 {{- else }}
-                  {{ $contributor.name }}
+                  {{ $translator.name }}
                 {{- end }}
               {{- end }}
             {{- else }}
@@ -144,16 +144,16 @@
           {{- end }}
         </div>
         <div class="col-md-4">
-          {{- if .Params.contributors }}
-            {{- range $index, $contributor := .Params.contributors }}
+          {{- if .Params.translators }}
+            {{- range $index, $translators := .Params.translators }}
               {{- if $index }},{{ end }}
-              {{- if $contributor.link }}
-                <a href="{{ $contributor.link }}" target="_blank" rel="noopener" class="text-decoration-none">
-                  {{ $contributor.name }}
-                  <i class="fa-solid fa-external-link-alt ms-1"></i>
+              {{- if $translators.url }}
+                <a href="{{ $translators.url }}" target="_blank" rel="noopener" class="text-decoration-none">
+                  {{ $translators.name }}
+                  <i class="fa-solid fa-external-link-alt ms-1" style="font-size: 0.6em;"></i>
                 </a>
               {{- else }}
-                {{ $contributor.name }}
+                {{ $translators.name }}
               {{- end }}
             {{- end }}
           {{- else }}

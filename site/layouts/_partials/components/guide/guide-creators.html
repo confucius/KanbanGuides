@@ -1,0 +1,22 @@
+<!-- Authors from creators list -->
+{{- $defaultLang := .Site.Home.Language.Lang | default "en" -}}
+{{- $currentPageDefaultLang := .Site.GetPage (printf "/%s%s" $defaultLang .File.Path) -}}
+{{- if not $currentPageDefaultLang -}}
+  {{- $currentPageDefaultLang = .Site.Sites.Default.GetPage .File.Path -}}
+{{- end -}}
+
+{{ $creators := $currentPageDefaultLang.Params.creators }}
+{{ if $creators }}
+  <div class="content-authors mt-3">
+    <div class="row">
+      <div class="col-12 col-md-2">
+        <span class="text-muted me-2">Creator(s):</span>
+      </div>
+      <div class="col-12 col-md-10">
+        {{ range sort $creators "name" }}
+          {{ partial "components/guide/guide-author.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

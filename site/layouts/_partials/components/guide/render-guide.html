@@ -142,26 +142,11 @@
                 </time>
               </div>
             {{ end }}
+            {{ partial "components/guide/guide-creators.html" . }}
+            {{ partial "components/guide/guide-contributors.html" . }}
+            {{ partial "components/guide/guide-translators.html" . }}
             <!-- Authors from creators list -->
-            {{ $creators := .Site.GetPage "/creators" }}
-            {{ if $creators }}
-              <div class="content-authors mt-3">
-                <span class="text-muted me-2">Authors:</span>
-                {{ range $creators.Pages }}
-                  <span class="author-item me-3">
-                    {{- $imageResource := "" }}
-                    {{- $urlifiedTitle := .Title | urlize }}
-                    {{- $imageResource = .Resources.GetMatch (printf "%s.*" $urlifiedTitle) }}
-                    {{- if $imageResource }}
-                      <img src="{{ $imageResource.Permalink }}" alt="{{ .Title }}" aria-label="Profile picture of {{ .Title }}" class="author-avatar rounded-circle me-1" style="width: 24px; height: 24px; object-fit: cover;" />
-                    {{- end }}
-                    <a href="{{ .Permalink }}" class="text-decoration-none">
-                      <strong>{{ .Title }}</strong>
-                    </a>
-                  </span>
-                {{ end }}
-              </div>
-            {{ end }}
+
             <div class="content-version mt-2">
               <span class="text-muted">Version: </span>
               <span class="version-number">v#{GitVersion_Major}#.#{GitVersion_Minor}#</span>

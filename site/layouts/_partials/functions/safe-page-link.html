@@ -9,7 +9,7 @@
 
 Parameters: - . (string): The path to the page (e.g., "/guide", "/translations") Returns: - A safe permalink URL that either points to the page in the current language or falls back to the default language version */ -}}
 {{- $pagePath := . -}}
-{{- $defaultLang := site.Params.defaultContentLanguage | default "en" -}}
+{{- $defaultLang := site.Home.Language.Lang | default "en" -}}
 {{- $currentLang := site.Language.Lang -}}
 {{- $safeUrl := "" -}}
 

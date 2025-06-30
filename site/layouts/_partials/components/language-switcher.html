@@ -4,7 +4,7 @@
       <i class="fa-solid fa-globe"></i> {{ .Site.Language.LanguageName }}
     </a>
     <ul class="dropdown-menu">
-      {{- $defaultLang := site.Params.defaultContentLanguage | default "en" }}
+      {{- $defaultLang := .Site.Home.Language.Lang | default "en" }}
       {{- range .Site.Languages }}
         {{- if ne .Lang $.Site.Language.Lang }}
           {{- $langUrl := "" }}
