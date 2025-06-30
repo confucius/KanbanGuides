@@ -425,6 +425,100 @@ Translation files are stored in the `i18n/` directory:
   translation: "Lizenziert unter CC BY-SA 4.0"
 ```
 
+## Content Front Matter Configuration
+
+### Attribution Fields
+
+The guide supports three types of attribution through content front matter: **creators**, **contributors**, and **translators**. These fields are used to display recognition for different types of contributions to the guide.
+
+#### Loading Behavior
+
+- **Creators & Contributors**: Only loaded from the default language (English) page (`site/content/guide/index.md`)
+- **Translators**: Only loaded from language-specific pages (`site/content/guide/index.es.md`, `site/content/guide/index.de.md`, etc.)
+
+This design ensures consistent attribution across all languages while allowing language-specific translator recognition.
+
+#### Field Schema
+
+All attribution types support the same field structure:
+
+```yaml
+# Required field
+name: "Full Name"
+
+# Optional image fields (priority order)
+image: "https://direct-url-to-image.jpg" # Highest priority
+gravatarHash: "sha256-hash-of-email" # Medium priority
+githubUsername: "github-username" # Lowest priority
+
+# Optional profile link
+url: "https://profile-or-website-url.com"
+
+# Translator-specific field
+language: "es" # Only used in translators section
+```
+
+#### Field Priority for Images
+
+The system attempts to load images in this priority order:
+
+1. **`image`** - Direct URL to profile image (highest priority)
+2. **`gravatarHash`** - SHA256 hash for Gravatar service
+3. **`githubUsername`** - GitHub username for GitHub avatar API
+4. **Default avatar** - System fallback if none available
+
+#### Example Configuration
+
+**Default Language (`site/content/guide/index.md`)**:
+
+```yaml
+---
+title: Open Guide to Kanban
+# ... other front matter fields ...
+
+creators:
+  - name: John Coleman
+    image: https://media.linkedin.com/dms/image/v2/D4E03AQGlxycsyUPltg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676027893027
+    url: https://www.linkedin.com/in/johnanthonycoleman/
+
+contributors:
+  - name: Martin Hinshelwood
+    gravatarHash: a9a55b4384e0420e376f441384d0c13fdadb9d39e72892ac60c3e89c3079d10d
+    githubUsername: mrhinsh
+    url: https://www.linkedin.com/in/martinhinshelwood/
+  - name: Jim Benson
+    url: https://www.linkedin.com/in/jimbenson/
+  - name: Magdalena Firlit
+---
+```
+
+**Translated Language (`site/content/guide/index.es.md`)**:
+
+```yaml
+---
+title: Guía Abierta de Kanban
+# ... other localized front matter fields ...
+
+# Do NOT include creators/contributors - loaded from default language
+
+translators:
+  - name: María García
+    language: es
+    gravatarHash: def789ghi012jkl345mno678pqr901stu234vwx567yz
+    url: https://www.linkedin.com/in/mariagarcia/
+  - name: Carlos Rodriguez
+    language: es
+    githubUsername: carlosrod
+---
+```
+
+### Technical Implementation Notes
+
+- **Gravatar Hash Generation**: Use SHA256 hash of lowercase, trimmed email address
+- **GitHub Username**: Must match exact GitHub username (case-sensitive)
+- **URL Validation**: All URLs should be well-formed and preferably HTTPS
+- **Language Consistency**: Translator `language` field should match file's language code
+
 ## Git Configuration
 
 ### `.gitignore`

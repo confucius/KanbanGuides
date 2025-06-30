@@ -158,6 +158,137 @@ hugo new content/creators/new-creator/index.md
    - Use descriptive filenames
    - Optimize for web (WebP preferred)
 
+### Content Attribution Fields
+
+The guide supports three types of attribution through front matter: **creators**, **contributors**, and **translators**. Each serves a specific purpose and has different loading behavior.
+
+#### Loading Behavior
+
+- **Creators & Contributors**: Only loaded from the default language (English) page (`index.md`)
+- **Translators**: Only loaded from language-specific pages (`index.es.md`, `index.de.md`, etc.)
+
+This ensures consistent attribution across all languages while allowing language-specific translator recognition.
+
+#### Creators Section
+
+Creators are the original authors and founders of the guide content.
+
+```yaml
+creators:
+  - name: John Coleman # Required: Full name
+    image: https://example.com/photo.jpg # Optional: Direct image URL (highest priority)
+    gravatarHash: abc123def456... # Optional: SHA256 hash for Gravatar
+    githubUsername: johncoleman # Optional: GitHub username for avatar
+    url: https://linkedin.com/in/john # Optional: Profile/website link
+```
+
+**Field Priority for Images**:
+
+1. `image` - Direct URL to profile image (highest priority)
+2. `gravatarHash` - SHA256 hash for Gravatar service
+3. `githubUsername` - GitHub username for GitHub avatar (lowest priority)
+
+#### Contributors Section
+
+Contributors are people who have contributed to the guide content, improvements, or maintenance.
+
+```yaml
+contributors:
+  - name: Martin Hinshelwood # Required: Full name
+    gravatarHash: a9a55b4384e0420e... # Optional: Gravatar hash
+    githubUsername: mrhinsh # Optional: GitHub username
+    url: https://linkedin.com/in/martin # Optional: Profile link
+  - name: Jim Benson # Minimal example with just name and URL
+    url: https://linkedin.com/in/jim
+  - name: Magdalena Firlit # Minimal example with just name
+```
+
+**Same image priority order applies**: `image` > `gravatarHash` > `githubUsername`
+
+#### Translators Section
+
+Translators are recognized on language-specific pages only. This section should **only** appear in translated content files (not in the default English `index.md`).
+
+```yaml
+# Example for Spanish translation (index.es.md)
+translators:
+  - name: María García # Required: Full name
+    language: es # Optional: Language code translated
+    gravatarHash: def789ghi012... # Optional: Gravatar hash
+    url: https://linkedin.com/in/maria # Optional: Profile link
+  - name: Carlos Rodriguez
+    language: es
+    githubUsername: carlosrod
+    url: https://github.com/carlosrod
+```
+
+#### Complete Front Matter Example
+
+**Default Language File (`index.md`)**:
+
+```yaml
+---
+title: Open Guide to Kanban
+description: Community-driven reference for Kanban in knowledge work
+# ... other front matter fields ...
+
+creators:
+  - name: John Coleman
+    image: https://media.linkedin.com/dms/image/v2/D4E03AQGlxycsyUPltg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676027893027
+    url: https://www.linkedin.com/in/johnanthonycoleman/
+
+contributors:
+  - name: Martin Hinshelwood
+    gravatarHash: a9a55b4384e0420e376f441384d0c13fdadb9d39e72892ac60c3e89c3079d10d
+    githubUsername: mrhinsh
+    url: https://www.linkedin.com/in/martinhinshelwood/
+  - name: Jim Benson
+    url: https://www.linkedin.com/in/jimbenson/
+---
+```
+
+**Translated File (`index.es.md`)**:
+
+```yaml
+---
+title: Guía Abierta de Kanban
+description: Referencia comunitaria para Kanban en trabajo del conocimiento
+# ... other localized front matter fields ...
+
+# Do NOT include creators/contributors here - they're loaded from default language
+
+translators:
+  - name: María García
+    language: es
+    gravatarHash: def789ghi012jkl345mno678pqr901stu234vwx567yz
+    url: https://www.linkedin.com/in/mariagarcia/
+  - name: Carlos Rodriguez
+    language: es
+    githubUsername: carlosrod
+---
+```
+
+#### Implementation Notes
+
+1. **Image Resolution Priority**: The system will attempt to load images in this order:
+
+   - `image` field (direct URL)
+   - `gravatarHash` (Gravatar service)
+   - `githubUsername` (GitHub avatar API)
+   - Fall back to default avatar if none available
+
+2. **Gravatar Hash Generation**: Use SHA256 hash of the lowercase, trimmed email address:
+
+   ```bash
+   echo -n "email@example.com" | sha256sum
+   ```
+
+3. **GitHub Username**: Should be the exact GitHub username (case-sensitive)
+
+4. **URL Validation**: URLs should be well-formed and preferably HTTPS
+
+5. **Language Consistency**: Ensure translator `language` field matches the file's language code
+
 ## Working with Layouts
 
 ### Template Development (Hugo v0.146.0+ New Template System)
@@ -259,6 +390,7 @@ layouts/
    ```
 
 2. **Use in Templates**
+
    ```html
    <h1>{{ i18n "welcome" }}</h1>
    ```
