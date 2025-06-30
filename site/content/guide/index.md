@@ -46,16 +46,10 @@ contributors:
   - name: John Coleman
     image: /images/people/john-coleman.jpg
     url: https://www.linkedin.com/in/johnanthonycoleman/
-  - name: Daniel Vacanti
-    image: /images/people/daniel-vacanti.jpg
-    url: https://www.linkedin.com/in/danielvacanti/
 translators:
   - name: John Coleman
     image: /images/people/john-coleman.jpg
     url: https://www.linkedin.com/in/johnanthonycoleman/
-  - name: Daniel Vacanti
-    image: /images/people/daniel-vacanti.jpg
-    url: https://www.linkedin.com/in/danielvacanti/
 ---
 
 TBA
