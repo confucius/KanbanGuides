@@ -13,13 +13,7 @@
 
         <p class="lead mb-4">
           {{ i18n "download_page_description" $guidePage }}
-          {{- $creators := .Site.GetPage "/creators" }}
-          {{- $creatorPages := $creators.Pages }}
-          {{- range $index, $creator := $creatorPages }}
-            {{- if $index }},{{ end }}
-            {{- if gt (len $creatorPages) 1 }}{{ if eq $index (sub (len $creatorPages) 1) }}&nbsp;{{ i18n "and" }}{{ end }}{{ end }}
-            <a href="{{ $creator.Permalink }}" class="text-decoration-none">{{ $creator.Title }}</a>
-          {{- end }}
+
           {{ i18n "download_page_originators" $guidePage }}
         </p>
 
