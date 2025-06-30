@@ -7,6 +7,27 @@ keywords:
 author:
   - John Coleman
   - Daniel Vacanti
+creators:
+  - name: John Coleman
+    image: /images/people/john-coleman.jpg
+    url: https://www.linkedin.com/in/johnanthonycoleman/
+  - name: Daniel Vacanti
+    image: /images/people/daniel-vacanti.jpg
+    url: https://www.linkedin.com/in/danielvacanti/
+contributors:
+  - name: John Coleman
+    image: /images/people/john-coleman.jpg
+    url: https://www.linkedin.com/in/johnanthonycoleman/
+  - name: Daniel Vacanti
+    image: /images/people/daniel-vacanti.jpg
+    url: https://www.linkedin.com/in/danielvacanti/
+translators:
+  - name: John Coleman
+    image: /images/people/john-coleman.jpg
+    url: https://www.linkedin.com/in/johnanthonycoleman/
+  - name: Daniel Vacanti
+    image: /images/people/daniel-vacanti.jpg
+    url: https://www.linkedin.com/in/danielvacanti/
 slug: kanban-guide-2025
 type: guide
 lang: en
@@ -14,7 +35,7 @@ mainfont: "Times New Roman"
 sansfont: "Arial"
 monofont: "Courier New"
 sitemap:
-  priority: 1.0
+  priority: 0.6
 ---
 
 ## Preface
