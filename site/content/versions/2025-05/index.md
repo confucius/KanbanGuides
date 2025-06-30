@@ -9,25 +9,17 @@ author:
   - Daniel Vacanti
 creators:
   - name: John Coleman
-    image: /images/people/john-coleman.jpg
     url: https://www.linkedin.com/in/johnanthonycoleman/
   - name: Daniel Vacanti
-    image: /images/people/daniel-vacanti.jpg
     url: https://www.linkedin.com/in/danielvacanti/
 contributors:
-  - name: John Coleman
-    image: /images/people/john-coleman.jpg
-    url: https://www.linkedin.com/in/johnanthonycoleman/
-  - name: Daniel Vacanti
-    image: /images/people/daniel-vacanti.jpg
-    url: https://www.linkedin.com/in/danielvacanti/
-translators:
-  - name: John Coleman
-    image: /images/people/john-coleman.jpg
-    url: https://www.linkedin.com/in/johnanthonycoleman/
-  - name: Daniel Vacanti
-    image: /images/people/daniel-vacanti.jpg
-    url: https://www.linkedin.com/in/danielvacanti/
+  - name: Julia Wester
+  - name: Colleen Johnson
+  - name: Prateek Singh
+  - name: Christian Neverdal
+  - name: Magdalena Firlit
+  - name: Tom Gilb
+  - name: Steve Tendon
 slug: kanban-guide-2025
 type: guide
 lang: en

@@ -1,0 +1,12 @@
+<span class="author-item me-3">
+  {{- if .image }}
+    <img src="{{ .image }}" alt="{{ .name }}" aria-label="Profile picture of {{ .name }}" class="author-avatar rounded-circle me-1" style="width: 24px; height: 24px; object-fit: cover;" />
+  {{- end }}
+  {{- if .url }}
+    <a href="{{ .url }}" class="text-decoration-none" target="_blank" rel="noopener">
+      <strong>{{ .name }}</strong>
+    </a>
+  {{- else }}
+    <strong>{{ .name }}</strong>
+  {{- end }}
+</span>
