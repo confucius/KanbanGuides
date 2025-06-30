@@ -57,6 +57,9 @@
 - id: nav_translations
   translation: "Translations"
 
+- id: nav_versions
+  translation: "Versions"
+
 - id: nav_pdf_version
   translation: "PDF Version"
 

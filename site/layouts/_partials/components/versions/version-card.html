@@ -115,13 +115,14 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
           </div>
           <div class="d-flex gap-2">
             {{ if $isLatest }}
-              <a href="{{ .Permalink }}" class="btn btn-primary btn-sm">
+              <a href="{{ partial "functions/safe-page-link.html" "/guide" }}" class="btn btn-primary btn-sm">
                 <i class="fas fa-book me-1"></i>
                 Read Guide
               </a>
-              <a href="/download" class="btn btn-outline-secondary btn-sm">
+
+              <a href="{{ partial "functions/safe-page-link.html" "/translations" }}" class="btn btn-outline-secondary btn-sm">
                 <i class="fas fa-download me-1"></i>
-                Download
+                Translations
               </a>
             {{ else }}
               <a href="{{ .Permalink }}" class="btn btn-outline-primary btn-sm">
