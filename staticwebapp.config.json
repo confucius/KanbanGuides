@@ -15,8 +15,8 @@
   "routes": [
     {
       "route": "/english/",
-      "redirect": "/",
-      "statusCode": 302
+      "redirect": "/open-guide-to-kanban/",
+      "statusCode": 301
     },
     {
       "route": "/wp-content/uploads/2020/10/Definitions-for-Kanban-Guide-1-1.pdf",

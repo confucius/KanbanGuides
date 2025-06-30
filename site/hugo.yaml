@@ -1,17 +1,10 @@
 title: Open Guide to Kanban
-
 buildFuture: true
-
 publishDir: ../public
 resourceDir: ../resources
-
 summaryLength: 30
-
 enableRobotsTXT: true
-
-# Disable default taxonomies (tags and categories)
 taxonomies: {}
-
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
 disableDefaultLanguageRedirect: false
@@ -21,52 +14,63 @@ languages:
     weight: 1
     title: Open Guide to Kanban
     params:
-      description: "The Open Guide to Kanban is a free, community-driven reference for applying Kanban in knowledge work. It defines the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches."
-      keywords: "Kanban, Open Guide to Kanban, knowledge work, flow optimisation, WIP limits, value delivery, agile, lean, continuous improvement, service level expectation, cumulative flow, throughput, metrics, work item age, flow efficiency, visualisation, work in progress, process improvement, kanban board, definition of workflow, outcome-oriented delivery"
+      description: The Open Guide to Kanban is a free, community-driven reference for applying Kanban in knowledge work. It defines the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches.
+      keywords: Kanban, Open Guide to Kanban, knowledge work, flow optimisation, WIP limits, value delivery, agile, lean, continuous improvement, service level expectation, cumulative flow, throughput, metrics, work item age, flow efficiency, visualisation, work in progress, process improvement, kanban board, definition of workflow, outcome-oriented delivery
+  tlh:
+    languageName: Klingon
+    weight: 2
+    title: Open Guide to Kanban
+    params:
+      description: The Open Guide to Kanban is a free, community-driven reference for applying Kanban in knowledge work. It defines the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches.
+      keywords: Kanban, Open Guide to Kanban
 
-# Site-wide parameters
 params:
-  description: "Open Guide to Kanban"
-  keywords: "Kanban, Open Guide to Kanban"
-  og_image: "/images/open-guide-to-kanban-logo-512.png" # URL to the default Open Graph image
-  siteProdUrl: "https://kanbanguides.org"
-  supportEmail: "support@kanbanguides.org"
-  githubUrl: "https://github.com/KanbanGuides/OpenGuideToKanban"
-  previewSiteUrl: "https://red-pond-0d8225910-preview.centralus.2.azurestaticapps.net/"
-  productionSiteUrl: "https://kanbanguides.org/"
-
-# Enable sitemap and robots.txt
+  description: Open Guide to Kanban
+  keywords: Kanban, Open Guide to Kanban
+  og_image: /images/open-guide-to-kanban-logo-512.png
+  siteProdUrl: https://kanbanguides.org
+  supportEmail: support@kanbanguides.org
+  githubUrl: https://github.com/KanbanGuides/OpenGuideToKanban
+  previewSiteUrl: https://red-pond-0d8225910-preview.centralus.2.azurestaticapps.net/
+  productionSiteUrl: https://kanbanguides.org/
 sitemap:
-  filename: "sitemap.xml"
-  changefreq: "daily"
+  filename: sitemap.xml
+  changefreq: daily
   priority: 0.5
-
-# RSS feed settings
 rss:
-  filename: "rss.xml"
-  name: "RSS Feed"
-  description: "Subscribe to our RSS feed"
-
+  filename: rss.xml
+  name: RSS Feed
+  description: Subscribe to our RSS feed
 outputs:
-  home: [html, json, rss, languages]
-  section: [html, rss]
-  taxonomy: [html, rss]
-  term: [html, rss]
-  page: [html, rss]
-
+  home:
+    - html
+    - json
+    - rss
+    - languages
+  section:
+    - html
+    - rss
+  taxonomy:
+    - html
+    - rss
+  term:
+    - html
+    - rss
+  page:
+    - html
+    - rss
 outputFormats:
   json:
-    mediaType: "application/json"
-    baseName: "pages"
+    mediaType: application/json
+    baseName: pages
   languages:
-    mediaType: "application/json"
-    baseName: "languages"
+    mediaType: application/json
+    baseName: languages
     isPlainText: true
-
 markup:
   goldmark:
     renderer:
-      unsafe: true # Allows raw HTML in Markdown
+      unsafe: true
     extensions:
       table: true
       linkify: true

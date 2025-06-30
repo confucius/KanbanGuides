@@ -1,0 +1,105 @@
+{{/* Versions Card Component
+
+  Usage: {{ partial "components/versions/versions-card.html" (dict "page" $page "isLatest" true)
+}}
+
+Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolean to indicate if this is the latest/current version */}}
+{{- $page := .page }}
+{{- $isLatest := .isLatest | default false }}
+
+{{ with $page }}
+  <div class="col-12 mx-auto mb-4">
+    <div class="card h-100 shadow-sm {{ if $isLatest }}border-primary{{ end }}">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <h5 class="card-title mb-0 {{ if $isLatest }}text-primary{{ end }}">
+            {{ if $isLatest }}
+              <i class="fas fa-star me-2"></i>
+            {{ end }}
+            {{ .Title | default "Open Guide to Kanban" }}
+          </h5>
+          {{ if $isLatest }}
+            <span class="badge bg-success">Latest</span>
+          {{ else }}
+            <span class="badge bg-primary">{{ .Date.Format "Jan 2006" }}</span>
+          {{ end }}
+        </div>
+
+        {{ with .Params.description }}
+          <p class="card-text text-muted mb-3">{{ . }}</p>
+        {{ else }}
+          {{ with .Summary }}
+            <p class="card-text text-muted mb-3">{{ . | truncate 200 }}</p>
+          {{ end }}
+        {{ end }}
+
+
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          {{ range .Params.author }}
+            <span class="badge bg-secondary">{{ . }}</span>
+          {{ end }}
+        </div>
+
+        {{/* Language buttons section */}}
+        {{ $translations := .AllTranslations }}
+        {{ $currentLang := .Language.Lang }}
+        {{ if gt (len $translations) 0 }}
+          <div class="mb-3">
+            <div class="text-muted small mb-2">
+              <i class="fas fa-globe me-1"></i>
+              Available Languages:
+            </div>
+            <div class="d-flex flex-wrap gap-1">
+              {{/* Current language button */}}
+              <span class="btn btn-primary btn-sm disabled">
+                {{ .Language.LanguageName }}
+              </span>
+              {{/* Other language buttons */}}
+              {{ range $translations }}
+                {{ if ne .Language.Lang $currentLang }}
+                  <a href="{{ .Permalink }}" class="btn btn-outline-primary btn-sm">
+                    {{ .Language.LanguageName }}
+                  </a>
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+
+
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="text-muted small">
+            <i class="fas fa-calendar me-1"></i>
+            {{ if .Date }}
+              {{ if $isLatest }}
+                Updated
+                {{ .Date.Format "January 2, 2006" }}
+              {{ else }}
+                {{ .Date.Format "January 2, 2006" }}
+              {{ end }}
+            {{ else }}
+              Current Version
+            {{ end }}
+          </div>
+          <div class="d-flex gap-2">
+            {{ if $isLatest }}
+              <a href="{{ .Permalink }}" class="btn btn-primary btn-sm">
+                <i class="fas fa-book me-1"></i>
+                Read Guide
+              </a>
+              <a href="/download" class="btn btn-outline-secondary btn-sm">
+                <i class="fas fa-download me-1"></i>
+                Download
+              </a>
+            {{ else }}
+              <a href="{{ .Permalink }}" class="btn btn-outline-primary btn-sm">
+                <i class="fas fa-eye me-1"></i>
+                View Version
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}

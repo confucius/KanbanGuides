@@ -5,7 +5,3 @@ buildFuture: true
 buildExpired: true
 
 disableAliases: true
-
-languages:
-  tlh:
-    disabled: false

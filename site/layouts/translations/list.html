@@ -1,5 +1,10 @@
 {{- define "main" }}
   {{- $guidePage := .Site.GetPage (printf "/%s/guide" .Site.Language.Lang) | default (.Site.GetPage "/guide") }}
+
+  {{- $now := now }}
+  {{- $translations := .Site.Data.translations }}
+  {{- $translation := index $translations .Site.Language.Lang | default (index $translations "en") }}
+
   {{- $isComingSoon := and $guidePage $guidePage.Date (lt now $guidePage.Date) (eq hugo.Environment "production") }}
   <section class="container my-5">
     <div class="row">

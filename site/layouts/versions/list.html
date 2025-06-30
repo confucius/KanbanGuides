@@ -1,0 +1,56 @@
+{{- define "main" }}
+  <section class="container my-5">
+    <div class="row mb-4">
+      <div class="col-12">
+        <h1 class="display-4 text-center mb-3">{{ .Title | default "Versions" }}</h1>
+        {{ with .Content }}
+          <div class="lead text-center mb-5">{{ . }}</div>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="row">
+      {{- $guidePage := .Site.GetPage (printf "/%s/guide" .Site.Language.Lang) | default (.Site.GetPage "/guide") }}
+      <!-- Dynamic Open Guide to Kanban card -->
+      {{ with $guidePage }}
+        {{ partial "components/versions/version-card.html" (dict "page" . "isLatest" true) }}
+      {{ end }}
+      {{- $englishVersions := .Site.GetPage "/en/versions" | default (.Site.GetPage "/versions") }}
+      {{- $versionPages := .Pages | lang.Merge ($englishVersions.Pages | default slice) }}
+      {{ range ($versionPages.ByDate.Reverse) }}
+        {{ partial "components/versions/version-card.html" (dict "page" . "isLatest" false) }}
+      {{ else }}
+        <div class="col-12">
+          <div class="text-center">
+            <div class="alert alert-info" role="alert">
+              <i class="fas fa-info-circle me-2"></i>
+              No versions are currently available.
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+
+    <!-- Additional information section -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="card bg-light">
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <i class="fas fa-download me-2"></i>
+              Download Options
+            </h5>
+            <p class="card-text">Each version includes multiple download formats and translation options.</p>
+            <a href="/download" class="btn btn-primary">
+              <i class="fas fa-download me-1"></i>
+              Browse Downloads
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{- end }}
+{{- define "template" }}
+  versions/list.html
+{{- end }}
