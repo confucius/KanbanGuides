@@ -32,7 +32,7 @@ params:
   siteProdUrl: "https://kanbanguides.org"
   supportEmail: "support@kanbanguides.org"
   githubUrl: "https://github.com/KanbanGuides/OpenGuideToKanban"
-  previewSiteUrl: "https://xxx-xxx-0c966e810-preview.centralus.6.azurestaticapps.net/"
+  previewSiteUrl: "https://red-pond-0d8225910-preview.centralus.2.azurestaticapps.net/"
   productionSiteUrl: "https://kanbanguides.org/"
 
 # Enable sitemap and robots.txt
