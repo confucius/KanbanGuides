@@ -12,7 +12,7 @@
               <p class="card-text flex-grow-1">{{ i18n "read_online_description" . }}</p>
             </div>
             <div class="card-footer">
-              <a href="{{ $guidePage.RelPermalink }}" class="btn btn-primary">{{ i18n "read_online_button" }}</a>
+              <a href="{{ partial "functions/safe-page-link.html" "/guide" }}" class="btn btn-primary">{{ i18n "read_online_button" }}</a>
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@
               <p class="card-text flex-grow-1">{{ i18n "download_description" . }}</p>
             </div>
             <div class="card-footer">
-              <a href="{{ (.Site.GetPage "/translations").Permalink }}" class="btn btn-primary">{{ i18n "nav_translations" . }}</a>
+              <a href="{{ partial "functions/safe-page-link.html" "/translations" }}" class="btn btn-primary">{{ i18n "nav_translations" . }}</a>
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@
               {{- end }}
             {{- end }}
           </div>
-          <a href="{{ (.Site.GetPage "/creators").Permalink }}"><img src="/images/open-guide-to-kanban-logo.png" class="img-fluid mb-3" alt="{{ .Site.Title }} Creators" /></a>
+          <a href="{{ partial "functions/safe-page-link.html" "/creators" }}"><img src="/images/open-guide-to-kanban-logo.png" class="img-fluid mb-3" alt="{{ .Site.Title }} Creators" /></a>
         </div>
         <div class="col-12 col-lg-8 col-xl-6">
           <div>
