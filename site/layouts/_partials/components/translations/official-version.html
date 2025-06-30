@@ -1,6 +1,6 @@
 {{- $englishSite := index (where .Site.Sites "Language.Lang" "en") 0 }}
 {{- $guidePage := $englishSite.GetPage "/guide" }}
-
+{{- $allCreators := (partial "functions/get-participants" $guidePage) }}
 
 <h2 class="mb-3">{{ i18n "download_official_version" . }}</h2>
 
@@ -8,7 +8,7 @@
 <div class="d-none d-md-block mb-3">
   <div class="row fw-bold text-muted border-bottom pb-2">
     <div class="col-md-4">{{ i18n "download_table_language" . }}</div>
-    <div class="col-md-4">{{ i18n "download_table_written_by" . }}</div>
+    <div class="col-md-4">{{ i18n "download_table_contributed_by" . | default "Contributors" }}</div>
     <div class="col-md-4">{{ i18n "download_table_action" . }}</div>
   </div>
 </div>
@@ -24,12 +24,11 @@
       </h6>
       <p class="card-text text-muted mb-3">
         <small>{{ i18n "download_table_written_by" . }}:</small><br />
-        {{- $creators := .Site.GetPage "/creators" }}
-        {{- $creatorPages := $creators.Pages }}
-        {{- range $index, $creator := $creatorPages }}
+        {{- range $index, $creator := $allCreators }}
           {{- if $index }},{{ end }}
-          {{- if gt (len $creatorPages) 1 }}{{ if eq $index (sub (len $creatorPages) 1) }}&nbsp;{{ end }}{{ end }}
-          <a href="{{ $creator.Permalink }}" class="text-decoration-none">{{ $creator.Title }}</a>
+          {{- if gt (len $allCreators) 1 }}{{ if eq $index (sub (len $allCreators) 1) }}&nbsp;{{ end }}{{ end }}
+          <a href="{{ $creator.url }}" class="text-decoration-none">{{ $creator.name }}<i class="fa-solid fa-external-link-alt ms-1" style="font-size: 0.6em;"></i>
+          </a>
         {{- end }}
       </p>
       <div class="d-flex gap-2 flex-wrap">
@@ -58,12 +57,11 @@
       {{ i18n "download_official_current_version" . }}
     </div>
     <div class="col-md-4">
-      {{- $creators := .Site.GetPage "/creators" }}
-      {{- $creatorPages := $creators.Pages }}
-      {{- range $index, $creator := $creatorPages }}
+      {{- range $index, $creator := $allCreators }}
         {{- if $index }},{{ end }}
-        {{- if gt (len $creatorPages) 1 }}{{ if eq $index (sub (len $creatorPages) 1) }}&nbsp;{{ end }}{{ end }}
-        <a href="{{ $creator.Permalink }}" class="text-decoration-none">{{ $creator.Title }}</a>
+        {{- if gt (len $allCreators) 1 }}{{ if eq $index (sub (len $allCreators) 1) }}&nbsp;{{ end }}{{ end }}
+        <a href="{{ $creator.url }}" class="text-decoration-none"> {{ $creator.name }}<i class="fa-solid fa-external-link-alt ms-1" style="font-size: 0.6em;"></i>
+        </a>
       {{- end }}
     </div>
     <div class="col-md-4">
@@ -86,7 +84,7 @@
     </div>
   </div>
 
-  <!-- English (US) Version - Mobile Card -->
+  {{/*  <!-- English (US) Version - Mobile Card -->
   <div class="card mb-3 d-md-none">
     <div class="card-body">
       <h6 class="card-title mb-2">
@@ -95,12 +93,10 @@
       </h6>
       <p class="card-text text-muted mb-3">
         <small>{{ i18n "download_table_written_by" . }}:</small><br />
-        {{- $creators := .Site.GetPage "/creators" }}
-        {{- $creatorPages := $creators.Pages }}
-        {{- range $index, $creator := $creatorPages }}
+        {{- range $index, $creator := $allCreators }}
           {{- if $index }},{{ end }}
-          {{- if gt (len $creatorPages) 1 }}{{ if eq $index (sub (len $creatorPages) 1) }}&nbsp;{{ end }}{{ end }}
-          <a href="{{ $creator.Permalink }}" class="text-decoration-none">{{ $creator.Title }}</a>
+          {{- if gt (len $allCreators) 1 }}{{ if eq $index (sub (len $allCreators) 1) }}&nbsp;{{ end }}{{ end }}
+          <a href="{{ $creator.url }}" class="text-decoration-none">{{ $creator.name }}</a>
         {{- end }}
       </p>
       <div class="d-flex gap-2 flex-wrap">
@@ -129,12 +125,10 @@
       {{ i18n "download_official_current_version" . }}
     </div>
     <div class="col-md-4">
-      {{- $creators := .Site.GetPage "/creators" }}
-      {{- $creatorPages := $creators.Pages }}
-      {{- range $index, $creator := $creatorPages }}
+      {{- range $index, $creator := $allCreators }}
         {{- if $index }},{{ end }}
-        {{- if gt (len $creatorPages) 1 }}{{ if eq $index (sub (len $creatorPages) 1) }}&nbsp;{{ end }}{{ end }}
-        <a href="{{ $creator.Permalink }}" class="text-decoration-none">{{ $creator.Title }}</a>
+        {{- if gt (len $allCreators) 1 }}{{ if eq $index (sub (len $allCreators) 1) }}&nbsp;{{ end }}{{ end }}
+        <a href="{{ $creator.url }}" class="text-decoration-none">{{ $creator.name }}</a>
       {{- end }}
     </div>
     <div class="col-md-4">
@@ -155,5 +149,5 @@
         {{- end }}
       </div>
     </div>
-  </div>
+  </div>  */}}
 </div>

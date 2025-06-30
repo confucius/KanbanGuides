@@ -14,7 +14,14 @@
 {{ range $contributors }}{{ $allParticipants = $allParticipants | append . }}{{ end }}
 {{ range $translators }}{{ $allParticipants = $allParticipants | append . }}{{ end }}
 
-{{/* Remove duplicates using uniq */}}
-{{ $allParticipants = $allParticipants | uniq }}
+{{/* Remove duplicates manually to preserve object structure */}}
+{{ $uniqueParticipants := slice }}
+{{ $seenNames := slice }}
+{{ range $allParticipants }}
+  {{ if not (in $seenNames .name) }}
+    {{ $uniqueParticipants = $uniqueParticipants | append . }}
+    {{ $seenNames = $seenNames | append .name }}
+  {{ end }}
+{{ end }}
 
-{{ return $allParticipants }}
+{{ return $uniqueParticipants }}
