@@ -312,7 +312,7 @@ translators:
 - [ ] Consistent heading hierarchy
 - [ ] Spelling and grammar check
 
-#### SEO Optimization
+#### Content SEO
 
 - [ ] Title under 60 characters
 - [ ] Description under 160 characters
