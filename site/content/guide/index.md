@@ -44,7 +44,8 @@ creators:
     url: https://www.linkedin.com/in/johnanthonycoleman/
 contributors:
   - name: Martin Hinshelwood
-    image: https://avatars.githubusercontent.com/u/5205575?size=64
+    gravatarHash: a9a55b4384e0420e376f441384d0c13fdadb9d39e72892ac60c3e89c3079d10d
+    githubUsername: mrhinsh
     url: https://www.linkedin.com/in/martinhinshelwood/
   - name: Jim Benson
     url: https://www.linkedin.com/in/jimbenson/
