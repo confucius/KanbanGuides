@@ -130,7 +130,7 @@ Distribution of names, email addresses, or other personal information acquired d
 
 The translator and the translation guardian must comply and assist each other in complying with all laws and regulations regarding personal data and privacy protection.
 
-# 8\. Termination
+# 8. Termination
 
 Translators can terminate their service at any time. The translation guardian will continue to manage any completed or in-progress translations.
 
