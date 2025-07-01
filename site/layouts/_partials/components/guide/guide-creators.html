@@ -1,11 +1,8 @@
-<!-- Authors from creators list -->
-{{- $defaultLang := .Site.Home.Language.Lang | default "en" -}}
-{{- $currentPageDefaultLang := .Site.GetPage (printf "/%s%s" $defaultLang .File.Path) -}}
-{{- if not $currentPageDefaultLang -}}
-  {{- $currentPageDefaultLang = .Site.Sites.Default.GetPage .File.Path -}}
-{{- end -}}
-
-{{ $creators := $currentPageDefaultLang.Params.creators }}
+{{ $creators := .Params.creators }}
+{{ if not $creators }}
+  {{- $creators = where .Site.Data.contributions "founding" true -}}
+  {{- $creators = where $creators "role" "creator" -}}
+{{ end }}
 {{ if $creators }}
   <div class="content-authors mt-3">
     <div class="row">
@@ -13,7 +10,7 @@
         <span class="text-muted me-2">Creator(s):</span>
       </div>
       <div class="col-12 col-md-10">
-        {{ range sort $creators "name" }}
+        {{ range sort $creators "weight" }}
           {{ partial "components/guide/guide-author.html" . }}
         {{ end }}
       </div>

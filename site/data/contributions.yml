@@ -1,0 +1,88 @@
+# Contributions Data
+# This file contains information about all contributors to the Open Guide to Kanban
+
+# All contributors in a flat list
+- name: John Coleman
+  image: https://media.licdn.com/dms/image/v2/D4E03AQGlxycsyUPltg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676027893027?e=1756944000&v=beta&t=N8SWmvidRGpSczzO4xHubCF92V2YX-WyQY9JSZEE160
+  url: https://www.linkedin.com/in/johnanthonycoleman/
+  contributions:
+    - creator
+    - author
+  role: creator
+  founding: true
+  weight: 1
+- name: Martin Hinshelwood
+  gravatarHash: a9a55b4384e0420e376f441384d0c13fdadb9d39e72892ac60c3e89c3079d10d
+  githubUsername: mrhinsh
+  url: https://nkdagility.com/company/people/martin-hinshelwood/
+  contributions:
+    - technical
+    - review
+    - contributor
+  role: contributor
+  founding: true
+
+- name: Jim Benson
+  url: https://www.linkedin.com/in/jimbenson/
+  contributions:
+    - review
+    - advisor
+    - contributor
+  role: contributor
+  founding: true
+
+- name: Magdalena Firlit
+  contributions:
+    - review
+    - contributor
+  role: contributor
+  founding: true
+
+- name: Michael Forni
+  url: https://www.linkedin.com/in/Michaelforni/
+  githubUsername: Michaelforni
+  contributions:
+    - review
+    - contributor
+  role: contributor
+  founding: true
+
+- name: Christian Neverdal
+  contributions:
+    - review
+    - contributor
+  role: contributor
+  founding: true
+
+- name: Nader Talai
+  contributions:
+    - review
+    - contributor
+  role: contributor
+  founding: true
+
+- name: Steve Tendon
+  contributions:
+    - review
+    - contributor
+  role: contributor
+  founding: true
+
+- name: Nigel Thurlow
+  url: https://www.linkedin.com/in/nigelthurlow/
+  image: https://media.licdn.com/dms/image/v2/D5603AQFUHK7rTaUzFQ/profile-displayphoto-shrink_400_400/B56ZVDywj0GoAk-/0/1740599134781?e=1756944000&v=beta&t=kHegE9bZMJXxLJ0zKbcr6kaaGSohFQ7etiLpFxeZsrs
+  contributions:
+    - review
+    - contributor
+  role: contributor
+  weight: 2
+  founding: true
+
+- name: Rikard Skelander
+  url: https://www.linkedin.com/in/rikardskelander/
+  githubUsername: skelander
+  contributions:
+    - review
+    - contributor
+  role: contributor
+  founding: true

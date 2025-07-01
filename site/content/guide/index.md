@@ -38,25 +38,6 @@ sitemap:
   priority: 1.0
 author:
   - John Coleman
-creators:
-  - name: John Coleman
-    image: https://media.licdn.com/dms/image/v2/D4E03AQGlxycsyUPltg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676027893027?e=1756944000&v=beta&t=N8SWmvidRGpSczzO4xHubCF92V2YX-WyQY9JSZEE160
-    url: https://www.linkedin.com/in/johnanthonycoleman/
-contributors:
-  - name: Martin Hinshelwood
-    gravatarHash: a9a55b4384e0420e376f441384d0c13fdadb9d39e72892ac60c3e89c3079d10d
-    githubUsername: mrhinsh
-    url: https://nkdagility.com/company/people/martin-hinshelwood/
-  - name: Jim Benson
-    url: https://www.linkedin.com/in/jimbenson/
-  - name: Magdalena Firlit
-  - name: Michael Forni
-  - name: Christian Neverdal
-  - name: Nader Talai
-  - name: Steve Tendon
-  - name: Nigel Thurlow
-    url: https://www.linkedin.com/in/nigelthurlow/
-    image: https://media.licdn.com/dms/image/v2/D5603AQFUHK7rTaUzFQ/profile-displayphoto-shrink_400_400/B56ZVDywj0GoAk-/0/1740599134781?e=1756944000&v=beta&t=kHegE9bZMJXxLJ0zKbcr6kaaGSohFQ7etiLpFxeZsrs
 ---
 
 TBA

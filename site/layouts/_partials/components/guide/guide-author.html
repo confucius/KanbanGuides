@@ -1,4 +1,4 @@
-<span class="author-item me-3">
+<span class="author-item me-3" title="{{ .name }} - {{ .weight }}">
   {{- if .gravatarHash }}
     <img src="https://www.gravatar.com/avatar/{{ .gravatarHash }}?s=24&d=mp" alt="{{ .name }}" aria-label="Profile picture of {{ .name }}" class="author-avatar rounded-circle me-1" style="width: 24px; height: 24px; object-fit: cover;" />
   {{- else if .githubUsername }}
