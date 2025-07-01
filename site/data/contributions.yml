@@ -11,6 +11,7 @@
   role: creator
   founding: true
   weight: 1
+
 - name: Martin Hinshelwood
   gravatarHash: a9a55b4384e0420e376f441384d0c13fdadb9d39e72892ac60c3e89c3079d10d
   githubUsername: mrhinsh
@@ -32,6 +33,8 @@
   founding: true
 
 - name: Magdalena Firlit
+  url: https://magdalenafirlit.com/
+  githubUsername: Magdalena-Firlit
   contributions:
     - review
     - contributor
@@ -70,7 +73,7 @@
 
 - name: Nigel Thurlow
   url: https://www.linkedin.com/in/nigelthurlow/
-  image: https://media.licdn.com/dms/image/v2/D5603AQFUHK7rTaUzFQ/profile-displayphoto-shrink_400_400/B56ZVDywj0GoAk-/0/1740599134781?e=1756944000&v=beta&t=kHegE9bZMJXxLJ0zKbcr6kaaGSohFQ7etiLpFxeZsrs
+  githubUsername: nigelthurlow
   contributions:
     - review
     - contributor
@@ -78,11 +81,12 @@
   weight: 2
   founding: true
 
-- name: Rikard Skelander
-  url: https://www.linkedin.com/in/rikardskelander/
-  githubUsername: skelander
+- name: Jose Casal
+  url: https://www.linkedin.com/in/jcasal/
+  githubUsername: darkewok
   contributions:
     - review
     - contributor
   role: contributor
+  weight: 3
   founding: true
