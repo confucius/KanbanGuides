@@ -1,6 +1,15 @@
 {{- $baseURL := .Site.BaseURL -}}
 {{- $siteURL := .Site.Params.siteProdUrl | default $baseURL -}}
 {{- $pageURL := printf "%s%s" $siteURL .RelPermalink -}}
+{{- $isDefaultLanguage := eq .Site.Language.Lang .Site.Home.Language.Lang -}}
+{{- $isTranslatedPage := not $isDefaultLanguage -}}
+
+{{- $defaultLang := .Site.Home.Language.Lang | default "en" -}}
+{{- $currentPageDefaultLang := .Site.GetPage (printf "/%s%s" $defaultLang .File.Path) -}}
+{{- if not $currentPageDefaultLang -}}
+  {{- $currentPageDefaultLang = .Site.Sites.Default.GetPage .File.Path -}}
+{{- end -}}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -11,9 +20,9 @@
   "url": {{ $pageURL }},
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
-  {{- $allCreators := (partial "functions/get-participants" .) }}
+  {{- $foundingContributors := where .Site.Data.contributions "founding" true -}}
   "author": [
-    {{- range $index, $creator := $allCreators -}}
+    {{- range $index, $creator := $foundingContributors -}}
     {{- if $index }},{{ end }}
     {
       "@type": "Person",

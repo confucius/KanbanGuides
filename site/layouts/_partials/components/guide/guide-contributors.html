@@ -1,11 +1,8 @@
-<!-- Authors from creators list -->
-{{- $defaultLang := .Site.Home.Language.Lang | default "en" -}}
-{{- $currentPageDefaultLang := .Site.GetPage (printf "/%s%s" $defaultLang .File.Path) -}}
-{{- if not $currentPageDefaultLang -}}
-  {{- $currentPageDefaultLang = .Site.Sites.Default.GetPage .File.Path -}}
-{{- end -}}
-
-{{ $contributors := $currentPageDefaultLang.Params.contributors }}
+{{ $contributors := .Params.contributors }}
+{{ if not $contributors }}
+  {{- $contributors = where .Site.Data.contributions "founding" true -}}
+  {{- $contributors = where $contributors "role" "contributor" -}}
+{{ end }}
 {{ if $contributors }}
   <div class="content-authors mt-3">
     <div class="row">
