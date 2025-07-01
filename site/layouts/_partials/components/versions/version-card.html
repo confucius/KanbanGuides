@@ -36,7 +36,12 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
 
         <div class="d-flex flex-wrap gap-2 mb-3">
           {{/* Display creators */}}
-          {{ range .Params.creators }}
+          {{ $creators := .Params.creators }}
+          {{ if not $creators }}
+            {{- $creators = where .Site.Data.contributions "founding" true -}}
+            {{- $creators = where $creators "role" "creator" -}}
+          {{ end }}
+          {{ range $creators }}
             <span class="badge bg-primary">
               {{ if .url }}
                 <a href="{{ .url }}" target="_blank" rel="noopener" class="text-white text-decoration-none">
@@ -50,7 +55,12 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
           {{ end }}
 
           {{/* Display contributors */}}
-          {{ range .Params.contributors }}
+          {{ $contributors := .Params.contributors }}
+          {{ if not $contributors }}
+            {{- $contributors = where .Site.Data.contributions "founding" true -}}
+            {{- $contributors = where $contributors "role" "contributor" -}}
+          {{ end }}
+          {{ range $contributors }}
             <span class="badge bg-secondary">
               {{ if .url }}
                 <a href="{{ .url }}" target="_blank" rel="noopener" class="text-white text-decoration-none">
@@ -63,19 +73,6 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
             </span>
           {{ end }}
 
-          {{/* Display translators if this is a translated page */}}
-          {{ range .Params.translators }}
-            <span class="badge bg-info">
-              {{ if .url }}
-                <a href="{{ .url }}" target="_blank" rel="noopener" class="text-white text-decoration-none">
-                  {{ .name }}
-                  <i class="fa-solid fa-external-link-alt ms-1" style="font-size: 0.6em;"></i>
-                </a>
-              {{ else }}
-                {{ .name }}
-              {{ end }}
-            </span>
-          {{ end }}
         </div>
 
         {{/* Language buttons section */}}
