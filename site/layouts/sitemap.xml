@@ -19,12 +19,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="{{ .Language.LanguageCode }}"
-                href="{{ .Site.Params.siteProdUrl }}{{ .RelPermalink }}"
+                href="{{ .Permalink }}"
                 />{{ end }}
     <xhtml:link
                 rel="alternate"
                 hreflang="{{ .Language.LanguageCode }}"
-                href="{{ .Site.Params.siteProdUrl }}{{ .RelPermalink }}"
+                href="{{ .Permalink }}"
                 />{{ end }}
   </url>
     {{- end -}}
