@@ -20,9 +20,8 @@
   {{- end }}
 {{- else }}
   {{- $productionLanguagesUrl := printf "%slanguages.json?v=%d" .Site.Params.productionSiteUrl now.Unix }}
-  {{- $productionLanguagesResponse := resources.GetRemote $productionLanguagesUrl }}
-  {{- if $productionLanguagesResponse }}
-    {{- $productionLanguagesData = $productionLanguagesResponse | transform.Unmarshal }}
+  {{- with try (resources.GetRemote $productionLanguagesUrl) }}
+    {{- $productionLanguagesData = . | transform.Unmarshal }}
   {{- end }}
 {{- end }}
 
