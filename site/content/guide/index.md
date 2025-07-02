@@ -46,13 +46,13 @@ July 2025
 
 This work, Open Guide to Kanban, is an adaptation of the Kanban Guide (May 2025 version) from [https://kanbanguides.org](https://kanbanguides.org), which is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). The original guide is © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc. Changes were made to the original. Licensed under CC BY-SA 4.0: [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/). _Portions highlighted in italic are © 2025_ Orderly Disruption Limited*, licensed under CC BY-SA 4.0.* All other content is from © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc., also licensed under CC BY-SA 4.0.
 
-## Preface {#preface}
+## Preface
 
 This document aims to provide _open_ _and adaptable_ guidance for Kanban _and Flow, drawing on ideas curated from various communities_. _It aims to serve as a coherent reference for various communities in addition to their own content._ Depending on the context, various approaches can complement Kanban, allowing it to accommodate a range of Value delivery and organizational challenges.
 
 _The use of the italics font supports the Creative Commons adaptation notice on the cover page; italics are not for emphasis. The use of a capital letter at the start of a word indicates a convention listed in the appendix of this document, e.g., Value is either a potential or realized benefit for a Stakeholder, including meeting the needs of the customer, the end-user, the decision-maker, the organization, and the environment._
 
-## Definition of Kanban in the Context of Knowledge Work {#definition-of-kanban-in-the-context-of-knowledge-work}
+## Definition of Kanban in the Context of Knowledge Work
 
 Kanban is a strategy for optimizing the _Flow_ of _Value_ through a _system_. It is a signaling system to call for Work or inventory. It comprises the following three practices working in tandem:
 
@@ -62,7 +62,7 @@ Kanban is a strategy for optimizing the _Flow_ of _Value_ through a _system_. It
 
 In their implementation, these Kanban practices are collectively called a Kanban system. Those who participate in the Value delivery of a Kanban system are called Kanban system members.
 
-## Why Use Kanban? {#why-use-kanban?}
+## Why Use Kanban?
 
 Central to the _understanding_ of Kanban is the concept of _Flow_. _In a Kanban system, Flow_ is the movement of Value through that Kanban system. As most _Kanban_ workflows exist to optimize Value, the strategy of Kanban is to optimize Value by optimizing Flow*, which* means striving to find the right balance of effectiveness, efficiency, and predictability:
 
@@ -76,13 +76,13 @@ _Side benefits are happier Kanban system members, higher quality, and the abilit
 
 Because Kanban _can_ _Visualize_ virtually any workflow, its application is not limited to any specific industry or context. Professional Knowledge Workers in finance, utilities, healthcare, and software (to name a few), have benefited from Kanban practices. Kanban in most contexts where Value is delivered.
 
-## Kanban Theory {#kanban-theory}
+## Kanban Theory
 
 _The Kanban system_ draws on _various approaches and understanding_ including, but not limited to, systems thinking _(5)_, lean principles _(4)_, queuing theory (batch size _(6-7)_ and queue size _(1,13-14)_), variation _(2,11)_, and quality control _(2,8,10)_. Continually improving a Kanban system based on these approaches and understanding is one way organizations can attempt to optimize the delivery of Value. Many existing _Value_\-oriented approaches share the _ideas_ upon which Kanban is based. Because of these similarities, Kanban can be used to augment those delivery approaches.
 
-## Kanban Practices {#kanban-practices}
+## Kanban Practices
 
-### Defining and Visualizing the Workflow {#defining-and-visualizing-the-workflow}
+### Defining and Visualizing the Workflow
 
 Optimizing _Flow_ requires defining what _Flow_ _of Value_ means in a given context, _the (ideally) smooth movement and delivery of potential or (ideally) realized benefits for Stakeholders_. The explicit shared understanding of Flow among Kanban system members within their context is called a Definition of Workflow. _Definition of Workflow_ is a fundamental concept of Kanban. All other elements of this guide depend heavily on how workflow is defined.
 
@@ -112,7 +112,7 @@ _In a software team, Kanban might Visualize feature development from idea to dep
 
 Kanban system members are limited only by their imagination regarding how they make _Flow_ _visible and how they foster purposeful and intentional interactions with the right people at the right time_. _It is recommended to Visualize each step in a workflow to prevent waste from remaining hidden._
 
-### Actively Managing Items in a Workflow {#actively-managing-items-in-a-workflow}
+### Actively Managing Items in a Workflow
 
 Items in the workflow must be actively managed. _Active management of Items in a workflow can take several forms, including, but not limited to, the following:_
 
@@ -147,7 +147,7 @@ _Rightsizing, in a Knowledge Work context, is based on the assumption that Work 
 
 _Capacity management often requires more than WIP control._ Controlling WIP helps _Flow_ and often improves the collective focus, commitment, and collaboration _of the Kanban system members_. Any acceptable exceptions to controlling WIP should be _explicitly stated_ as part of the _Definition of Workflow_.
 
-### Improving _Flow_ {#improving-flow}
+### Improving _Flow_
 
 Given an explicit Definition of Workflow, it is the Kanban system members’ responsibility to continuously improve their _Flow_ _by_ _achieving_ a better balance of effectiveness, efficiency, and predictability. Continual study of the system can guide potential improvements. _Kanban system members often review_ the _Definition of Workflow_ to discuss and _adopt_ _needed_ changes.
 
@@ -157,7 +157,7 @@ _Better still, people who demonstrate leadership, also known as leaders, Go See,
 
 _Kanban favors evolutionary change, but it does not prohibit larger, structural changes, informed by evidence and a clear understanding of the system. Changes should be purposeful and context-driven._
 
-## Inform Flow Optimization with Appropriate Measures or Metrics {#inform-flow-optimization-with-appropriate-measures-or-metrics}
+## Inform Flow Optimization with Appropriate Measures or Metrics
 
 - **Blocked Elapsed Time for Finished Items (BETFI):** The cumulative time for a single ‘finished’ Work Item (or a selection of ‘finished’ Items) spends in a blocked condition from ‘started’ to ‘finished,’ but not in a Queue or Buffer state. \[measure for a single Item, metric for multiple Items\]
 - **_Cumulative Queueing or Buffer Time (CQBT):_** _The cumulative time a ‘finished’ single Work Item (or a selection of ‘finished’ Items) spends in Queueing or Buffer states from ‘started’ to ‘finished.’ \[measure for a single Work Item, metric for multiple Work Items\]_
@@ -188,7 +188,7 @@ _Time to Market, and for each coherent ‘started’ and ‘finished’ pair:_
 
 Provided that Kanban system members use _Flow_ metrics _and measures_ as described in this guide, _and they are appropriate for the context,_ they can refer to any of them by other names. It is up to the Kanban system members to decide how best to _use_ these _Flow_ metrics _and measures, such as Visualizing them in charts or assessing variation. A proactive focus on outcomes, impact, and Value is recommended._
 
-### _Outcomes, Impact, and Value_ {#outcomes,-impact,-and-value}
+### _Outcomes, Impact, and Value_
 
 _Kanban system members should regularly look for evidence of outcomes/impact, e.g.:_
 
@@ -210,7 +210,7 @@ _By measuring these kinds of outcomes, impacts, Value metrics, and Value measure
 
 _Clarity and understanding of Work Items should happen just-in-time to avoid waste._ Avoid excessive focus on outputs and insufficient focus on outcomes. _Kanban system members should proactively, intentionally, purposefully, and regularly review the metrics or measures and continually improve them._
 
-## Endnote {#endnote}
+## Endnote
 
 _Only the Kanban Practices, the minimum criteria Definition of Workflow, and a selection of metrics or measures are mandatory; everything else is optional._ _Consider the context. Kanban system members should foster the humane Flow of Value._
 
@@ -218,11 +218,11 @@ _Feedback from results (‘result feedback’) refers to the data that comes bac
 
 _In practice, Kanban is a journey of ongoing learning and adaptation. By starting with these core practices and continuously improving, Kanban system members can sustainably achieve better Flow of Value. Kanban system members should start simple and evolve their Kanban system as they learn._
 
-## History of Kanban {#history-of-kanban}
+## History of Kanban
 
 The present state of Kanban can be traced to the Toyota Production System (and its antecedents) and the work of people such as Taiichi Ohno _(9)_. The collective set of practices for Knowledge Work, now commonly referred to as _Kanban (12),_ mainly originated on a team at Corbis in 2006\. Those practices quickly spread to encompass a large and diverse international community that has continued to enhance and evolve the approach.
 
-## Acknowledgments {#acknowledgments}
+## Acknowledgments
 
 _People acknowledged here do not necessarily agree with what is written in this document, and that is ok. Nevertheless, the Open Guide to Kanban owes a massive debt of gratitude to:_
 
@@ -232,9 +232,9 @@ _People acknowledged here do not necessarily agree with what is written in this 
 - _Open Guide to Kanban reviewers: Jim Benson, Andy Carmichael, Jose Casal, Magdalena Firlit, Michael Forni, Martin Hinshelwood, Christian Neverdal, Nader Talai, Steve Tendon, and Nigel Thurlow_
 - _Influences: Russell L. Ackoff, Jim Benson, Andy Carmichael, Emily Coleman, John Cutler, W. Edwards Deming, Dominica DeGrandis, Tom Gilb, Joseph M. Juran, Siegfried Kaltenecker, Henrik Kniberg, Klaus Leopold, John Little, Troy Magennis, Taiichi Ohno, Donald G. Reinersten, Sam L. Savage, Walter Shewhart, Nader Talai, Steve Tendon, Nigel Thurlow, and Donald J. Wheeler._
 
-## Appendix {#appendix}
+## Appendix
 
-### Controlling Work In Progress/Process \= Controlling ‘Started but not Finished Work’ {#controlling-work-in-progress/process-=-controlling-‘started-but-not-finished-work’}
+### Controlling Work In Progress/Process \= Controlling ‘Started but not Finished Work’
 
 Control of _‘Started but not Finished Work’, also referred to as_ WIP control, can be represented on a Kanban board in any way that _Kanban system_ members deem appropriate*, including, but not limited to, painter’s tape spots, Total Work Item Age or Total Elapsed Time for ‘Started’ but Not Finished Items (TETSNFI), queue controls, WIP control numbers, or WIP control ranges.*
 
@@ -245,7 +245,7 @@ _There are also some optional non-Kanban options, supported by some communities,
 - **Flow Constraint** (16)**:** The bottleneck with the least capacity in the Definition of Workflow. There can be multiple bottlenecks (all with less capacity than what is required by the demand), and the Flow Constraint is the most limited one. It restricts the Kanban system’s overall Throughput, determining the pace at which Value is delivered. Example: In a software development team, if the testing takes the longest and limits the release of features, testing is the Flow Constraint that sets the system’s pace. In Knowledge Work, bottlenecks often exhibit turbulent behaviour and can move around the workflow in unpredictable ways. But sometimes bottlenecks are stubborn.
 - **Simplified DBR (Drum-Buffer-Rope)** (3,16)**:** A simplified scheduling method where the Kanban system’s Throughput sets the workflow pace, and Throughput acts as a replenishment signal like in CONWIP. Suppose there is a Kanban system using Simplified Drum-Buffer-Rope, and the Definition of Workflow is designed to handle up to 15 Items, with 12 actively in progress/process (drum) and a Buffer of 3 Items ready to start, ensuring Work continues smoothly if any of the 12 Items face issues by pulling from the Buffer, maintaining Flow with, for example, 13 in progress/process and 2 in reserve. The rope signals replenishment when an Item is delivered, keeping the total within the 15-Item limit, and the system prioritizes rebuilding the Buffer quickly if it is depleted, proactively resolving issues to sustain Flow. Not everyone supports it.
 
-### If Kanban system members need to prioritize a Work Item to ‘start’ … {#if-kanban-system-members-need-to-prioritize-a-work-item-to-‘start’-…}
+### If Kanban system members need to prioritize a Work Item to ‘start’
 
 _Here are some optional non-Kanban techniques that some but not all communities support:_
 
@@ -262,7 +262,7 @@ _Here are some optional non-Kanban techniques that some but not all communities 
 - **Slack** (19)**:** Slack is leaving unused capacity in the system to cope with demand surges, unplanned work, or the emergence of unseen circumstances. In a Kanban for Knowledge Work context, it is a deliberate allocation or policy of spare capacity or time within the Definition of Workflow to absorb variability, handle unexpected disruptions, or enable continuous improvement without compromising the Kanban system’s Throughput. Example: Kanban system members might maintain a Slack by limiting their ‘Started but Not Finished Work’ (SNFW) or Work In Progress/Process (WIP) to 80% of capacity, allowing time to address urgent requests or refine processes without delaying planned work. Slack is a key concept in Lean.
 - **Value divided by Effort:** Estimated Value (usually an educated guess) divided by Estimated Effort (usually an educated guess). Actual Effort and Value tend to be random. Kanban system members should tread carefully before considering this approach. Optionally, consider Risk.
 
-### Conventions Used in the Context of Knowledge Work {#conventions-used-in-the-context-of-knowledge-work}
+### Conventions Used in the Context of Knowledge Workd
 
 - **Buffer** (16)**:** A buffer is a WIP-limited (or ‘Started but Not Finished Work’ limited) area that holds Work temporarily to smooth Flow and prevent overload, and also functions as a WIP controlled queue. Not to be confused with Slack. Not everyone supports Buffer; more columns can lead to a higher amount of ‘Started but Not Finished Work’ (SNFW) or Work In Progress/Process (WIP).
 - **_Definition of Workflow:_** The explicit shared understanding of Flow among Kanban system members within their context, including but not limited to, _the explicit set of agreements and policies that describe how Work Items are selected, progressed, and ‘finished’ through the workflow’s distinct stages._
@@ -294,7 +294,7 @@ _Here are some optional non-Kanban techniques that some but not all communities 
 - **Value**: Either a potential or realized benefit for a Stakeholder. Examples include meeting the needs of the customer, the end-user, the decision-maker, the organization, and the environment.
 - **Visualize, visualization:** Any method to convey ideas effectively, including conceptual clarification, not necessarily only visual.
 
-## References {#references}
+## References
 
 References are placed here to inform readers of opportunities for further study. They do not necessarily support the text in this guide:
 
