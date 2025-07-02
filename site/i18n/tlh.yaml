@@ -1,183 +1,191 @@
-# Klingon translations
+# tlhIngan Hol mugh
 - id: and
-  translation: "and"
+  translation: "je"
 
 - id: read_online_title
-  translation: "Read the {{ .Site.Title }} online"
+  translation: "HurDaq {{ .Site.Title }} laD"
 
 - id: read_online_description
-  translation: "Access the complete guide digitally with interactive features and easy navigation."
+  translation: "naDev nugh DIch HurDaq DIlo'. nugh DIch 'e' naDev."
 
 - id: read_online_button
-  translation: "Read online"
+  translation: "HurDaq laD"
 
 - id: what_is_guide_title
-  translation: "What is the {{ .Site.Title }}?"
+  translation: "nuq 'oH {{ .Site.Title }}'e'?"
 
 - id: open_source_title
-  translation: "Open Source & Community Driven"
+  translation: "nugh DIch 'e' jup chenmoH"
 
 - id: open_source_description
-  translation: "This {{ .Site.Title }} is an open source project that thrives on community collaboration. Whether you want to suggest improvements, report issues, or contribute content, we welcome your participation. Together, we can make this resource even more valuable for the Kanban community worldwide."
+  translation: "{{ .Site.Title }} 'oH nugh DIch nugh'e' 'e' jup chenmoH. DIch choH 'e' DIlo', Dub DIch 'e' qorDu', pagh DIch chup 'e' DIlo', DIch DIlo' maH. naDev DIch DIch DIch chenmoH 'e' DIch."
 
 - id: join_discussion_button
-  translation: "Join the Discussion"
+  translation: "jaq DIch"
 
 - id: join_discussion_title
-  translation: "Join the {{ .Site.Title }} Discussion"
+  translation: "{{ .Site.Title }} jaq DIch"
 
 - id: join_discussion_description
-  translation: "Engage with the community, share your insights, and help shape the future of the {{ .Site.Title }}. Your contributions are invaluable in making this guide a comprehensive resource for Kanban practitioners."
+  translation: "jup DIch, DIch naDev nugh, 'ej {{ .Site.Title }} naDev DIch choH. DIch nugh DIch chenmoHmeH naDev DIch DIch."
+
+- id: translation_title
+  translation: "{{ .Site.Title }} mugh"
+
+- id: translation_description
+  translation: "{{ .Site.Title }} DIch naQ Hol pagh mugh DIch jup chenmoH 'e' DIch."
 
 - id: download_title
-  translation: "Download the {{ .Site.Title }}"
+  translation: "{{ .Site.Title }} DIch"
 
 - id: download_description
-  translation: "Get the complete {{ .Site.Title }} in PDF format for offline reading. Perfect for those who prefer a physical copy or need to reference the guide without an internet connection."
+  translation: "{{ .Site.Title }} DIch naQ PDF DIch Daq DIch. HurHa' DIch laD DIch DIch 'e' naDev."
 
 - id: download_button
-  translation: "Download PDF"
+  translation: "PDF DIch"
 
 - id: about_creators_title
-  translation: "About the creators of {{ .Site.Title }}"
+  translation: "{{ .Site.Title }} chenmoHwI' DIch"
 
 - id: read_bio_button
-  translation: "Read {{ .Name }}'s bio"
+  translation: "{{ .Name }} DIch laD"
 
 - id: guide_content_not_found
-  translation: "Guide content not found"
+  translation: "naDev DIch DIch tu'lu'be'"
 
 - id: reportTranslationError
-  translation: "Report Translation Error"
+  translation: "mugh Qob DIch"
 
-# Navigation translations
+# DIch naDev mugh
 - id: nav_read_online
-  translation: "Read Online"
+  translation: "HurDaq laD"
 
 - id: nav_translations
-  translation: "Translations"
+  translation: "mugh"
+
+- id: nav_versions
+  translation: "DIch nugh"
 
 - id: nav_pdf_version
-  translation: "PDF Version"
+  translation: "PDF DIch"
 
 - id: nav_creators
-  translation: "Creators"
+  translation: "chenmoHwI'"
 
 - id: nav_all_creators
-  translation: "All Creators"
+  translation: "Hoch chenmoHwI'"
 
 - id: nav_faq
-  translation: "FAQ"
+  translation: "DIch jup"
 
-# Guide page PDF download translations
+# naDev DIch PDF DIch mugh
 - id: guide_pdf_download_button
-  translation: "Download PDF"
+  translation: "PDF DIch"
 
 - id: guide_pdf_not_available
-  translation: "PDF not available"
+  translation: "PDF DIch DIch"
 
 - id: guide_pdf_intro_text
-  translation: "You can also download this guide as a PDF for offline reading."
+  translation: "naDev DIch PDF DIch je DIch."
 
 - id: guide_pdf_intro_link
-  translation: "Download PDF"
+  translation: "PDF DIch"
 
-# Preview Translations functionality
+# mugh DIch naDev
 - id: download_preview_translations
-  translation: "Preview Translations"
+  translation: "mugh DIch naDev"
 
 - id: download_preview_description
-  translation: "These translations are available in preview and need at least 5 community reviewers before they can be moved to the main site. Help us review and improve these translations!"
+  translation: "mugh DIch naDev DIch 'e' DIch vagh jup DIch DIch. mugh DIch naDev DIch DIch 'e' DIch!"
 
 - id: download_visit_preview
-  translation: "Visit preview site"
+  translation: "DIch naDev DIch"
 
 - id: download_table_status
-  translation: "Status"
+  translation: "DIch"
 
 - id: download_preview_status
-  translation: "In Preview"
+  translation: "naDev DIch"
 
 - id: download_preview_action
-  translation: "Preview"
+  translation: "DIch naDev"
 
 - id: download_discussion_action
-  translation: "Discussion"
+  translation: "jaq DIch"
 
-# Download page translations
+# DIch DIch mugh
 - id: download_page_title
-  translation: "Read & Download the official {{ .Title }}"
+  translation: "{{ .Title }} DIch laD DIch je"
 
 - id: download_page_description
-  translation: "{{ .Title }} is defined here by"
+  translation: "{{ .Title }} naDev DIch"
 
 - id: download_page_originators
-  translation: ", the originators of the {{ .Title }}."
+  translation: ", {{ .Title }} chenmoHwI' wa'DIch."
 
 - id: download_translations_provided
-  translation: "Translations provided by the generous individuals and groups listed below. Please select the guide in the language you would like to download."
+  translation: "mugh chenmoH DIch nugh je DIch. Hol DIch wuq naDev DIch."
 
 - id: download_translation_error
-  translation: "If you have found a possible translation error with the {{ .Title }} please contact the translator directly. If you need additional support please contact"
+  translation: "{{ .Title }} mugh Qob tu' DIch 'e' mughwI' DIch DIch. DIch naDev DIch"
 
 - id: download_official_version
-  translation: "Official Version"
+  translation: "DIch DIch"
 
 - id: download_community_translations
-  translation: "Community Translations"
+  translation: "jup mugh"
 
 - id: download_current_version_released
-  translation: "The current official version of the {{ .Site.Title }} was released in"
+  translation: "{{ .Site.Title }} DIch DIch nugh chenmoH"
 
 - id: download_older_translations_notice
-  translation: "Translations of the {{ .Site.Title }} with older dates may not contain the most recent information."
+  translation: "{{ .Site.Title }} mugh nugh DIch DIch DIch DIch tu'lu'be' 'e' vIl."
 
 - id: download_table_language
-  translation: "Language"
+  translation: "Hol"
 
 - id: download_table_translations_by
-  translation: "Translations By"
+  translation: "mughwI'"
 
 - id: download_table_written_by
-  translation: "Written By"
+  translation: "ghItlhwI'"
 
 - id: download_table_action
-  translation: "Action"
+  translation: "DIch"
 
 - id: download_official_current_version
-  translation: "Official Current Version"
+  translation: "DIch DIch nugh"
 
 - id: download_button_text
-  translation: "Download"
+  translation: "DIch"
 
 - id: download_coming_soon
-  translation: "Coming Soon"
+  translation: "tugh"
 
 - id: download_missing_language
-  translation: "Missing your language?"
+  translation: "Hol DIch?"
 
 - id: download_contribute_translation
-  translation: "Help the community by contributing a new translation."
+  translation: "jup DIch mugh DIch nugh."
 
 - id: download_add_translation
-  translation: "Add Translation"
+  translation: "mugh DIch"
 
 - id: download_community_contributors
-  translation: "Community Contributors"
+  translation: "jup DIch nugh"
 
 - id: read_online_action
-  translation: "Read Online"
+  translation: "HurDaq laD"
 
-# PDF Download functionality
+# PDF DIch DIch
 - id: guide_pdf_download_button
-  translation: "Download PDF"
+  translation: "PDF DIch"
 
 - id: guide_pdf_not_available
-  translation: "PDF not available"
+  translation: "PDF DIch DIch"
 
 - id: guide_pdf_intro_text
-  translation: "This guide is also available as a PDF download."
+  translation: "naDev DIch PDF DIch je DIch."
 
 - id: guide_pdf_intro_link
-  translation: "Download PDF"
-
+  translation: "PDF DIch"

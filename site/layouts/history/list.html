@@ -15,8 +15,16 @@
       {{ with $guidePage }}
         {{ partial "components/versions/version-card.html" (dict "page" . "isLatest" true) }}
       {{ end }}
-      {{- $englishVersions := .Site.GetPage "/en/versions" | default (.Site.GetPage "/versions") }}
-      {{- $versionPages := .Pages | lang.Merge ($englishVersions.Pages ) }}
+
+      {{- /* Merge version pages from all languages */ -}}
+      {{- $versionPages := .Pages }}
+      {{- range .Site.Home.Translations }}
+        {{- $langHistoryPage := .Site.GetPage (printf "/%s/history" .Language.Lang) | default (.Site.GetPage "/history") }}
+        {{- if $langHistoryPage }}
+          {{- $versionPages = $versionPages | lang.Merge $langHistoryPage.Pages }}
+        {{- end }}
+      {{- end }}
+
       {{ range ($versionPages.ByDate.Reverse) }}
         {{ partial "components/versions/version-card.html" (dict "page" . "isLatest" false) }}
       {{ else }}
