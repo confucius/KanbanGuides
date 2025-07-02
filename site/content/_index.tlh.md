@@ -1,5 +1,5 @@
 ---
-title: "Open Guide to Kanban | In the Context of Knowledge Work"
+title: "Kanban nugh DIch | valwI' veb DIch"
 url: "/"
 ---
 

@@ -1,10 +1,9 @@
 ---
-title: Translations
+title: mugh
 layout: translations
-description: Originals & Translations of the Open Guide to Kanban
+description: Kanban nugh DIch DIch nugh je mugh
 aliases:
   - /downloads/
   - /download/
   - /translationsdirectory/
 ---
-
