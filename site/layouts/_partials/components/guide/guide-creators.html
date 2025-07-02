@@ -11,9 +11,11 @@
         <span class="text-muted me-2">Creator(s):</span>
       </div>
       <div class="col-12 col-md-10">
-        {{ range sort $contributors "weight" }}
-          {{ partial "components/guide/guide-author.html" . }}
-        {{ end }}
+        <div class="d-flex flex-wrap">
+          {{ range sort $contributors "weight" }}
+            {{ partial "components/guide/guide-author.html" . }}
+          {{ end }}
+        </div>
       </div>
     </div>
   </div>
