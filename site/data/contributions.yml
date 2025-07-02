@@ -9,7 +9,7 @@
     - creator
     - author
   role: creator
-  founding: true
+  founder: true
   weight: 1
 
 - name: Martin Hinshelwood
@@ -21,7 +21,18 @@
     - review
     - contributor
   role: contributor
-  founding: true
+  weight: 100
+  founder: true
+
+- name: Andy Carmichael
+  url: https://www.linkedin.com/in/andycarmichael/
+  githubUsername: andycarmichaeluk
+  contributions:
+    - review
+    - contributor
+  role: contributor
+  weight: 100
+  founder: true
 
 - name: Jim Benson
   url: https://www.linkedin.com/in/jimbenson/
@@ -30,7 +41,8 @@
     - advisor
     - contributor
   role: contributor
-  founding: true
+  weight: 100
+  founder: true
 
 - name: Magdalena Firlit
   url: https://magdalenafirlit.com/
@@ -39,7 +51,8 @@
     - review
     - contributor
   role: contributor
-  founding: true
+  weight: 2
+  founder: true
 
 - name: Michael Forni
   url: https://www.linkedin.com/in/Michaelforni/
@@ -48,28 +61,32 @@
     - review
     - contributor
   role: contributor
-  founding: true
+  weight: 100
+  founder: true
 
 - name: Christian Neverdal
   contributions:
     - review
     - contributor
   role: contributor
-  founding: true
+  weight: 100
+  founder: true
 
 - name: Nader Talai
   contributions:
     - review
     - contributor
   role: contributor
-  founding: true
+  weight: 100
+  founder: true
 
 - name: Steve Tendon
   contributions:
     - review
     - contributor
   role: contributor
-  founding: true
+  weight: 100
+  founder: true
 
 - name: Nigel Thurlow
   url: https://www.linkedin.com/in/nigelthurlow/
@@ -78,8 +95,8 @@
     - review
     - contributor
   role: contributor
-  weight: 2
-  founding: true
+  weight: 3
+  founder: true
 
 - name: Jose Casal
   url: https://www.linkedin.com/in/jcasal/
@@ -88,5 +105,13 @@
     - review
     - contributor
   role: contributor
-  weight: 3
-  founding: true
+  weight: 4
+  founder: true
+
+- name: Rikard Skelander
+  url: https://www.linkedin.com/in/rikardskelander/
+  githubUsername: skelander
+  contributions:
+    - testing
+  role: involved
+  founder: true

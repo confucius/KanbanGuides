@@ -1,6 +1,6 @@
 {{- $englishSite := index (where .Site.Sites "Language.Lang" "en") 0 }}
 {{- $guidePage := $englishSite.GetPage "/guide" }}
-{{- $foundingContributors := where .Site.Data.contributions "founding" true -}}
+{{- $foundingContributors := where .Site.Data.contributions "founder" true -}}
 
 <h2 class="mb-3">{{ i18n "download_official_version" . }}</h2>
 

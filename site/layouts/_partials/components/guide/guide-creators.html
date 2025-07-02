@@ -1,6 +1,6 @@
 {{ $creators := .Params.creators }}
 {{ if not $creators }}
-  {{- $creators = where .Site.Data.contributions "founding" true -}}
+  {{- $creators = where .Site.Data.contributions "founder" true -}}
   {{- $creators = where $creators "role" "creator" -}}
 {{ end }}
 {{ if $creators }}

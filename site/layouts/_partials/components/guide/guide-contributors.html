@@ -1,7 +1,8 @@
 {{ $contributors := .Params.contributors }}
 {{ if not $contributors }}
-  {{- $contributors = where .Site.Data.contributions "founding" true -}}
-  {{- $contributors = where $contributors "role" "contributor" -}}
+  {{- $contributors = .Site.Data.contributions -}}
+  {{/* {{- $contributors = where $contributors "founder" true -}} */}}
+  {{- $contributors = where $contributors "role" "in" (slice "contributor" "creator") -}}
 {{ end }}
 {{ if $contributors }}
   <div class="content-authors mt-3">
@@ -10,7 +11,7 @@
         <span class="text-muted me-2">Contributors(s):</span>
       </div>
       <div class="col-12 col-md-10">
-        {{ range sort $contributors "weight" "desc" }}
+        {{ range sort $contributors "weight" "asc" }}
           {{ partial "components/guide/guide-author.html" . }}
         {{ end }}
       </div>
