@@ -19,7 +19,7 @@
 
         <p class="mb-4">{{ i18n "download_translations_provided" . }}</p>
 
-        <p class="mb-5">{{ i18n "download_translation_error" $guidePage }} {{ .Site.Params.supportEmail }}</p>
+        <p class="mb-5">{{ i18n "download_translation_error" $guidePage }} <a target="_blank" href="{{ .Site.Params.githubUrl }}">{{ .Site.Params.githubUrl }}</a></p>
 
         <!-- Official Version -->
         {{ partial "components/translations/official-version.html" . }}

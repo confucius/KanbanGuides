@@ -30,7 +30,7 @@
     },
     {
       "route": "/wp-content/uploads/2025/05/Kanban-Guide-2025-05.pdf",
-      "redirect": "/versions/kanban-guide-2025/pdf/kanban-guide.en.pdf",
+      "redirect": "/history/kanban-guide-2025/pdf/kanban-guide.v2025.5.en.pdf",
       "statusCode": 302
     },
     {
@@ -45,32 +45,32 @@
     },
     {
       "route": "/francais/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.fr.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.fr.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2023/04/ProKanban-in-French_v.1.2-1.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.fr.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.fr.pdf",
       "statusCode": 301
     },
     {
       "route": "/catala/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.ca.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.ca.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2021/10/Kanban-Guide-Template-for-Printing-Catalan.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.ca.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.ca.pdf",
       "statusCode": 301
     },
     {
       "route": "/polska/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.pl.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.pl.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2022/05/Kanban-Guide-2020-Polish-Translation-v1.3.docx.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.pl.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.pl.pdf",
       "statusCode": 301
     },
     {
@@ -95,112 +95,112 @@
     },
     {
       "route": "/italiano/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.it.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.it.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2021/10/Guida-Kanban.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.it.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.it.pdf",
       "statusCode": 301
     },
     {
       "route": "/deutsch/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.de.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.de.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2022/02/Kanban-Guide-Translation-German.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.de.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.de.pdf",
       "statusCode": 301
     },
     {
       "route": "/中文简体simplified/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.zh-Hans.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.zh-Hans.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2022/01/Kanban-Guide-2020-12-Chinese-Simplified-CHS.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.zh-Hans.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.zh-Hans.pdf",
       "statusCode": 301
     },
     {
       "route": "/用中文-表達-traditional/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.zh-Hant.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.zh-Hant.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2022/02/Kanban-Guide-2020-12-Chinese-Traditional-CHT.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.zh-Hant.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.zh-Hant.pdf",
       "statusCode": 301
     },
     {
       "route": "/espanol/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.es-419.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.es-419.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2021/09/Guia-Kanban-espanol-LATAM.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.es-419.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.es-419.pdf",
       "statusCode": 301
     },
     {
       "route": "/portugues/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.pt-BR.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.pt-BR.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2021/10/Kanban-Guide-PT-BR.pdf",
-      "redirect": "/",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.pt-BR.pdf",
       "statusCode": 301
     },
     {
       "route": "/dutch/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.nl.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.nl.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2023/03/ProKanban-in-Dutch-v.0.1.docx.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.nl.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.nl.pdf",
       "statusCode": 301
     },
     {
       "route": "/czech/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.cz.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.cz.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2023/11/kanban-guide_CZ_final-1.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.cz.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.cz.pdf",
       "statusCode": 301
     },
     {
       "route": "/romana/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.ro.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.ro.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2023/12/GHIDUL-KANBAN.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.ro.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.ro.pdf",
       "statusCode": 301
     },
     {
       "route": "/enespanol/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.es.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.es.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2024/04/Kanban-Guide-en-Espanol.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.es.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.es.pdf",
       "statusCode": 302
     },
     {
       "route": "/日本語で/",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.ja.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.ja.pdf",
       "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2022/05/The-Kanban-Guide-Japanese.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.ja.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.ja.pdf",
       "statusCode": 302
     },
     {
@@ -215,12 +215,12 @@
     },
     {
       "route": "/wp-content/uploads/2025/05/Kanban-Guide-2024-RUS.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.ru.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.ru.pdf",
       "statusCode": 301
     },
     {
       "route": "/wp-content/uploads/2025/05/Marathi-Kanban-Guide-2020-version.pdf",
-      "redirect": "/versions/kanban-guide-2020-12/pdf/kanban-guide.mr.pdf",
+      "redirect": "/history/kanban-guide-2020-12/pdf/kanban-guide.v2020.12.mr.pdf",
       "statusCode": 301
     }
   ]

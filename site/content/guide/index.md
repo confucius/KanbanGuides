@@ -33,14 +33,14 @@ mainfont: "Times New Roman"
 sansfont: "Arial"
 monofont: "Courier New"
 guide_whatis: |
-  The Open Guide to Kanban is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems. Built on the foundations of the Kanban Guide (2025), this guide expands its applicability across industries and team contexts, while remaining open and adaptable. It is intended to support organisations seeking clarity, consistency, and effectiveness in how they manage the flow of value
+  The Open Guide to Kanban is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems. Built on the foundations of the Kanban Guide (2025), this guide expands its applicability across industries and team contexts, while remaining open and adaptable. It is intended to support organisations seeking clarity, consistency, and effectiveness in how they manage the flow of value.
 sitemap:
   priority: 1.0
 author:
   - John Coleman
 ---
 
-This work, Open Guide to Kanban, is an adaptation of the Kanban Guide (May 2025 version) from [https://kanbanguides.org](https://kanbanguides.org), which is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). The original guide is © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc. Changes were made to the original. Licensed under CC BY-SA 4.0: [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/). _Portions highlighted in italic are © 2025_ Orderly Disruption Limited*, licensed under CC BY-SA 4.0.* All other content is from © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc., also licensed under CC BY-SA 4.0.
+This work, Open Guide to Kanban, is an adaptation of the Kanban Guide (May 2025 version) from [https://kanbanguides.org](https://kanbanguides.org), which is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). The original guide is © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc. Changes were made to the original. Licensed under CC BY-SA 4.0: [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/). _Portions highlighted in italic are © 2025_ Orderly Disruption Limited, licensed under CC BY-SA 4.0. All other content is from © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc., also licensed under CC BY-SA 4.0.
 
 ## Preface
 
@@ -60,7 +60,7 @@ In their implementation, these Kanban practices are collectively called a Kanban
 
 ## Why Use Kanban?
 
-Central to the _understanding_ of Kanban is the concept of _Flow_. _In a Kanban system, Flow_ is the movement of Value through that Kanban system. As most _Kanban_ workflows exist to optimize Value, the strategy of Kanban is to optimize Value by optimizing Flow*, which* means striving to find the right balance of effectiveness, efficiency, and predictability:
+Central to the _understanding_ of Kanban is the concept of _Flow_. _In a Kanban system, Flow_ is the movement of Value through that Kanban system. As most _Kanban_ workflows exist to optimize Value, the strategy of Kanban is to optimize Value by optimizing Flow, which means striving to find the right balance of effectiveness, efficiency, and predictability:
 
 - An effective workflow is one that delivers what stakeholders _desire,_ when they _desire_ it.
 - An efficient workflow allocates available _capacity_ optimally to deliver Value.
@@ -86,11 +86,10 @@ _To inform optimal workflow operation and facilitate continuous improvement, at 
 
 1. A definition of the individual units of Value that are moving through the workflow, referred to as _Work Items (or Items)_.
 2. _Depending on the Work Item, for at least one coherent ‘started’ and ‘finished’ point pair:_
-
    - [ ] One or more defined states that the _Work Items_ _Flow_ through from ‘started’ to ‘finished.’
-   - [ ] _Work Items_ between the ‘started’ and ‘finished’ points*, even if waiting in a Queue or Buffer*, are considered:  
-          - _‘Started but Not Finished Work’ (SNFW) or_  
-          - _Work in Progress_/_Process_ (WIP).
+   - [ ] _Work Items_ between the ‘started’ and ‘finished’ points, even if waiting in a Queue or Buffer, are considered:
+     - _‘Started but Not Finished Work’ (SNFW) or_
+     - _Work in Progress_/_Process_ (WIP).
    - [ ] A definition of how WIP will be controlled from ‘started’ to ‘finished.’
    - [ ] _A set of_ Explicit policies about how _Work Items_ can _Flow_ through each state from ‘started’ to ‘finished’ _defect-free_. _For example, Kanban system members might have a policy that is explicit about fixing any known defects in an Item before moving it to the next state, so that no known defect is passed to a subsequent process._
    - [ ] A _Service Level Expectation_ (SLE): A forecast of how long it should take a _Work Item_ to _Flow_ from ‘started’ to ‘finished.’ _Note that there is no guarantee that what happened in the past will happen in the future._
@@ -116,7 +115,7 @@ Items in the workflow must be actively managed. _Active management of Items in a
 - _Ensure_ _Work Items_ do not age unnecessarily, using the _Service Level Expectation_ as a reference.
 - _Resolve impediments that are causing blocked Work or blocked processes_.
 
-A common practice is for Kanban system members to review the active _Items_ _on a regular basis_. This review can occur continuously or at regular intervals. Kanban system members must explicitly control the number of _Work Items_ in a workflow from ‘started’ to ‘finished*,’ directly or indirectly*. That control can be represented on a Kanban board in any way that _Kanban system_ members deem appropriate*.*
+A common practice is for Kanban system members to review the active _Items_ _on a regular basis_. This review can occur continuously or at regular intervals. Kanban system members must explicitly control the number of _Work Items_ in a workflow from ‘started’ to ‘finished,’ directly or indirectly. That control can be represented on a Kanban board in any way that _Kanban system_ members deem appropriate.
 
 _The use of WIP limits (16) in Kanban for Knowledge Work typically indicates that demand can exceed the team’s capacity, so WIP limits (16) are used to regulate and balance the Flow of Work Items and prevent overload._
 
@@ -156,21 +155,27 @@ _Kanban favors evolutionary change, but it does not prohibit larger, structural 
 ## Inform Flow Optimization with Appropriate Measures or Metrics
 
 - **Blocked Elapsed Time for Finished Items (BETFI):** The cumulative time for a single ‘finished’ Work Item (or a selection of ‘finished’ Items) spends in a blocked condition from ‘started’ to ‘finished,’ but not in a Queue or Buffer state. \[measure for a single Item, metric for multiple Items\]
+
+> [!FOOTNOTE]
+> The Definition of Workflow should include a policy for defining Blockers (in context) and signaling them.
+
 - **_Cumulative Queueing or Buffer Time (CQBT):_** _The cumulative time a ‘finished’ single Work Item (or a selection of ‘finished’ Items) spends in Queueing or Buffer states from ‘started’ to ‘finished.’ \[measure for a single Work Item, metric for multiple Work Items\]_
 - **_Elapsed Time from ‘Started’ to ‘Finished’ (ETSF):_** The (typically _rounded-up) number of elapsed time units (often calendar days) from_ when a single _Work Item_ ‘started’ _to_ when a _Work Item_ ‘finished.’ _Only ‘finished’ Items get ETSFs. \[measure\]_
 - **Flow Distribution:** The Visualization and analysis of Work Item types ‘finished’ or ‘completed’ over time, enabling active management to ensure a healthy balance of effort. \[metric\]
+
+> [!FOOTNOTE]
+> The Definition of Workflow should clearly define any Queue and Buffer states.
+
 - **_Flow Efficiency:_** The ratio of active working time to the total time an Item or a selection of Items spends in the workflow, including waiting times, between the ‘started’ and ‘finished’ points on a Definition of Workflow. _It is expressed as a percentage. It can be misleading, as time spent in active states may not be actual active time. ((ETSF-(CQBT+other non-value-adding time))/ETSF) 100\. \[metric\] Example of other non-value-adding time: Blocked Elapsed Time for Finished Items_
 - **Number of Blockers:** The number of impediments, partial or complete, at a given point in time (usually current datetime), to the Flow of Work Items from ‘started’ to ‘finished.’ \[measure\]
 - **Process Cycle Efficiency:** Measures the Work efficiency of a system or its parts. It is calculated by dividing Value-adding time by Time to Market and then multiplying by 100 to get a percentage. This means Kanban system members have to measure all Value-adding and all non-Value-adding time (including, but not limited to, waiting time). ((T2M-(CQBT+other non-value-adding time))/T2M) 100\. \[metric\]
 - **_Service Level Expectation:_** A forecast of how long it should take a _Work Item_ to Flow from ‘started’ to ‘finished.’ The _Service Level Expectation_ itself has two parts: a period of elapsed time and a probability associated with that period (e.g., ‘85% of _Work Items_ will be ‘finished’ in eight days or less’). _It is based on a selection of Elapsed Time from ‘Started’ to ‘Finished’ from all history, a subset of history, or if data does not exist or is insufficient, an educated guess. \[metric\]_
-- **‘Started but Not Finished Work’ (SNFW) or Work In Progress/Process (**WIP) _or Flow Load_: _The_ number of _Work Items_ ‘started’ but not ‘finished’. _\[measure\]_
+- **‘Started but Not Finished Work’ (SNFW)** or **Work In Progress/Process (WIP)** _or **Flow Load**_: _The_ number of _Work Items_ ‘started’ but not ‘finished’. _\[measure\]_
 - **Throughput:** The number of _Work Items_ ‘finished’ per unit of time. The measurement of throughput is the exact count of _Work Items_, _not revenue. \[metric\]_
-- **Time to Market, also known as Customer Lead Time:** The* (typically *rounded-up) number of elapsed time units (often calendar days/weeks) from when a Stakeholder’s order for a single Work Item was received to when the Work Item was delivered to the Stakeholder. It is one example of an ETSF. \[measure for a single Work Item, metric for a product or service\]
-- **Total Work Item Age (TWIA) or Total Elapsed Time for ‘Started’ but Not ‘Finished’ Items (TETSNFI):** The total elapsed time from when all in-progress (‘started’ but not ‘finished’) Work Items ‘started’ to a specified datetime, usually the current datetime. \[metric\]
-- **Work Item Age (WIA) _or Elapsed Time for ‘Started’ but Not ‘Finished’ Items (ETSNFI)_:** The (typically _rounded-up) number of elapsed time units (often calendar days)_ _from_ _the datetime a single ‘not finished’ Work Item_ ‘started’ _to_ _a specified datetime, usually the current datetime. By acting on relatively older Items, feedback loops can be shortened, and Flow improves. \[measure\]_
+- **Time to Market, also known as Customer Lead Time:** The (typically rounded-up) number of elapsed time units (often calendar days/weeks) from when a Stakeholder’s order for a single Work Item was received to when the Work Item was delivered to the Stakeholder. It is one example of an ETSF. \[measure for a single Work Item, metric for a product or service\]
+- **Total Work Item Age (TWIA)** or **Total Elapsed Time for ‘Started’ but Not ‘Finished’ Items (TETSNFI)** **:** The total elapsed time from when all in-progress (‘started’ but not ‘finished’) Work Items ‘started’ to a specified datetime, usually the current datetime. \[metric\]
+- **Work Item Age (WIA)** or **_Elapsed Time for ‘Started’ but Not ‘Finished’ Items(ETSNFI)_** : The (typically _rounded-up) number of elapsed time units (often calendar days)_ _from_ _the datetime a single ‘not finished’ Work Item_ ‘started’ _to_ _a specified datetime, usually the current datetime. By acting on relatively older Items, feedback loops can be shortened, and Flow improves. \[measure\]_
 
-The Definition of Workflow should clearly define any Queue and Buffer states.  
- The Definition of Workflow should include a policy for defining Blockers (in context) and signaling them.  
 The _Flow_ metrics _and measures_ apply to the appropriate ‘started’ and ‘finished’ points established by the Kanban system members in their _Definition of Workflow_. _If there are multiple sets of ‘started’ and ‘finished’ points, some flow metrics and measures are often applied to each ‘started’ and ‘finished’ pair._
 
 **_If Kanban system members are unsure where to start, this guide suggests:_**
@@ -188,7 +193,6 @@ Provided that Kanban system members use _Flow_ metrics _and measures_ as describ
 
 _Kanban system members should regularly look for evidence of outcomes/impact, e.g.:_
 
--
 - _Customer outcomes could focus on delivering measurable Value to customers, e.g., reduced Failure Demand, customer long-term cost reduction, or addressed customer jobs (18)._
 - _User outcomes could address specific changes in user behavior that solve problems or improve experiences, e.g., ‘completing’ Work Items more effectively at the lowest costs, or better usability._
 - _Product Stakeholder outcomes could connect these behavioral changes to product performance metrics, such as trends in product customer adoption, retention, and convergence, as well as trends in feature adoption, decision-maker and user metrics, and product Time to Market._
@@ -222,7 +226,7 @@ The present state of Kanban can be traced to the Toyota Production System (and i
 
 _People acknowledged here do not necessarily agree with what is written in this document, and that is ok. Nevertheless, the Open Guide to Kanban owes a massive debt of gratitude to:_
 
-- All who helped to develop Kanban*, including those who preferred not to be named*
+- All who helped to develop Kanban, including those who preferred not to be named
 - _Kanban Guide July 2020 or December 2020 version reviewers: Jean-Paul Bayley, Jose Casal, Colleen Johnson, Todd Miller, Eric Naiburg, Steve Porter, Ryan Ripley, Dave West, Julia Wester, Yuval Yeret, and Deborah Zanke_
 - _Kanban Guide May 2025 version reviewers:_ Magdalena Firlit, Tom Gilb, Colleen Johnson, Christian Neverdal, Prateek Singh, Steve Tendon, and Julia Wester
 - _Open Guide to Kanban reviewers: Jim Benson, Andy Carmichael, Jose Casal, Magdalena Firlit, Michael Forni, Martin Hinshelwood, Christian Neverdal, Nader Talai, Steve Tendon, and Nigel Thurlow_
@@ -232,7 +236,7 @@ _People acknowledged here do not necessarily agree with what is written in this 
 
 ### Controlling Work In Progress/Process \= Controlling ‘Started but not Finished Work’
 
-Control of _‘Started but not Finished Work’, also referred to as_ WIP control, can be represented on a Kanban board in any way that _Kanban system_ members deem appropriate*, including, but not limited to, painter’s tape spots, Total Work Item Age or Total Elapsed Time for ‘Started’ but Not Finished Items (TETSNFI), queue controls, WIP control numbers, or WIP control ranges.*
+Control of _‘Started but not Finished Work’, also referred to as_ WIP control, can be represented on a Kanban board in any way that _Kanban system_ members deem appropriate, including, but not limited to, painter’s tape spots, Total Work Item Age or Total Elapsed Time for ‘Started’ but Not Finished Items (TETSNFI), queue controls, WIP control numbers, or WIP control ranges.
 
 _There are also some optional non-Kanban options, supported by some communities, such as CONWIP(16), Simplified DBR (16), or DBR(16):_
 
@@ -278,7 +282,7 @@ _Here are some optional non-Kanban techniques that some but not all communities 
 - **Push:** Work is assigned onto Kanban system members or into the Kanban system without considering the current capacity or readiness of Kanban system members to ‘start’ the Work.
 - **Queue:** A queue in Kanban is a waiting area for Work Items, often without strict limits, but it can serve as a Buffer if Work In Progress/Process (WIP) limits (16) or ‘Started but Not Finished Work’ (SNFW) limits are present.
 - **Risk:** The chance that something bad could happen.
-- **Stable system:** Put simply**,** a system that can consistently meet the demand placed upon it. There are more accurate descriptions (7,8,20). Knowledge Work tends to produce a higher range of Work Item sizes than manufacturing work. Unequal sizes do not necessarily lead to higher variation of elapsed times (due to waiting time often being the most significant factor, etc.) or Throughput but can do so (due to external dependencies, etc.). The view in this guide is that approaches designed for manufacturing do not necessarily lack utility in Knowledge Work.
+- **Stable system:** Put simply, a system that can consistently meet the demand placed upon it. There are more accurate descriptions (7,8,20). Knowledge Work tends to produce a higher range of Work Item sizes than manufacturing work. Unequal sizes do not necessarily lead to higher variation of elapsed times (due to waiting time often being the most significant factor, etc.) or Throughput but can do so (due to external dependencies, etc.). The view in this guide is that approaches designed for manufacturing do not necessarily lack utility in Knowledge Work.
 - **Stakeholder**: An entity, individual, or group responsible for, interested in, or affected by the inputs, activities, and outcomes of the Kanban system. Includes but is not limited to customer, decision-maker, or user.
 - **‘Started’:** When elapsed time clocks ‘start’ for a ‘started’ and ‘finished’ pair in a Definition of Workflow.
 - **‘started’ and ‘finished’ pair:** Each of one or many ‘started’ points on a Definition of Workflow should have a matching ‘finished’ point on the same Definition of Workflow.
