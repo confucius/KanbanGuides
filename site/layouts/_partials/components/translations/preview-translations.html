@@ -32,9 +32,8 @@
     {{- end }}
   {{- else }}
     {{/* Load remote file in other environments */}}
-    {{- $productionLanguagesResponse := resources.GetRemote $productionLanguagesUrl }}
-    {{- if $productionLanguagesResponse }}
-      {{- $productionLanguagesData = $productionLanguagesResponse | transform.Unmarshal }}
+    {{- with try (resources.GetRemote $productionLanguagesUrl) }}
+      {{- $productionLanguagesData = . | transform.Unmarshal }}
       {{- if $productionLanguagesData.languages }}
         {{- range $productionLanguagesData.languages }}
           {{- $productionLanguageCodes = $productionLanguageCodes | append .code }}
@@ -52,9 +51,8 @@
     {{- end }}
   {{- else }}
     {{/* Load remote file in other environments */}}
-    {{- $previewLanguagesResponse := resources.GetRemote $previewLanguagesUrl }}
-    {{- if $previewLanguagesResponse }}
-      {{- $previewLanguagesData = $previewLanguagesResponse | transform.Unmarshal }}
+    {{- with try (resources.GetRemote $previewLanguagesUrl) }}
+      {{- $previewLanguagesData = . | transform.Unmarshal }}
     {{- end }}
   {{- end }}
 
