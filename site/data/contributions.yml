@@ -65,10 +65,12 @@
   founder: true
 
 - name: Christian Neverdal
+  githubUsername: flyrev
   contributions:
     - review
     - contributor
   role: contributor
+  url: https://www.linkedin.com/in/christian-neverdal/
   weight: 100
   founder: true
 
