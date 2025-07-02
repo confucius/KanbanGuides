@@ -15,7 +15,7 @@
       {{ with $guidePage }}
         {{ partial "components/versions/version-card.html" (dict "page" . "isLatest" true) }}
       {{ end }}
-      {{- $englishVersions := .Site.GetPage "/en/versions" | default (.Site.GetPage "/versions") }}
+      {{- $englishVersions := .Site.GetPage "/en/history" | default (.Site.GetPage "/history") }}
       {{- $versionPages := .Pages | lang.Merge ($englishVersions.Pages ) }}
       {{ range ($versionPages.ByDate.Reverse) }}
         {{ partial "components/versions/version-card.html" (dict "page" . "isLatest" false) }}

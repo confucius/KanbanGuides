@@ -29,6 +29,12 @@
 - id: join_discussion_description
   translation: "jup DIch, DIch naDev nugh, 'ej {{ .Site.Title }} naDev DIch choH. DIch nugh DIch chenmoHmeH naDev DIch DIch."
 
+- id: translation_title
+  translation: "{{ .Site.Title }} mugh"
+
+- id: translation_description
+  translation: "{{ .Site.Title }} DIch naQ Hol pagh mugh DIch jup chenmoH 'e' DIch."
+
 - id: download_title
   translation: "{{ .Site.Title }} DIch"
 
@@ -56,6 +62,9 @@
 
 - id: nav_translations
   translation: "mugh"
+
+- id: nav_versions
+  translation: "DIch nugh"
 
 - id: nav_pdf_version
   translation: "PDF DIch"
@@ -180,4 +189,3 @@
 
 - id: guide_pdf_intro_link
   translation: "PDF DIch"
-
