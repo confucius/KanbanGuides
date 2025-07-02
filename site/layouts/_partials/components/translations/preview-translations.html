@@ -32,14 +32,19 @@
     {{- end }}
   {{- else }}
     {{/* Load remote file in other environments */}}
-    {{- $productionLanguagesResponse := resources.GetRemote $productionLanguagesUrl }}
-    {{- if $productionLanguagesResponse }}
-      {{- $productionLanguagesData = $productionLanguagesResponse | transform.Unmarshal }}
-      {{- if $productionLanguagesData.languages }}
-        {{- range $productionLanguagesData.languages }}
-          {{- $productionLanguageCodes = $productionLanguageCodes | append .code }}
+    {{- with try (resources.GetRemote $productionLanguagesUrl) }}
+
+      {{ with .Err }}
+        {{ warnf "Error fetching production languages: %s" . }}
+      {{ else }}
+        {{- $productionLanguagesData = .Value | transform.Unmarshal }}
+        {{- if $productionLanguagesData.languages }}
+          {{- range $productionLanguagesData.languages }}
+            {{- $productionLanguageCodes = $productionLanguageCodes | append .code }}
+          {{- end }}
         {{- end }}
-      {{- end }}
+      {{ end }}
+
     {{- end }}
   {{- end }}
 
@@ -52,9 +57,12 @@
     {{- end }}
   {{- else }}
     {{/* Load remote file in other environments */}}
-    {{- $previewLanguagesResponse := resources.GetRemote $previewLanguagesUrl }}
-    {{- if $previewLanguagesResponse }}
-      {{- $previewLanguagesData = $previewLanguagesResponse | transform.Unmarshal }}
+    {{- with try (resources.GetRemote $previewLanguagesUrl) }}
+      {{ with .Err }}
+        {{ warnf "Error fetching production languages: %s" . }}
+      {{ else }}
+        {{- $previewLanguagesData = .Value | transform.Unmarshal }}
+      {{- end }}
     {{- end }}
   {{- end }}
 

@@ -1,4 +1,4 @@
-baseURL: https://kanbanguides.org
+baseURL: /
 Environment: "production"
 minifyOutput: true
 

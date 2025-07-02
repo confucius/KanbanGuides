@@ -20,10 +20,12 @@
   {{- end }}
 {{- else }}
   {{- $productionLanguagesUrl := printf "%slanguages.json?v=%d" .Site.Params.productionSiteUrl now.Unix }}
-  {{- with resources.GetRemote $productionLanguagesUrl }}
-    {{- if not .Err }}
-      {{- $productionLanguagesData = . | transform.Unmarshal }}
-    {{- end }}
+  {{- with try (resources.GetRemote $productionLanguagesUrl) }}
+    {{ with .Err }}
+      {{ warnf "Error fetching production languages: %s" . }}
+    {{ else }}
+      {{- $productionLanguagesData = .Value | transform.Unmarshal }}
+    {{ end }}
   {{- end }}
 {{- end }}
 
