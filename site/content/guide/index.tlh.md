@@ -26,7 +26,7 @@ keywords:
 author:
   - John Coleman
 date: 2025-06-11T09:00:00Z
-slug: open-guide-to-kanban
+slug: Kanban-nugh-DIch
 type: guide
 lang: tlh
 mainfont: "Times New Roman"
@@ -43,115 +43,36 @@ translators:
     url: https://nkdagility.com/company/people/martin-hinshelwood/
 ---
 
-# Kanban nugh DIch
+## ghojmeH ghantoH le' - kanban lo'
 
-## nuq 'oH Kanban'e'?
+Qu'majvam _ghantoH le'_ _Kanban_, chenmoHlu'pu' _Kanban ghojmeH ghantoH_ (tera' jar vagh 2025) ghomvo'. Qap Creative Commons Attribution-ShareAlike 4.0 International chut (CC BY-SA 4.0). ghantoH'a' 'oH © 2019–2025 _Orderly Disruption Limited_ _Daniel S. Vacanti, Inc._ ChoHmey lutu'lu'. CC BY-SA 4.0 veb: [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/). _ghItlhmey Hurgh_ 'oH © 2025 _Orderly Disruption Limited_, chutvamvaD lo'laH.
 
-Kanban 'oH valwI' DIch DIlo'meH mI''e'. DIch chenmoH 'e' naDev. jup maH DIch chenmoH 'e' nugh naDev DIch.
+## DevwI' mu'mey
 
-## DIch mI'
+ghantoHvam mu' chu' 'oH _le'_ _lISlaHbogh_ mu'tlheghmey je. _Kanban_ _Qap_ luyajmeH, SuvwI'pu' HochHomvo' Qulbogh QeD lo'. _ghantoHvam_ 'oH lo'laHbogh De' nIvbogh. Qapchu'laHbe'chugh _Kanban_ neH, SuvwI'pu' lo'laH DuHmey law', _ghantoHvam_ QapmoHmeH.
 
-### 1. veb cha'
+_ghItlhmey Hurgh lo'lu', QInmey Hurgh 'oH Qumchugh. mu' taghbogh nInwI' tIn, yIbej Appendix-Daq. pIm "Value", "Stakeholder", "customer", "user", "decision-maker" DanoHmeH._
 
-DIch veb cha' 'e' DIch. Hoch DIch cha'meH naDev DIch chenmoH.
+## Kanban - SovmeH QeD Qul ghotpu' lo'
 
-### 2. jup naQ DIch
+_Kanban_ 'oH SIQpu'bogh mIw 'oH _Qap_ _Qapchu'_ 'e' _Value_ QaymeH. cha'logh QIn, vagh mIw:
 
-jup naQ DIch chenmoH 'e' DIch. law' DIch chenmoH 'e' DIch pagh.
+- mIw _Qap_ _le'_ 'oH le' 'ang.
+- _Itemmey_ SeH, _Qap_ mIwDaq.
+- _Qap_ QapmoH.
 
-### 3. DIch choq
+ghantoHvam lo'lu'taHvIS, _Kanban QeD_ jatlhlu'. _Value_ Qaybogh SuvwI'pu' 'oH _Kanban QeD_ SuvwI'pu'.
 
-DIch DIch choqmeH mI' chenmoH 'e' DIch. nom DIch chenmoH 'e' naDev.
+## qatlh Kanban lo'?
 
-## DIch pagh
+_Qap_ SovlaHbe'chugh, _Kanban_ yajlaHbe'. _Qap_ 'oH _Value_ Qaybogh mIw. Qapchu' 'oHbogh _Kanban_, nIvbogh neH _Qap_, nIvbogh neH _Value_. vaj:
 
-### DIch naQ
+- Qapchu' mIw - nuv 'eybogh Qay
+- nIvbogh mIw - _capacity_ lo'chu'
+- 'aQroS Sov - poQbogh Qap Qel
 
-DIch naQ pagh cha'meH mI' DIch. DIch naQ law' chenmoH 'e' DIch pagh.
+Qapchu'ghach SuvwI'pu' jeSlaHlaH Qap 'e' SuqmeH. Qap 'oHmeH _Kanban QeD_, Qap 'anglaHbogh SuvwI' QInmey Hurgh je.
 
-### DIch poQ
+qImroqDaq Qapbe'ghach lo'bogh, _Kanban_ SuvwI'pu' QuchmoH, Qatlh laHmey, Qap HochHom SeHlaH. 'oHbe' Qapchu', 'ach Qapchu'moHlaH. laH Hoch
 
-DIch poQ pagh cha'meH mI' DIch. DIch poQmeH mI' DIch chenmoH.
-
-### DIch DIch
-
-DIch DIch pagh cha'meH mI' DIch. DIch DIchmeH mI' chenmoH 'e' DIch.
-
-## nugh DIch
-
-### DIch chenmoH
-
-DIch DIch chenmoHmeH mI' DIch. reD DIch chenmoH 'e' naDev DIch.
-
-### DIch choq
-
-DIch DIch choqmeH mI' chenmoH 'e' DIch. DIch DIch choqmeH naDev DIch.
-
-### DIch nugh
-
-DIch nugh chenmoHmeH mI' DIch. DIch nugh DIchmeH mI' chenmoH.
-
-## DIch DIlo'
-
-### DIch cha'
-
-DIch cha'meH mI':
-
-1. **DIch jup** - DIch jup chenmoH
-2. **DIch veb** - DIch veb cha'
-3. **DIch DIch** - DIch DIch chenmoH
-
-### DIch naQ DIch
-
-DIch naQ DIchmeH mI':
-
-- DIch naQ puS chenmoH
-- DIch naQ nugh DIch
-- DIch naQ choq DIch
-
-### DIch DIch chenmoH
-
-DIch DIch chenmoHmeH mI':
-
-- DIch DIch pagh cha'
-- DIch DIch choq
-- DIch DIch nugh
-
-## DIch naDev
-
-DIch naDev DIchmeH mI' DIch:
-
-### DIch naQ pagh
-
-DIch naQ pagh cha'meH mI' chenmoH. DIch naQ law' chenmoH 'e' DIch pagh.
-
-### DIch poQ pagh
-
-DIch poQ pagh cha'meH mI' chenmoH. DIch poQmeH mI' DIch.
-
-### DIch DIch pagh
-
-DIch DIch pagh cha'meH mI' chenmoH. DIch DIchmeH mI' DIch.
-
-## DIch mI' nugh
-
-DIch DIch chenmoHmeH mI' nugh:
-
-1. **DIch cha'** - DIch veb cha'
-2. **jup DIch** - jup naQ DIch chenmoH
-3. **DIch choq** - DIch choqmeH mI' chenmoH
-4. **DIch naDev** - DIch naDevmeH mI' chenmoH
-5. **DIch nugh** - DIch nugh chenmoHmeH mI' chenmoH
-
-## DIch maH
-
-DIch DIchmeH:
-
-- DIch DIch chenmoH
-- DIch DIch choq
-- DIch DIch nugh
-- DIch DIch DIlo'
-
----
-
-_Kanban nugh DIch 'e' nugh chenmoH maH. DIch chenmoH 'e' maH DIch._
+loQ Qaybe'bogh mIw le' 'anglaH _Kanban_. SuvwI' lo'laH _Kanban_ HochDuQ veb 'oHbogh mIwDaq. _Kanban_ Qap _Value_ Qaylu'taHbogh Daqmey HochDaq.
