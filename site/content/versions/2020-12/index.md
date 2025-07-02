@@ -7,36 +7,66 @@ keywords:
 author:
   - John Coleman
   - Daniel Vacanti
-creators:
+contributors:
   - name: John Coleman
+    githubUsername: ViralGoodAgile
     url: https://www.linkedin.com/in/johnanthonycoleman/
+    role: creator
+    founder: true
+    weight: 1
   - name: Daniel Vacanti
     url: https://www.linkedin.com/in/danielvacanti/
-contributors:
+    role: creator
+    founder: true
+    weight: 2
   - name: Yuval Yeret
-    role: foundational concepts
+    weight: 100
+    founder: true
+    role: contributor
   - name: Steve Porter
-    role: foundational concepts
+    weight: 100
+    founder: true
+    role: contributor
   - name: Emily Coleman
-    role: value definition inspiration
+    weight: 100
+    founder: true
+    role: contributor
   - name: Ryan Ripley
-    role: supporting materials
+    weight: 100
+    founder: true
+    role: contributor
   - name: Todd Miller
-    role: supporting materials
+    weight: 100
+    founder: true
+    role: contributor
   - name: Julia Wester
-    role: reviewer
+    weight: 100
+    founder: true
+    role: contributor
   - name: Colleen Johnson
-    role: reviewer
+    weight: 100
+    founder: true
+    role: contributor
   - name: Jose Casal
-    role: reviewer
+    weight: 100
+    founder: true
+    role: contributor
   - name: Jean-Paul Bayley
-    role: reviewer
+    weight: 100
+    founder: true
+    role: contributor
   - name: Dave West
-    role: publishing feedback
+    weight: 100
+    founder: true
+    role: contributor
   - name: Eric Naiburg
-    role: publishing feedback
+    weight: 100
+    founder: true
+    role: contributor
   - name: Deborah Zanke
-    role: editing
+    weight: 100
+    founder: true
+    role: contributor
 slug: kanban-guide-2020-12
 type: guide
 lang: en

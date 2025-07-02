@@ -35,33 +35,15 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
 
 
         <div class="d-flex flex-wrap gap-2 mb-3">
-          {{/* Display creators */}}
-          {{ $creators := .Params.creators }}
-          {{ if not $creators }}
-            {{- $creators = where .Site.Data.contributions "founding" true -}}
-            {{- $creators = where $creators "role" "creator" -}}
-          {{ end }}
-          {{ range $creators }}
-            <span class="badge bg-primary">
-              {{ if .url }}
-                <a href="{{ .url }}" target="_blank" rel="noopener" class="text-white text-decoration-none">
-                  {{ .name }}
-                  <i class="fa-solid fa-external-link-alt ms-1" style="font-size: 0.6em;"></i>
-                </a>
-              {{ else }}
-                {{ .name }}
-              {{ end }}
-            </span>
-          {{ end }}
-
           {{/* Display contributors */}}
           {{ $contributors := .Params.contributors }}
           {{ if not $contributors }}
-            {{- $contributors = where .Site.Data.contributions "founding" true -}}
-            {{- $contributors = where $contributors "role" "contributor" -}}
+            {{- $contributors = .Site.Data.contributions -}}
+            {{- $contributors = where $contributors "founder" true -}}
+            {{- $contributors = where $contributors "role" "in" (slice "contributor" "creator") -}}
           {{ end }}
-          {{ range $contributors }}
-            <span class="badge bg-secondary">
+          {{ range sort $contributors "weight" "asc" }}
+            <span class="badge {{ if eq .role "creator" }}bg-primary{{- else }}bg-secondary{{- end }}">
               {{ if .url }}
                 <a href="{{ .url }}" target="_blank" rel="noopener" class="text-white text-decoration-none">
                   {{ .name }}
