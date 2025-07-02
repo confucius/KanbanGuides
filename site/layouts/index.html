@@ -20,8 +20,8 @@
           <div class="card card-dark h-100">
             <div class="card-body text-center d-flex flex-column">
               <i class="header-icon fa-solid fa-download"></i>
-              <h5 class="card-title">{{ i18n "download_title" . }}</h5>
-              <p class="card-text flex-grow-1">{{ i18n "download_description" . }}</p>
+              <h5 class="card-title">{{ i18n "translation_title" . }}</h5>
+              <p class="card-text flex-grow-1">{{ i18n "translation_description" . }}</p>
             </div>
             <div class="card-footer">
               <a href="{{ partial "functions/safe-page-link.html" "/translations" }}" class="btn btn-primary">{{ i18n "nav_translations" . }}</a>
@@ -81,7 +81,7 @@
                 {{- end }}
               </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 mt-4">
               <h2 class="text-center">{{ i18n "open_source_title" }}</h2>
               <p class="lead text-center">
                 {{ i18n "open_source_description" . }}

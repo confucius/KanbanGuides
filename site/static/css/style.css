@@ -14,6 +14,20 @@
   border-top: 1px solid #555;
 }
 
+/* Hide bullet points for list items containing checkboxes as direct children */
+li:has(> input[type="checkbox"]) {
+  list-style: none;
+}
+
+/* Fallback for browsers that don't support :has() - target common checkbox list patterns */
+ul li input[type="checkbox"] {
+  margin-left: -1.2em;
+}
+
+li input[type="checkbox"] + * {
+  margin-left: 0.3em;
+}
+
 .main-header {
   background-color: #135289;
   color: white;
