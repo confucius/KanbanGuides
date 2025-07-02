@@ -77,6 +77,8 @@
     - review
     - contributor
   role: contributor
+  githubUsername: nadertalai
+  url: https://www.linkedin.com/in/nadertalai/
   weight: 100
   founder: true
 
