@@ -121,7 +121,7 @@
   translation: "Translations provided by the generous individuals and groups listed below. Please select the guide in the language you would like to download."
 
 - id: download_translation_error
-  translation: "If you have found a possible translation error with the {{ .Title }} please contact the translator directly. If you need additional support please contact"
+  translation: "If you have found a possible translation error with the {{ .Title }} please contact the translator directly. If you need additional support please contact us on"
 
 - id: download_official_version
   translation: "Official Version"
