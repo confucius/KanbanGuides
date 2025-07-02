@@ -1,5 +1,5 @@
 ---
-title: Open Guide to Kanban
+title: Open Guide to Kanban - In the Context of Knowledge Work
 description: The Open Guide to Kanban is a free, community-driven reference for applying Kanban in knowledge work. It defines the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches.
 keywords:
   - Kanban
@@ -39,10 +39,6 @@ sitemap:
 author:
   - John Coleman
 ---
-
-# Open Guide to Kanban - _In the Context of Knowledge Work_
-
-July 2025
 
 This work, Open Guide to Kanban, is an adaptation of the Kanban Guide (May 2025 version) from [https://kanbanguides.org](https://kanbanguides.org), which is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). The original guide is © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc. Changes were made to the original. Licensed under CC BY-SA 4.0: [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/). _Portions highlighted in italic are © 2025_ Orderly Disruption Limited*, licensed under CC BY-SA 4.0.* All other content is from © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc., also licensed under CC BY-SA 4.0.
 
