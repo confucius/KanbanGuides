@@ -33,12 +33,18 @@
   {{- else }}
     {{/* Load remote file in other environments */}}
     {{- with try (resources.GetRemote $productionLanguagesUrl) }}
-      {{- $productionLanguagesData = . | transform.Unmarshal }}
-      {{- if $productionLanguagesData.languages }}
-        {{- range $productionLanguagesData.languages }}
-          {{- $productionLanguageCodes = $productionLanguageCodes | append .code }}
+
+      {{ with .Err }}
+        {{ warnf "Error fetching production languages: %s" . }}
+      {{ else }}
+        {{- $productionLanguagesData = . | transform.Unmarshal }}
+        {{- if $productionLanguagesData.languages }}
+          {{- range $productionLanguagesData.languages }}
+            {{- $productionLanguageCodes = $productionLanguageCodes | append .code }}
+          {{- end }}
         {{- end }}
-      {{- end }}
+      {{ end }}
+
     {{- end }}
   {{- end }}
 
@@ -52,7 +58,11 @@
   {{- else }}
     {{/* Load remote file in other environments */}}
     {{- with try (resources.GetRemote $previewLanguagesUrl) }}
-      {{- $previewLanguagesData = . | transform.Unmarshal }}
+      {{ with .Err }}
+        {{ warnf "Error fetching production languages: %s" . }}
+      {{ else }}
+        {{- $previewLanguagesData = . | transform.Unmarshal }}
+      {{- end }}
     {{- end }}
   {{- end }}
 
