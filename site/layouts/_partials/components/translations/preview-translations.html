@@ -37,7 +37,7 @@
       {{ with .Err }}
         {{ warnf "Error fetching production languages: %s" . }}
       {{ else }}
-        {{- $productionLanguagesData = . | transform.Unmarshal }}
+        {{- $productionLanguagesData = .Value | transform.Unmarshal }}
         {{- if $productionLanguagesData.languages }}
           {{- range $productionLanguagesData.languages }}
             {{- $productionLanguageCodes = $productionLanguageCodes | append .code }}
@@ -61,7 +61,7 @@
       {{ with .Err }}
         {{ warnf "Error fetching production languages: %s" . }}
       {{ else }}
-        {{- $previewLanguagesData = . | transform.Unmarshal }}
+        {{- $previewLanguagesData = .Value | transform.Unmarshal }}
       {{- end }}
     {{- end }}
   {{- end }}
