@@ -33,7 +33,7 @@ mainfont: "Times New Roman"
 sansfont: "Arial"
 monofont: "Courier New"
 guide_whatis: |
-  The Open Guide to Kanban is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems. Built on the foundations of the Kanban Guide (2025), this guide expands its applicability across industries and team contexts, while remaining open and adaptable. It is intended to support organisations seeking clarity, consistency, and effectiveness in how they manage the flow of value
+  The Open Guide to Kanban is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems. Built on the foundations of the Kanban Guide (2025), this guide expands its applicability across industries and team contexts, while remaining open and adaptable. It is intended to support organisations seeking clarity, consistency, and effectiveness in how they manage the flow of value.
 sitemap:
   priority: 1.0
 author:
@@ -156,14 +156,14 @@ _Kanban favors evolutionary change, but it does not prohibit larger, structural 
 
 - **Blocked Elapsed Time for Finished Items (BETFI):** The cumulative time for a single ‘finished’ Work Item (or a selection of ‘finished’ Items) spends in a blocked condition from ‘started’ to ‘finished,’ but not in a Queue or Buffer state. \[measure for a single Item, metric for multiple Items\]
 
-> [!NOTE]
+> [!FOOTNOTE]
 > The Definition of Workflow should include a policy for defining Blockers (in context) and signaling them.
 
 - **_Cumulative Queueing or Buffer Time (CQBT):_** _The cumulative time a ‘finished’ single Work Item (or a selection of ‘finished’ Items) spends in Queueing or Buffer states from ‘started’ to ‘finished.’ \[measure for a single Work Item, metric for multiple Work Items\]_
 - **_Elapsed Time from ‘Started’ to ‘Finished’ (ETSF):_** The (typically _rounded-up) number of elapsed time units (often calendar days) from_ when a single _Work Item_ ‘started’ _to_ when a _Work Item_ ‘finished.’ _Only ‘finished’ Items get ETSFs. \[measure\]_
 - **Flow Distribution:** The Visualization and analysis of Work Item types ‘finished’ or ‘completed’ over time, enabling active management to ensure a healthy balance of effort. \[metric\]
 
-> [!NOTE]
+> [!FOOTNOTE]
 > The Definition of Workflow should clearly define any Queue and Buffer states.
 
 - **_Flow Efficiency:_** The ratio of active working time to the total time an Item or a selection of Items spends in the workflow, including waiting times, between the ‘started’ and ‘finished’ points on a Definition of Workflow. _It is expressed as a percentage. It can be misleading, as time spent in active states may not be actual active time. ((ETSF-(CQBT+other non-value-adding time))/ETSF) 100\. \[metric\] Example of other non-value-adding time: Blocked Elapsed Time for Finished Items_
