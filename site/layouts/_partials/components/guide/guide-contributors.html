@@ -1,9 +1,9 @@
 {{ $contributors := .Params.contributors }}
 {{ if not $contributors }}
   {{- $contributors = .Site.Data.contributions -}}
-  {{/* {{- $contributors = where $contributors "founder" true -}} */}}
-  {{- $contributors = where $contributors "role" "in" (slice "contributor" "creator") -}}
 {{ end }}
+{{- $contributors = where $contributors "founder" true -}}
+{{- $contributors = where $contributors "role" "in" (slice "contributor" "creator") -}}
 {{ if $contributors }}
   <div class="content-authors mt-3">
     <div class="row">
