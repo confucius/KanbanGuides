@@ -1,4 +1,5 @@
 {{- define "main" }}
+  {{- $guidePage := .Site.GetPage (printf "/%s/guide" .Site.Language.Lang) | default (.Site.GetPage "/guide") }}
   <section class="container my-5">
     <div class="row mb-4">
       <div class="col-12">
@@ -14,7 +15,8 @@
             <i class="fas fa-info-circle me-3 text-primary" style="font-size: 1.5rem;"></i>
             <div>
               <strong>Evolution of the Guide</strong><br />
-              The current <strong>Open Guide to Kanban</strong> is a living document that has evolved from previous historical versions, incorporating community feedback and modern Kanban practices.
+              The current <strong><a href="{{ $guidePage.Permalink }}">Open Guide to Kanban</a></strong> is a living document that has evolved from previous historical versions, incorporating community feedback and modern Kanban practices. For ProKanban,
+              <a href="/history/kanban-guide-2025/">The Kanban Guide</a> is their living guide.
             </div>
           </div>
         </div>
@@ -42,8 +44,6 @@
     </div>
 
     <div class="row version-timeline">
-      {{- $guidePage := .Site.GetPage (printf "/%s/guide" .Site.Language.Lang) | default (.Site.GetPage "/guide") }}
-
       {{- /* Merge version pages from all languages */ -}}
       {{- $versionPages := .Pages }}
       {{- range .Site.Home.Translations }}
@@ -90,25 +90,6 @@
           </div>
         {{ end }}
       {{ end }}
-    </div>
-
-    <!-- Additional information section -->
-    <div class="row mt-5">
-      <div class="col-12">
-        <div class="card bg-light">
-          <div class="card-body text-center">
-            <h5 class="card-title">
-              <i class="fas fa-download me-2"></i>
-              Download Options
-            </h5>
-            <p class="card-text">Each version includes multiple download formats and translation options.</p>
-            <a href="/download" class="btn btn-primary">
-              <i class="fas fa-download me-1"></i>
-              Browse Downloads
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 {{- end }}
