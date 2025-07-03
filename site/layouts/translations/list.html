@@ -1,5 +1,15 @@
 {{- define "main" }}
-  {{- $guidePage := .Site.GetPage (printf "/%s/guide" .Site.Language.Lang) | default (.Site.GetPage "/guide") }}
+  {{ $targetPath := "guide" }}
+  {{ $guidePage := site.GetPage $targetPath }}
+
+  {{ if not $guidePage }}
+    {{ $defaultSite := index site.Sites 0 }}
+    {{ $guidePage = $defaultSite.GetPage $targetPath }}
+  {{ end }}
+
+  {{- if not $guidePage }}
+    {{- fmt.Errorf "Guide page not found" }}
+  {{- end }}
 
   {{- $now := now }}
   {{- $translations := .Site.Data.translations }}
