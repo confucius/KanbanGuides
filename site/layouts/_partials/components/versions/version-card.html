@@ -9,19 +9,31 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
 
 {{ with $page }}
   <div class="col-12 mx-auto mb-4">
-    <div class="card h-100 shadow-sm {{ if $isLatest }}border-primary{{ end }}">
+    <div class="card h-100 shadow-sm {{ if $isLatest }}border-primary border-2{{ else }}border-secondary{{ end }}">
+      {{ if $isLatest }}
+        <div class="card-header bg-primary text-white">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-star me-2"></i>
+              <strong>Current Open Guide</strong>
+            </div>
+            <span class="badge bg-light text-primary">
+              <i class="fas fa-code-branch me-1"></i>
+              Active
+            </span>
+          </div>
+        </div>
+      {{ end }}
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-start mb-3">
           <h5 class="card-title mb-0 {{ if $isLatest }}text-primary{{ end }}">
-            {{ if $isLatest }}
-              <i class="fas fa-star me-2"></i>
+            {{ if not $isLatest }}
+              <i class="fas fa-archive me-2 text-muted"></i>
             {{ end }}
             {{ .Title | default "Open Guide to Kanban" }}
           </h5>
-          {{ if $isLatest }}
-            <span class="badge bg-success">Latest</span>
-          {{ else }}
-            <span class="badge bg-primary">{{ .Date.Format "Jan 2006" }}</span>
+          {{ if not $isLatest }}
+            <span class="badge bg-secondary">{{ .Date.Format "Jan 2006" }}</span>
           {{ end }}
         </div>
 
@@ -122,9 +134,10 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
             <i class="fas fa-calendar me-1"></i>
             {{ if .Date }}
               {{ if $isLatest }}
-                Updated
+                Living Document - Updated
                 {{ .Date.Format "January 2, 2006" }}
               {{ else }}
+                Historical Version -
                 {{ .Date.Format "January 2, 2006" }}
               {{ end }}
             {{ else }}
@@ -143,9 +156,9 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
                 Translations
               </a>
             {{ else }}
-              <a href="{{ .Permalink }}" class="btn btn-outline-primary btn-sm">
-                <i class="fas fa-eye me-1"></i>
-                View Version
+              <a href="{{ .Permalink }}" class="btn btn-outline-secondary btn-sm">
+                <i class="fas fa-archive me-1"></i>
+                View Archive
               </a>
             {{ end }}
           </div>
