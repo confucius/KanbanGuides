@@ -6,15 +6,43 @@
         {{ with .Content }}
           <div class="lead text-center mb-5">{{ . }}</div>
         {{ end }}
+
+
+        <!-- Evolution explanation -->
+        <div class="alert alert-info mx-auto" style="max-width: 800px;" role="alert">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-info-circle me-3 text-primary" style="font-size: 1.5rem;"></i>
+            <div>
+              <strong>Evolution of the Guide</strong><br />
+              The current <strong>Open Guide to Kanban</strong> is a living document that has evolved from previous historical versions, incorporating community feedback and modern Kanban practices.
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Fork Summary -->
+        <div class="row mt-4 mb-3">
+          <div class="col-md-8 mx-auto">
+            <div class="card border-primary bg-light">
+              <div class="card-body text-center py-3">
+                <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
+                  <div class="d-flex align-items-center">
+                    <span class="badge bg-secondary me-2">Historical Versions</span>
+                    <i class="fas fa-arrow-right text-primary mx-2"></i>
+                    <i class="fas fa-code-branch text-primary mx-2" style="font-size: 1.2rem;"></i>
+                    <i class="fas fa-arrow-right text-primary mx-2"></i>
+                    <span class="badge bg-primary">Open Guide</span>
+                  </div>
+                </div>
+                <small class="text-muted d-block mt-2"> Current guide builds upon and extends previous versions </small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row version-timeline">
       {{- $guidePage := .Site.GetPage (printf "/%s/guide" .Site.Language.Lang) | default (.Site.GetPage "/guide") }}
-      <!-- Dynamic Open Guide to Kanban card -->
-      {{ with $guidePage }}
-        {{ partial "components/versions/version-card.html" (dict "page" . "isLatest" true) }}
-      {{ end }}
 
       {{- /* Merge version pages from all languages */ -}}
       {{- $versionPages := .Pages }}
@@ -25,17 +53,42 @@
         {{- end }}
       {{- end }}
 
-      {{ range ($versionPages.ByDate.Reverse) }}
-        {{ partial "components/versions/version-card.html" (dict "page" . "isLatest" false) }}
-      {{ else }}
-        <div class="col-12">
-          <div class="text-center">
-            <div class="alert alert-info" role="alert">
-              <i class="fas fa-info-circle me-2"></i>
-              No versions are currently available.
-            </div>
+
+      <!-- Latest version - Current Open Guide to Kanban -->
+      {{ with $guidePage }}
+        <div class="version-latest">
+          {{ partial "components/versions/version-card.html" (dict "page" . "isLatest" true) }}
+        </div>
+      {{ end }}
+
+
+      <!-- Fork indicator -->
+      {{ if gt (len $versionPages) 0 }}
+        <div class="version-fork-indicator">
+          <div class="fork-text">
+            <i class="fas fa-code-branch me-2"></i>
+            Forked & Enhanced from These Historical Versions
           </div>
         </div>
+      {{ end }}
+
+
+      <!-- Historical versions -->
+      {{ range ($versionPages.ByDate.Reverse) }}
+        <div class="version-historical">
+          {{ partial "components/versions/version-card.html" (dict "page" . "isLatest" false) }}
+        </div>
+      {{ else }}
+        {{ if not $guidePage }}
+          <div class="col-12">
+            <div class="text-center">
+              <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle me-2"></i>
+                No versions are currently available.
+              </div>
+            </div>
+          </div>
+        {{ end }}
       {{ end }}
     </div>
 
