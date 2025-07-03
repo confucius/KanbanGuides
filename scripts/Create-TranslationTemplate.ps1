@@ -41,7 +41,7 @@ Overwrite existing files if they exist
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidatePattern('^[a-z]{2,3}(-[A-Z]{2})?$')]
+    [ValidatePattern('^[a-z]{2,3}(-[A-Z]{2}|-[0-9]{3})?$')]
     [string]$LanguageCode,
     
     [Parameter(Mandatory = $true)]
@@ -229,10 +229,31 @@ function New-TranslatedContent {
     $englishFiles = Get-ChildItem -Path $contentDir -Recurse -Filter "*.md" | Where-Object {
         $_.Name -match '^(index|_index)\.md$'
     }
+    
+    # Files to skip (need manual translation)
+    $skipPatterns = @(
+        '*\guide\index.md',
+        '*\history\*\index.md'
+    )
+    
     foreach ($file in $englishFiles) {
         $relativePath = $file.FullName.Substring($contentDir.Length + 1)
         $directory = Split-Path $relativePath -Parent
         $fileName = Split-Path $relativePath -Leaf
+        
+        # Check if this file should be skipped
+        $shouldSkip = $false
+        foreach ($pattern in $skipPatterns) {
+            if ($file.FullName -like $pattern) {
+                $shouldSkip = $true
+                Write-Host "   ⏭️  Skipping (manual translation needed): $relativePath" -ForegroundColor Magenta
+                break
+            }
+        }
+        
+        if ($shouldSkip) {
+            continue
+        }
         
         # Create translated filename
         $translatedFileName = $fileName -replace '\.md$', ".$LangCode.md"
@@ -293,9 +314,8 @@ function Test-LanguageSetup {
     # Check for essential content files
     $essentialFiles = @(
         "content/_index.$LangCode.md",
-        "content/creators/_index.$LangCode.md",
-        "content/download/_index.$LangCode.md",
-        "content/guide/index.$LangCode.md"
+        "content/history/_index.$LangCode.md",
+        "content/translations/_index.$LangCode.md"
     )
     
     foreach ($file in $essentialFiles) {
@@ -356,8 +376,10 @@ try {
     Write-Host "Next steps:" -ForegroundColor Yellow
     Write-Host "1. Translate the content in the i18n/$LanguageCode.yaml file" -ForegroundColor Yellow
     Write-Host "2. Translate the content in the created .$LanguageCode.md files" -ForegroundColor Yellow
-    Write-Host "3. Test the site by running 'hugo server' from the site directory" -ForegroundColor Yellow
-    Write-Host "4. Commit and push your changes" -ForegroundColor Yellow
+    Write-Host "3. Manually create and translate guide/index.$LanguageCode.md" -ForegroundColor Yellow
+    Write-Host "4. Manually create and translate history/*/index.$LanguageCode.md files" -ForegroundColor Yellow
+    Write-Host "5. Test the site by running 'hugo server' from the site directory" -ForegroundColor Yellow
+    Write-Host "6. Commit and push your changes" -ForegroundColor Yellow
     
     if (-not $validationResult) {
         Write-Host ""
