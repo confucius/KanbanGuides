@@ -33,14 +33,12 @@ mainfont: "Times New Roman"
 sansfont: "Arial"
 monofont: "Courier New"
 guide_whatis: |
-  The Open Guide to Kanban is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems. Built on the foundations of the Kanban Guide (2025), this guide expands its applicability across industries and team contexts, while remaining open and adaptable. It is intended to support organisations seeking clarity, consistency, and effectiveness in how they manage the flow of value.
+  The [Open Guide to Kanban](/open-guide-to-kanban/) is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems. Built on the foundations of the [Kanban Guide (2025)](/history/kanban-guide-2025/), this guide expands its applicability across industries and team contexts, while remaining open and adaptable. It is intended to support organisations seeking clarity, consistency, and effectiveness in how they manage the flow of value.
 sitemap:
   priority: 1.0
-author:
-  - John Coleman
 ---
 
-This work, Open Guide to Kanban, is an adaptation of the Kanban Guide (May 2025 version) from [https://kanbanguides.org](https://kanbanguides.org), which is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). The original guide is © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc. Changes were made to the original. Licensed under CC BY-SA 4.0: [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/). _Portions highlighted in italic are © 2025_ Orderly Disruption Limited, licensed under CC BY-SA 4.0. All other content is from © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc., also licensed under CC BY-SA 4.0.
+This work, Open Guide to Kanban, is an adaptation of the Kanban Guide (May 2025 version) from [https://kanbanguides.org/history/kanban-guide-2025/](https://kanbanguides.org "previous"), which is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). The original guide is © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc. Changes were made to the original. Licensed under CC BY-SA 4.0: [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/). _Portions highlighted in italic are © 2025_ Orderly Disruption Limited, licensed under CC BY-SA 4.0. All other content is from © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc., also licensed under CC BY-SA 4.0.
 
 ## Preface
 
