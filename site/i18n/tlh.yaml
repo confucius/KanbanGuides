@@ -189,3 +189,28 @@
 
 - id: guide_pdf_intro_link
   translation: "PDF DIch"
+
+# maH nugh mugh
+- id: history_page_title
+  translation: "DIch choq"
+
+- id: history_evolution_title
+  translation: "nugh choH DIch"
+
+- id: history_evolution_description
+  translation: 'DaH <strong><a href="{{ .GuideLink }}">qorgh DIch Kanban</a></strong> ''oH yoDlu''ghach DIch''e'' ''e'' DIch maH DIch vo'' choH, jup chup ''ej nugh Kanban DIch rarwI''. ProKanban DIch, <a href="/history/kanban-guide-2025/">Kanban DIch</a> DIch yoDlu''ghach DIch.'
+
+- id: history_fork_summary_historical
+  translation: "maH DIch choq"
+
+- id: history_fork_summary_current
+  translation: "DIch nugh"
+
+- id: history_fork_summary_description
+  translation: "DaH nugh DIch maH DIch choq DIchmeH choH"
+
+- id: history_fork_indicator
+  translation: "maH DIch choq vo' DIch choH"
+
+- id: history_no_versions_available
+  translation: "DIch choq DIch DIch."

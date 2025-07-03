@@ -183,3 +183,28 @@
 
 - id: guide_pdf_intro_link
   translation: "Download PDF"
+
+# History page translations
+- id: history_page_title
+  translation: "Versions"
+
+- id: history_evolution_title
+  translation: "Evolution of the Guide"
+
+- id: history_evolution_description
+  translation: 'The current <strong><a href="{{ .GuideLink }}">Open Guide to Kanban</a></strong> is a living document that has evolved from previous historical versions, incorporating community feedback and modern Kanban practices. For ProKanban, <a href="/history/kanban-guide-2025/">The Kanban Guide</a> is their living guide.'
+
+- id: history_fork_summary_historical
+  translation: "Historical Versions"
+
+- id: history_fork_summary_current
+  translation: "Open Guide"
+
+- id: history_fork_summary_description
+  translation: "Current guide builds upon and extends previous versions"
+
+- id: history_fork_indicator
+  translation: "Forked & Enhanced from These Historical Versions"
+
+- id: history_no_versions_available
+  translation: "No versions are currently available."
