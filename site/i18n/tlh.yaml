@@ -214,3 +214,55 @@
 
 - id: history_no_versions_available
   translation: "DIch choq DIch DIch."
+
+# DIch nugh mugh
+- id: guide_join_discussion
+  translation: "jup DIch"
+
+- id: guide_table_of_contents
+  translation: "DIch nav DIch"
+
+- id: guide_coming_soon
+  translation: "naDev DIch DIch! choH DIch yap!"
+
+- id: guide_pdf_en
+  translation: "PDF (EN)"
+
+- id: guide_pdf_en_us
+  translation: "PDF (EN-US)"
+
+- id: guide_pdf_en_not_available
+  translation: "PDF (EN) DIch"
+
+- id: guide_pdf_en_us_not_available
+  translation: "PDF (EN-US) DIch"
+
+- id: guide_coming_label
+  translation: "DIch:"
+
+- id: guide_updated_label
+  translation: "choH:"
+
+- id: guide_version_label
+  translation: "DIch:"
+
+- id: guide_content_unavailable_note
+  translation: "DIch:"
+
+- id: guide_content_unavailable_message
+  translation: "DIch naDev {{ .Language }} DIch DIch. DIch nugh naDev cha'."
+
+- id: guide_content_unavailable_title
+  translation: "naDev DIch:"
+
+- id: guide_content_unavailable_description
+  translation: "DIch naDev DIch 'e' DIch DIch 'ej DIch naDev DIch. DIch"
+
+- id: guide_report_issue_link
+  translation: "DIch DIch chup"
+
+- id: guide_report_issue_message
+  translation: "DIchmeH."
+
+- id: guide_back_to_home
+  translation: "← DIch naDev"

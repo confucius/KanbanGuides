@@ -1,39 +1,39 @@
 ---
-title: Open Guide to Kanban - In the Context of Knowledge Work
-description: The Open Guide to Kanban is a free, community-driven reference for applying Kanban in knowledge work. It defines the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches.
+title: Guía Abierta de Kanban - Trabajo del Conocimiento
+description: Referencia gratuita para aplicar Kanban en trabajo del conocimiento. Define prácticas, métricas y principios para mejorar flujo y entrega de valor.
 keywords:
   - Kanban
-  - Open Guide to Kanban
-  - knowledge work
-  - flow optimisation
-  - WIP limits
-  - value delivery
-  - agile
+  - Guía Abierta de Kanban
+  - trabajo del conocimiento
+  - optimización del flujo
+  - límites WIP
+  - entrega de valor
+  - ágil
   - lean
-  - continuous improvement
-  - service level expectation
-  - cumulative flow
-  - throughput
-  - metrics
-  - work item age
-  - flow efficiency
-  - visualisation
-  - work in progress
-  - process improvement
-  - kanban board
-  - definition of workflow
-  - outcome-oriented delivery
+  - mejora continua
+  - expectativa de nivel de servicio
+  - flujo acumulativo
+  - rendimiento
+  - métricas
+  - antigüedad del elemento de trabajo
+  - eficiencia del flujo
+  - visualización
+  - trabajo en progreso
+  - mejora de procesos
+  - tablero kanban
+  - definición del flujo de trabajo
+  - entrega orientada a resultados
 author:
   - John Coleman
 date: 2025-07-02T09:00:00Z
-slug: open-guide-to-kanban
+slug: guia-abierta-de-kanban
 type: guide
 lang: es-419
 mainfont: "Times New Roman"
 sansfont: "Arial"
 monofont: "Courier New"
 guide_whatis: |
-  The [Open Guide to Kanban](/open-guide-to-kanban/) is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems. Built on the foundations of the [Kanban Guide (2025)](/history/kanban-guide-2025/), this guide expands its applicability across industries and team contexts, while remaining open and adaptable. It is intended to support organisations seeking clarity, consistency, and effectiveness in how they manage the flow of value.
+  La [Guía Abierta de Kanban](/open-guide-to-kanban/) es una referencia práctica y curada por la comunidad para usar Kanban en el trabajo del conocimiento. Define las prácticas esenciales, medidas y lenguaje para diseñar, ejecutar y mejorar sistemas Kanban. Construida sobre los fundamentos de la [Guía Kanban (2025)](/history/kanban-guide-2025/), esta guía expande su aplicabilidad a través de industrias y contextos de equipos, manteniéndose abierta y adaptable. Está destinada a apoyar a las organizaciones que buscan claridad, consistencia y efectividad en cómo gestionan el flujo de valor.
 sitemap:
   priority: 1.0
 ---

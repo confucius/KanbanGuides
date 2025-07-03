@@ -32,6 +32,8 @@ languages:
     params:
       description: Guía Abierta de Kanban
       keywords: Kanban, guía, metodología ágil, flujo de trabajo
+      status: AI
+
 params:
   description: Open Guide to Kanban
   keywords: Kanban, Open Guide to Kanban
@@ -51,22 +53,22 @@ rss:
   description: Subscribe to our RSS feed
 outputs:
   home:
-  - html
-  - json
-  - rss
-  - languages
+    - html
+    - json
+    - rss
+    - languages
   section:
-  - html
-  - rss
+    - html
+    - rss
   taxonomy:
-  - html
-  - rss
+    - html
+    - rss
   term:
-  - html
-  - rss
+    - html
+    - rss
   page:
-  - html
-  - rss
+    - html
+    - rss
 outputFormats:
   json:
     mediaType: application/json
@@ -87,4 +89,3 @@ markup:
       attribute:
         block: true
         title: true
-

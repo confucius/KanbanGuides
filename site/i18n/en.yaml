@@ -208,3 +208,55 @@
 
 - id: history_no_versions_available
   translation: "No versions are currently available."
+
+# Guide template translations
+- id: guide_join_discussion
+  translation: "Join Discussion"
+
+- id: guide_table_of_contents
+  translation: "Table of Contents"
+
+- id: guide_coming_soon
+  translation: "This guide is coming soon! Stay tuned for updates."
+
+- id: guide_pdf_en
+  translation: "PDF (EN)"
+
+- id: guide_pdf_en_us
+  translation: "PDF (EN-US)"
+
+- id: guide_pdf_en_not_available
+  translation: "PDF (EN) not available"
+
+- id: guide_pdf_en_us_not_available
+  translation: "PDF (EN-US) not available"
+
+- id: guide_coming_label
+  translation: "Coming:"
+
+- id: guide_updated_label
+  translation: "Updated:"
+
+- id: guide_version_label
+  translation: "Version:"
+
+- id: guide_content_unavailable_note
+  translation: "Note:"
+
+- id: guide_content_unavailable_message
+  translation: "This page content is currently unavailable in {{ .Language }}. Showing the default guide content below."
+
+- id: guide_content_unavailable_title
+  translation: "Content Unavailable:"
+
+- id: guide_content_unavailable_description
+  translation: "The content for this page could not be loaded and no default content is available. Please"
+
+- id: guide_report_issue_link
+  translation: "report this issue"
+
+- id: guide_report_issue_message
+  translation: "to help us fix it."
+
+- id: guide_back_to_home
+  translation: "← Back to Home"
