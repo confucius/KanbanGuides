@@ -1,7 +1,6 @@
-baseURL: "https://kanbanguides.org"
-Environment: "production"
+baseURL: https://kanbanguides.org
+Environment: production
 minifyOutput: true
-
 languages:
   tlh:
     disabled: true
@@ -13,3 +12,6 @@ languages:
     disabled: true
   de:
     disabled: true
+  es-419:
+    disabled: true
+

@@ -336,6 +336,64 @@ function Test-LanguageSetup {
     }
 }
 
+# Function to add language to hugo.production.yaml
+function Add-LanguageToProduction {
+    param(
+        [string]$HugoProductionYamlPath,
+        [string]$LangCode
+    )
+    
+    Write-Host "📝 Adding language configuration to hugo.production.yaml..." -ForegroundColor Yellow
+    
+    # Check if production config file exists
+    if (-not (Test-Path $HugoProductionYamlPath)) {
+        Write-Host "   ⏭️  Skipping production config (file not found): $HugoProductionYamlPath" -ForegroundColor DarkYellow
+        return
+    }
+    
+    # Read and parse the production YAML file
+    $yamlContent = Get-Content -Path $HugoProductionYamlPath -Raw
+    
+    try {
+        $config = ConvertFrom-Yaml $yamlContent -Ordered -ErrorAction Stop
+    }
+    catch {
+        throw "Failed to parse hugo.production.yaml as valid YAML: $($_.Exception.Message). Please check the YAML syntax in $HugoProductionYamlPath"
+    }
+    
+    # Check if language already exists
+    if ($config.languages -and $config.languages.Contains($LangCode)) {
+        if (-not $Force) {
+            Write-Host "   ⏭️  Language '$LangCode' already exists in hugo.production.yaml" -ForegroundColor DarkYellow
+            return
+        }
+        Write-Host "   ⚠️  Language exists in production config, overwriting due to -Force flag..." -ForegroundColor Yellow
+    }
+    
+    # Ensure languages section exists
+    if (-not $config.languages) {
+        $config.languages = [ordered]@{}
+    }
+    
+    # Create the new language configuration for production (disabled by default)
+    $languageConfig = [ordered]@{
+        disabled = $true
+    }
+    
+    # Add or update the language
+    $config.languages[$LangCode] = $languageConfig
+    
+    # Convert back to YAML and write to file
+    try {
+        $newYamlContent = ConvertTo-Yaml $config -Options EmitDefaults -ErrorAction Stop
+        Set-Content -Path $HugoProductionYamlPath -Value $newYamlContent -Encoding UTF8 -ErrorAction Stop
+        Write-Host "✅ Language configuration added to hugo.production.yaml (disabled)" -ForegroundColor Green
+    }
+    catch {
+        throw "Failed to write updated YAML to $HugoProductionYamlPath`: $($_.Exception.Message)"
+    }
+}
+
 # Main execution
 try {
     # Set defaults
@@ -366,6 +424,7 @@ try {
     Add-LanguageToHugo -HugoYamlPath (Join-Path $siteDir "hugo.yaml") -LangCode $LanguageCode -LangName $LanguageName -LangWeight $Weight -LangTitle $Title -LangDescription $Description -LangKeywords $Keywords
     New-I18nFile -LangCode $LanguageCode -LangName $LanguageName
     New-TranslatedContent -LangCode $LanguageCode
+    Add-LanguageToProduction -HugoProductionYamlPath (Join-Path $siteDir "hugo.production.yaml") -LangCode $LanguageCode
     
     Write-Host ""
     $validationResult = Test-LanguageSetup -LangCode $LanguageCode -LangName $LanguageName
