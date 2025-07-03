@@ -4,3 +4,9 @@ minifyOutput: true
 
 buildDrafts: true
 buildFuture: true
+
+languages:
+  tlh:
+    disabled: true
+  es-419:
+    disabled: true
