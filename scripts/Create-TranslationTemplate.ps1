@@ -8,7 +8,8 @@ This script helps set up a new language for the Open Guide to Kanban Hugo site b
 1. Adding the language configuration to hugo.yaml
 2. Creating i18n translation files
 3. Creating translated content files based on English defaults
-4. Validating the setup
+4. Updating front matter (lang attribute, removing content attribute)
+5. Validating the setup
 
 .PARAMETER LanguageCode
 The ISO 639-1 language code (e.g., 'de', 'es', 'fr')
@@ -277,12 +278,13 @@ function New-TranslatedContent {
             New-Item -ItemType Directory -Path $translatedDir -Force | Out-Null
         }
         
-        # Copy content with basic metadata
+        # Copy content and update front matter
         $content = Get-Content -Path $file.FullName -Raw
-        Set-Content -Path $translatedPath -Value $content -Encoding UTF8
+        $updatedContent = Update-FrontMatter -Content $content -LanguageCode $LangCode
+        Set-Content -Path $translatedPath -Value $updatedContent -Encoding UTF8
         
         $createdFiles += $translatedPath
-        Write-Host "   ✅ Created: $translatedPath" -ForegroundColor Green
+        Write-Host "   ✅ Created: $translatedPath (front matter updated)" -ForegroundColor Green
     }
     
     if ($createdFiles.Count -gt 0) {
@@ -392,6 +394,66 @@ function Add-LanguageToProduction {
     catch {
         throw "Failed to write updated YAML to $HugoProductionYamlPath`: $($_.Exception.Message)"
     }
+}
+
+# Function to update front matter for translated content
+function Update-FrontMatter {
+    param(
+        [string]$Content,
+        [string]$LanguageCode
+    )
+    
+    # Check if content has front matter
+    if ($Content -notmatch '^---\r?\n(.*?)\r?\n---\r?\n(.*)$' -and $Content -notmatch '^---\r?\n(.*?)\r?\n---$') {
+        # No front matter found, return content as-is
+        return $Content
+    }
+    
+    # Split content into front matter and body
+    $frontMatterRegex = '^---\r?\n(.*?)\r?\n---(\r?\n(.*))?$'
+    if ($Content -match $frontMatterRegex) {
+        $frontMatterText = $matches[1]
+        $bodyText = if ($matches[3]) { $matches[3] } else { "" }
+        
+        # Parse and update front matter
+        $frontMatterLines = $frontMatterText -split '\r?\n'
+        $updatedLines = @()
+        $langFound = $false
+        
+        foreach ($line in $frontMatterLines) {
+            if ($line -match '^(\s*)lang\s*:\s*(.*)$') {
+                # Update lang attribute
+                $updatedLines += "$($matches[1])lang: $LanguageCode"
+                $langFound = $true
+            }
+            elseif ($line -match '^(\s*)content\s*:\s*(.*)$') {
+                # Skip content attribute (remove it)
+                # Don't add this line to updatedLines
+            }
+            else {
+                # Keep other lines as-is
+                $updatedLines += $line
+            }
+        }
+        
+        # Add lang attribute if it wasn't found
+        if (-not $langFound) {
+            $updatedLines += "lang: $LanguageCode"
+        }
+        
+        # Reconstruct the content
+        $updatedFrontMatter = $updatedLines -join "`n"
+        $updatedContent = "---`n$updatedFrontMatter`n---"
+        
+        if ($bodyText) {
+            $updatedContent += "`n$bodyText"
+        }
+        
+        return $updatedContent
+    }
+    
+    # Fallback: return original content if regex didn't match properly
+    return $Content
 }
 
 # Main execution
