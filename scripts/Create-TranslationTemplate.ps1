@@ -8,7 +8,8 @@ This script helps set up a new language for the Open Guide to Kanban Hugo site b
 1. Adding the language configuration to hugo.yaml
 2. Creating i18n translation files
 3. Creating translated content files based on English defaults
-4. Validating the setup
+4. Updating front matter (lang attribute, removing content attribute)
+5. Validating the setup
 
 .PARAMETER LanguageCode
 The ISO 639-1 language code (e.g., 'de', 'es', 'fr')
@@ -41,7 +42,7 @@ Overwrite existing files if they exist
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidatePattern('^[a-z]{2,3}(-[A-Z]{2})?$')]
+    [ValidatePattern('^[a-z]{2,3}(-[A-Z]{2}|-[0-9]{3})?$')]
     [string]$LanguageCode,
     
     [Parameter(Mandatory = $true)]
@@ -229,10 +230,31 @@ function New-TranslatedContent {
     $englishFiles = Get-ChildItem -Path $contentDir -Recurse -Filter "*.md" | Where-Object {
         $_.Name -match '^(index|_index)\.md$'
     }
+    
+    # Files to skip (need manual translation)
+    $skipPatterns = @(
+        '*\guide\index.md',
+        '*\history\*\index.md'
+    )
+    
     foreach ($file in $englishFiles) {
         $relativePath = $file.FullName.Substring($contentDir.Length + 1)
         $directory = Split-Path $relativePath -Parent
         $fileName = Split-Path $relativePath -Leaf
+        
+        # Check if this file should be skipped
+        $shouldSkip = $false
+        foreach ($pattern in $skipPatterns) {
+            if ($file.FullName -like $pattern) {
+                $shouldSkip = $true
+                Write-Host "   ⏭️  Skipping (manual translation needed): $relativePath" -ForegroundColor Magenta
+                break
+            }
+        }
+        
+        if ($shouldSkip) {
+            continue
+        }
         
         # Create translated filename
         $translatedFileName = $fileName -replace '\.md$', ".$LangCode.md"
@@ -256,12 +278,13 @@ function New-TranslatedContent {
             New-Item -ItemType Directory -Path $translatedDir -Force | Out-Null
         }
         
-        # Copy content with basic metadata
+        # Copy content and update front matter
         $content = Get-Content -Path $file.FullName -Raw
-        Set-Content -Path $translatedPath -Value $content -Encoding UTF8
+        $updatedContent = Update-FrontMatter -Content $content -LanguageCode $LangCode
+        Set-Content -Path $translatedPath -Value $updatedContent -Encoding UTF8
         
         $createdFiles += $translatedPath
-        Write-Host "   ✅ Created: $translatedPath" -ForegroundColor Green
+        Write-Host "   ✅ Created: $translatedPath (front matter updated)" -ForegroundColor Green
     }
     
     if ($createdFiles.Count -gt 0) {
@@ -293,9 +316,8 @@ function Test-LanguageSetup {
     # Check for essential content files
     $essentialFiles = @(
         "content/_index.$LangCode.md",
-        "content/creators/_index.$LangCode.md",
-        "content/download/_index.$LangCode.md",
-        "content/guide/index.$LangCode.md"
+        "content/history/_index.$LangCode.md",
+        "content/translations/_index.$LangCode.md"
     )
     
     foreach ($file in $essentialFiles) {
@@ -314,6 +336,124 @@ function Test-LanguageSetup {
         $issues | ForEach-Object { Write-Host "   - $_" -ForegroundColor Red }
         return $false
     }
+}
+
+# Function to add language to hugo.production.yaml
+function Add-LanguageToProduction {
+    param(
+        [string]$HugoProductionYamlPath,
+        [string]$LangCode
+    )
+    
+    Write-Host "📝 Adding language configuration to hugo.production.yaml..." -ForegroundColor Yellow
+    
+    # Check if production config file exists
+    if (-not (Test-Path $HugoProductionYamlPath)) {
+        Write-Host "   ⏭️  Skipping production config (file not found): $HugoProductionYamlPath" -ForegroundColor DarkYellow
+        return
+    }
+    
+    # Read and parse the production YAML file
+    $yamlContent = Get-Content -Path $HugoProductionYamlPath -Raw
+    
+    try {
+        $config = ConvertFrom-Yaml $yamlContent -Ordered -ErrorAction Stop
+    }
+    catch {
+        throw "Failed to parse hugo.production.yaml as valid YAML: $($_.Exception.Message). Please check the YAML syntax in $HugoProductionYamlPath"
+    }
+    
+    # Check if language already exists
+    if ($config.languages -and $config.languages.Contains($LangCode)) {
+        if (-not $Force) {
+            Write-Host "   ⏭️  Language '$LangCode' already exists in hugo.production.yaml" -ForegroundColor DarkYellow
+            return
+        }
+        Write-Host "   ⚠️  Language exists in production config, overwriting due to -Force flag..." -ForegroundColor Yellow
+    }
+    
+    # Ensure languages section exists
+    if (-not $config.languages) {
+        $config.languages = [ordered]@{}
+    }
+    
+    # Create the new language configuration for production (disabled by default)
+    $languageConfig = [ordered]@{
+        disabled = $true
+    }
+    
+    # Add or update the language
+    $config.languages[$LangCode] = $languageConfig
+    
+    # Convert back to YAML and write to file
+    try {
+        $newYamlContent = ConvertTo-Yaml $config -Options EmitDefaults -ErrorAction Stop
+        Set-Content -Path $HugoProductionYamlPath -Value $newYamlContent -Encoding UTF8 -ErrorAction Stop
+        Write-Host "✅ Language configuration added to hugo.production.yaml (disabled)" -ForegroundColor Green
+    }
+    catch {
+        throw "Failed to write updated YAML to $HugoProductionYamlPath`: $($_.Exception.Message)"
+    }
+}
+
+# Function to update front matter for translated content
+function Update-FrontMatter {
+    param(
+        [string]$Content,
+        [string]$LanguageCode
+    )
+    
+    # Check if content has front matter
+    if ($Content -notmatch '^---\r?\n(.*?)\r?\n---\r?\n(.*)$' -and $Content -notmatch '^---\r?\n(.*?)\r?\n---$') {
+        # No front matter found, return content as-is
+        return $Content
+    }
+    
+    # Split content into front matter and body
+    $frontMatterRegex = '^---\r?\n(.*?)\r?\n---(\r?\n(.*))?$'
+    if ($Content -match $frontMatterRegex) {
+        $frontMatterText = $matches[1]
+        $bodyText = if ($matches[3]) { $matches[3] } else { "" }
+        
+        # Parse and update front matter
+        $frontMatterLines = $frontMatterText -split '\r?\n'
+        $updatedLines = @()
+        $langFound = $false
+        
+        foreach ($line in $frontMatterLines) {
+            if ($line -match '^(\s*)lang\s*:\s*(.*)$') {
+                # Update lang attribute
+                $updatedLines += "$($matches[1])lang: $LanguageCode"
+                $langFound = $true
+            }
+            elseif ($line -match '^(\s*)content\s*:\s*(.*)$') {
+                # Skip content attribute (remove it)
+                # Don't add this line to updatedLines
+            }
+            else {
+                # Keep other lines as-is
+                $updatedLines += $line
+            }
+        }
+        
+        # Add lang attribute if it wasn't found
+        if (-not $langFound) {
+            $updatedLines += "lang: $LanguageCode"
+        }
+        
+        # Reconstruct the content
+        $updatedFrontMatter = $updatedLines -join "`n"
+        $updatedContent = "---`n$updatedFrontMatter`n---"
+        
+        if ($bodyText) {
+            $updatedContent += "`n$bodyText"
+        }
+        
+        return $updatedContent
+    }
+    
+    # Fallback: return original content if regex didn't match properly
+    return $Content
 }
 
 # Main execution
@@ -346,6 +486,7 @@ try {
     Add-LanguageToHugo -HugoYamlPath (Join-Path $siteDir "hugo.yaml") -LangCode $LanguageCode -LangName $LanguageName -LangWeight $Weight -LangTitle $Title -LangDescription $Description -LangKeywords $Keywords
     New-I18nFile -LangCode $LanguageCode -LangName $LanguageName
     New-TranslatedContent -LangCode $LanguageCode
+    Add-LanguageToProduction -HugoProductionYamlPath (Join-Path $siteDir "hugo.production.yaml") -LangCode $LanguageCode
     
     Write-Host ""
     $validationResult = Test-LanguageSetup -LangCode $LanguageCode -LangName $LanguageName
@@ -356,8 +497,10 @@ try {
     Write-Host "Next steps:" -ForegroundColor Yellow
     Write-Host "1. Translate the content in the i18n/$LanguageCode.yaml file" -ForegroundColor Yellow
     Write-Host "2. Translate the content in the created .$LanguageCode.md files" -ForegroundColor Yellow
-    Write-Host "3. Test the site by running 'hugo server' from the site directory" -ForegroundColor Yellow
-    Write-Host "4. Commit and push your changes" -ForegroundColor Yellow
+    Write-Host "3. Manually create and translate guide/index.$LanguageCode.md" -ForegroundColor Yellow
+    Write-Host "4. Manually create and translate history/*/index.$LanguageCode.md files" -ForegroundColor Yellow
+    Write-Host "5. Test the site by running 'hugo server' from the site directory" -ForegroundColor Yellow
+    Write-Host "6. Commit and push your changes" -ForegroundColor Yellow
     
     if (-not $validationResult) {
         Write-Host ""

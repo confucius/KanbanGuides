@@ -1,0 +1,262 @@
+# Spanish (Latin America) translations
+- id: and
+  translation: "y"
+
+- id: read_online_title
+  translation: "Lee la {{ .Site.Title }} en línea"
+
+- id: read_online_description
+  translation: "Accede a la guía completa digitalmente con funciones interactivas y navegación fácil."
+
+- id: read_online_button
+  translation: "Leer en línea"
+
+- id: what_is_guide_title
+  translation: "¿Qué es la {{ .Site.Title }}?"
+
+- id: open_source_title
+  translation: "Código Abierto e Impulsado por la Comunidad"
+
+- id: open_source_description
+  translation: "Esta {{ .Site.Title }} es un proyecto de código abierto que prospera con la colaboración comunitaria. Ya sea que quieras sugerir mejoras, reportar problemas o contribuir contenido, damos la bienvenida a tu participación. Juntos, podemos hacer este recurso aún más valioso para la comunidad Kanban mundial."
+
+- id: join_discussion_button
+  translation: "Únete a la Discusión"
+
+- id: join_discussion_title
+  translation: "Únete a la Discusión de la {{ .Site.Title }}"
+
+- id: join_discussion_description
+  translation: "Participa con la comunidad, comparte tus conocimientos y ayuda a dar forma al futuro de la {{ .Site.Title }}. Tus contribuciones son invaluables para hacer de esta guía un recurso integral para los practicantes de Kanban."
+
+- id: translation_title
+  translation: "Traducciones de la {{ .Site.Title }}"
+
+- id: translation_description
+  translation: "Obtén la {{ .Site.Title }} completa en otros idiomas o crea una comunidad alrededor de una nueva traducción."
+
+- id: download_button
+  translation: "Descargar PDF"
+
+- id: about_creators_title
+  translation: "Acerca de los creadores de {{ .Site.Title }}"
+
+- id: read_bio_button
+  translation: "Lee la biografía de {{ .Name }}"
+
+- id: guide_content_not_found
+  translation: "Contenido de la guía no encontrado"
+
+- id: reportTranslationError
+  translation: "Reportar Error de Traducción"
+
+# Navigation translations
+- id: nav_read_online
+  translation: "Leer en Línea"
+
+- id: nav_translations
+  translation: "Traducciones"
+
+- id: nav_versions
+  translation: "Versiones"
+
+- id: nav_pdf_version
+  translation: "Versión PDF"
+
+- id: nav_creators
+  translation: "Creadores"
+
+- id: nav_all_creators
+  translation: "Todos los Creadores"
+
+- id: nav_faq
+  translation: "Preguntas Frecuentes"
+
+# Guide page PDF download translations
+- id: guide_pdf_download_button
+  translation: "Descargar PDF"
+
+- id: guide_pdf_not_available
+  translation: "PDF no disponible"
+
+- id: guide_pdf_intro_text
+  translation: "También puedes descargar esta guía como PDF para lectura sin conexión."
+
+- id: guide_pdf_intro_link
+  translation: "Descargar PDF"
+
+# Preview Translations functionality
+- id: download_preview_translations
+  translation: "Vista Previa de Traducciones"
+
+- id: download_preview_description
+  translation: "Estas traducciones están disponibles en vista previa y necesitan al menos 5 revisores de la comunidad antes de poder moverse al sitio principal. ¡Ayúdanos a revisar y mejorar estas traducciones!"
+
+- id: download_visit_preview
+  translation: "Visitar sitio de vista previa"
+
+- id: download_table_status
+  translation: "Estado"
+
+- id: download_preview_status
+  translation: "En Vista Previa"
+
+- id: download_preview_action
+  translation: "Vista Previa"
+
+- id: download_discussion_action
+  translation: "Discusión"
+
+# Download page translations
+- id: download_page_title
+  translation: "Lee y Descarga la {{ .Title }} oficial"
+
+- id: download_page_description
+  translation: "{{ .Title }} está definida aquí por"
+
+- id: download_page_originators
+  translation: ", los creadores de la {{ .Title }}."
+
+- id: download_translations_provided
+  translation: "Traducciones proporcionadas por las generosas personas y grupos listados abajo. Por favor selecciona la guía en el idioma que te gustaría descargar."
+
+- id: download_translation_error
+  translation: "Si has encontrado un posible error de traducción con la {{ .Title }} por favor contacta directamente al traductor. Si necesitas soporte adicional por favor contáctanos en"
+
+- id: download_official_version
+  translation: "Versión Oficial"
+
+- id: download_community_translations
+  translation: "Traducciones de la Comunidad"
+
+- id: download_current_version_released
+  translation: "La versión oficial actual de la {{ .Site.Title }} fue publicada en"
+
+- id: download_older_translations_notice
+  translation: "Las traducciones de la {{ .Site.Title }} con fechas anteriores pueden no contener la información más reciente."
+
+- id: download_table_language
+  translation: "Idioma"
+
+- id: download_table_translations_by
+  translation: "Traducciones Por"
+
+- id: download_table_written_by
+  translation: "Escrito Por"
+
+- id: download_table_action
+  translation: "Acción"
+
+- id: download_official_current_version
+  translation: "Versión Oficial Actual"
+
+- id: download_button_text
+  translation: "Descargar"
+
+- id: download_coming_soon
+  translation: "Próximamente"
+
+- id: download_missing_language
+  translation: "¿Falta tu idioma?"
+
+- id: download_contribute_translation
+  translation: "Ayuda a la comunidad contribuyendo con una nueva traducción."
+
+- id: download_add_translation
+  translation: "Agregar Traducción"
+
+- id: download_community_contributors
+  translation: "Contribuidores de la Comunidad"
+
+- id: read_online_action
+  translation: "Leer en Línea"
+
+# PDF Download functionality
+- id: guide_pdf_download_button
+  translation: "Descargar PDF"
+
+- id: guide_pdf_not_available
+  translation: "PDF no disponible"
+
+- id: guide_pdf_intro_text
+  translation: "Esta guía también está disponible como descarga PDF."
+
+- id: guide_pdf_intro_link
+  translation: "Descargar PDF"
+
+# History page translations
+- id: history_page_title
+  translation: "Versiones"
+
+- id: history_evolution_title
+  translation: "Evolución de la Guía"
+
+- id: history_evolution_description
+  translation: 'La actual <strong><a href="{{ .GuideLink }}">Guía Abierta de Kanban</a></strong> es un documento vivo que ha evolucionado desde versiones históricas anteriores, incorporando retroalimentación de la comunidad y prácticas modernas de Kanban. Para ProKanban, <a href="/history/kanban-guide-2025/">La Guía de Kanban</a> es su guía viva.'
+
+- id: history_fork_summary_historical
+  translation: "Versiones Históricas"
+
+- id: history_fork_summary_current
+  translation: "Guía Abierta"
+
+- id: history_fork_summary_description
+  translation: "La guía actual se basa y extiende las versiones anteriores"
+
+- id: history_fork_indicator
+  translation: "Bifurcada y Mejorada desde Estas Versiones Históricas"
+
+- id: history_no_versions_available
+  translation: "No hay versiones disponibles actualmente."
+
+# Guide template translations
+- id: guide_join_discussion
+  translation: "Únete a la Discusión"
+
+- id: guide_table_of_contents
+  translation: "Tabla de Contenidos"
+
+- id: guide_coming_soon
+  translation: "¡Esta guía estará disponible pronto! Mantente atento a las actualizaciones."
+
+- id: guide_pdf_en
+  translation: "PDF (EN)"
+
+- id: guide_pdf_en_us
+  translation: "PDF (EN-US)"
+
+- id: guide_pdf_en_not_available
+  translation: "PDF (EN) no disponible"
+
+- id: guide_pdf_en_us_not_available
+  translation: "PDF (EN-US) no disponible"
+
+- id: guide_coming_label
+  translation: "Próximamente:"
+
+- id: guide_updated_label
+  translation: "Actualizado:"
+
+- id: guide_version_label
+  translation: "Versión:"
+
+- id: guide_content_unavailable_note
+  translation: "Nota:"
+
+- id: guide_content_unavailable_message
+  translation: "El contenido de esta página no está disponible actualmente en {{ .Language }}. Mostrando el contenido de la guía predeterminada a continuación."
+
+- id: guide_content_unavailable_title
+  translation: "Contenido No Disponible:"
+
+- id: guide_content_unavailable_description
+  translation: "El contenido de esta página no se pudo cargar y no hay contenido predeterminado disponible. Por favor"
+
+- id: guide_report_issue_link
+  translation: "reporta este problema"
+
+- id: guide_report_issue_message
+  translation: "para ayudarnos a solucionarlo."
+
+- id: guide_back_to_home
+  translation: "← Volver al Inicio"

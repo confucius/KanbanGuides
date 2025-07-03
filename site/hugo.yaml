@@ -9,7 +9,6 @@ defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
 disableDefaultLanguageRedirect: false
 disableLanguages: []
-
 languages:
   en:
     languageName: English
@@ -25,7 +24,15 @@ languages:
     params:
       description: The Open Guide to Kanban is a free, community-driven reference for applying Kanban in knowledge work. It defines the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches.
       keywords: Kanban, Open Guide to Kanban
-      status: "reference"
+      status: reference
+  es-419:
+    languageName: Spanish (Latin America)
+    weight: 3
+    title: Guía Abierta de Kanban
+    params:
+      description: Guía Abierta de Kanban
+      keywords: Kanban, guía, metodología ágil, flujo de trabajo
+      status: AI
 
 params:
   description: Open Guide to Kanban

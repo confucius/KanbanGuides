@@ -189,3 +189,80 @@
 
 - id: guide_pdf_intro_link
   translation: "PDF DIch"
+
+# maH nugh mugh
+- id: history_page_title
+  translation: "DIch choq"
+
+- id: history_evolution_title
+  translation: "nugh choH DIch"
+
+- id: history_evolution_description
+  translation: 'DaH <strong><a href="{{ .GuideLink }}">qorgh DIch Kanban</a></strong> ''oH yoDlu''ghach DIch''e'' ''e'' DIch maH DIch vo'' choH, jup chup ''ej nugh Kanban DIch rarwI''. ProKanban DIch, <a href="/history/kanban-guide-2025/">Kanban DIch</a> DIch yoDlu''ghach DIch.'
+
+- id: history_fork_summary_historical
+  translation: "maH DIch choq"
+
+- id: history_fork_summary_current
+  translation: "DIch nugh"
+
+- id: history_fork_summary_description
+  translation: "DaH nugh DIch maH DIch choq DIchmeH choH"
+
+- id: history_fork_indicator
+  translation: "maH DIch choq vo' DIch choH"
+
+- id: history_no_versions_available
+  translation: "DIch choq DIch DIch."
+
+# DIch nugh mugh
+- id: guide_join_discussion
+  translation: "jup DIch"
+
+- id: guide_table_of_contents
+  translation: "DIch nav DIch"
+
+- id: guide_coming_soon
+  translation: "naDev DIch DIch! choH DIch yap!"
+
+- id: guide_pdf_en
+  translation: "PDF (EN)"
+
+- id: guide_pdf_en_us
+  translation: "PDF (EN-US)"
+
+- id: guide_pdf_en_not_available
+  translation: "PDF (EN) DIch"
+
+- id: guide_pdf_en_us_not_available
+  translation: "PDF (EN-US) DIch"
+
+- id: guide_coming_label
+  translation: "DIch:"
+
+- id: guide_updated_label
+  translation: "choH:"
+
+- id: guide_version_label
+  translation: "DIch:"
+
+- id: guide_content_unavailable_note
+  translation: "DIch:"
+
+- id: guide_content_unavailable_message
+  translation: "DIch naDev {{ .Language }} DIch DIch. DIch nugh naDev cha'."
+
+- id: guide_content_unavailable_title
+  translation: "naDev DIch:"
+
+- id: guide_content_unavailable_description
+  translation: "DIch naDev DIch 'e' DIch DIch 'ej DIch naDev DIch. DIch"
+
+- id: guide_report_issue_link
+  translation: "DIch DIch chup"
+
+- id: guide_report_issue_message
+  translation: "DIchmeH."
+
+- id: guide_back_to_home
+  translation: "← DIch naDev"
