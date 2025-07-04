@@ -15,6 +15,10 @@ sansfont: "Arial"
 monofont: "Courier New"
 sitemap:
   priority: 0.6
+guide_whatis: |
+  This document aims to be a unifying reference for the community by offering the minimal guidance for Kanban. Depending on the context, various approaches can complement Kanban, allowing it to accommodate the full spectrum of value delivery and organizational challenges.
+
+   This guide has conventions for some terms. They are not meant to replace any other existing definitions but to clarify how they are intended to be applied here.
 aliases:
   - /kanban-guide/latest/
 ---

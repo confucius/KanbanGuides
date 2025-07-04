@@ -1,5 +1,47 @@
 {{- define "main" }}
-  {{- $guidePage := .Site.GetPage "/guide" }}
+  {{/* Dynamically find the latest guide version in the current section */}}
+  {{- $guidePage := "" }}
+  {{- $latestVersion := "" }}
+
+  {{/* Get all pages in the current section */}}
+  {{- $sectionPages := where .Site.RegularPages "Section" .Section }}
+
+  {{/* Filter for guide pages and sort by date (newest first) */}}
+  {{- $guidePages := where $sectionPages "Type" "guide" }}
+  {{- if $guidePages }}
+    {{- $sortedPages := $guidePages.ByDate.Reverse }}
+    {{- $guidePage = index $sortedPages 0 }}
+  {{- end }}
+
+  {{/* Fallback: try to find by version number in URL path */}}
+  {{- if not $guidePage }}
+    {{- range $sectionPages }}
+      {{/* Extract version from URL path (e.g., /open-guide-for-kanban/2025.7/) */}}
+      {{- $pathParts := split .RelPermalink "/" }}
+      {{- range $pathParts }}
+        {{- if and (ne . "") (findRE `^\d{4}\.\d+` .) }}
+          {{- if or (not $latestVersion) (gt . $latestVersion) }}
+            {{- $latestVersion = . }}
+            {{- $guidePage = $ }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+
+  {{/* Final fallback: get the section page itself */}}
+  {{- if not $guidePage }}
+    {{- $guidePage = .Site.GetPage .Section }}
+  {{- end }}
+
+  {{- if not $guidePage }}
+    {{- $defaultSite := index site.Sites 0 }}
+    {{- $guidePage = $defaultSite.GetPage .Section }}
+  {{- end }}
+
+  {{- if not $guidePage }}
+    {{- fmt.Errorf "No guide page found for section: %s" .Section }}
+  {{- end }}
   {{- $isComingSoon := and $guidePage $guidePage.Date (lt now $guidePage.Date) (eq hugo.Environment "production") }}
   {{- $bgColor := .Params.brand.bg_colour | default "#135289" }}
   <section class="section container-fluid main-header" style="background-color: {{ $bgColor }} !important;">
@@ -22,8 +64,8 @@
           <div class="card card-dark h-100">
             <div class="card-body text-center d-flex flex-column">
               <i class="header-icon fa-solid fa-download"></i>
-              <h5 class="card-title">{{ i18n "translation_title" . }}</h5>
-              <p class="card-text flex-grow-1">{{ i18n "translation_description" . }}</p>
+              <h5 class="card-title">{{ i18n "translations_title" . }}</h5>
+              <p class="card-text flex-grow-1">{{ i18n "translations_description" . }}</p>
             </div>
             <div class="card-footer">
               <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "translations") }}" class="btn btn-primary">{{ i18n "nav_translations" . }}</a>
@@ -65,28 +107,13 @@
     <div class="container my-5">
       <div class="row">
         <div class="col-12 col-lg-4 col-xl-6">
-          <div class="row d-none d-xl-flex">
-            <div class="col-2"></div>
-            {{- $pages := .Site.RegularPages }}
-            {{- range .Site.Home.Translations }}
-              {{- $pages = $pages | lang.Merge .Site.RegularPages }}
-            {{- end }}
-            {{- range where $pages "Section" "creators" }}
-              {{- if ne .Title "Creators" }}
-                <div class="col-3">
-                  <a href="{{ .Permalink }}">{{ .Title }}</a>
-                </div>
-              {{- end }}
-            {{- end }}
-          </div>
-          <a href="{{ partial "functions/safe-page-link.html" "/guide" }}"><img src="/images/open-guide-to-kanban-logo.png" class="img-fluid mb-3" alt="{{ .Site.Title }} Creators" /></a>
+          <img src="{{ .Params.brand.image }}" class="img-fluid mb-3" alt="{{ .Title }}" />
         </div>
         <div class="col-12 col-lg-8 col-xl-6">
           <div>
             <div class="col-12">
               <h2 class="text-center">{{ i18n "what_is_guide_title" . }}</h2>
               <div class="lead text-center">
-                {{- $guidePage := .Site.GetPage "/guide" }}
                 {{- $guideWhatis := partial "functions/get-page-param-with-default.html" (dict "page" $guidePage "param" "guide_whatis" "context" .) }}
                 {{- if $guideWhatis }}
                   {{ $guideWhatis | markdownify }}
