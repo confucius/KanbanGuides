@@ -44,6 +44,9 @@
   {{- end }}
   {{- $isComingSoon := and $guidePage $guidePage.Date (lt now $guidePage.Date) (eq hugo.Environment "production") }}
   {{- $bgColor := .Params.brand.bg_colour | default "#135289" }}
+  
+  {{ partial "components/guide-nav-menu.html" . }}
+  
   <section class="section container-fluid main-header" style="background-color: {{ $bgColor }} !important;">
     <div class="container my-5">
       <div class="row">

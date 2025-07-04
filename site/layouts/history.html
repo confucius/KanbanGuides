@@ -43,6 +43,7 @@
     {{- fmt.Errorf "No guide page found for section: %s" .Section }}
   {{- end }}
 
+  {{ partial "components/guide-nav-menu.html" . }}
 
   <section class="container my-5">
     <div class="row mb-4">

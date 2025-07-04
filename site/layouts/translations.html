@@ -50,6 +50,9 @@
   {{- $translation := index $translations .Site.Language.Lang | default (index $translations "en") }}
 
   {{- $isComingSoon := and $guidePage $guidePage.Date (lt now $guidePage.Date) (eq hugo.Environment "production") }}
+  
+  {{ partial "components/guide-nav-menu.html" . }}
+  
   <section class="container my-5">
     <div class="row">
       <div class="col-12">

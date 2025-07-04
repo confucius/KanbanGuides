@@ -1,0 +1,106 @@
+{{/*
+Guide Navigation Menu - Provides navigation between guide, translations, and history pages
+*/}}
+
+{{- $currentSection := .Section }}
+{{- $currentPage := . }}
+
+{{/* Get the guide section page */}}
+{{- $guideSection := .Site.GetPage $currentSection }}
+{{- if not $guideSection }}
+  {{- $guideSection = .Site.GetPage (printf "/%s" $currentSection) }}
+{{- end }}
+
+{{/* Get the latest version */}}
+{{- $latestVersion := partial "functions/get-latest-version" . }}
+
+{{/* Check current page type to determine active state */}}
+{{- $isGuideContent := false }}
+{{- $isTranslations := false }}
+{{- $isHistory := false }}
+
+{{- if hasPrefix .RelPermalink (printf "/%s/translations" $currentSection) }}
+  {{- $isTranslations = true }}
+{{- else if hasPrefix .RelPermalink (printf "/%s/history" $currentSection) }}
+  {{- $isHistory = true }}
+{{- else if eq .Type "guide" }}
+  {{- $isGuideContent = true }}
+{{- end }}
+
+<nav class="guide-nav-menu bg-light border-bottom py-2 mb-4" aria-label="Guide navigation">
+  <div class="container">
+    <ul class="nav nav-pills justify-content-center">
+      {{/* Guide Content Link */}}
+      <li class="nav-item">
+        {{- if $latestVersion }}
+          <a class="nav-link{{ if $isGuideContent }} active{{ end }}" 
+             href="{{ partial "functions/safe-page-link.html" (path.Join $currentSection $latestVersion) }}"
+             aria-current="{{ if $isGuideContent }}page{{ else }}false{{ end }}">
+            <i class="fa-solid fa-book me-2"></i>{{ i18n "nav_read_guide" | default "Read Guide" }}
+          </a>
+        {{- else }}
+          <a class="nav-link{{ if $isGuideContent }} active{{ end }}" 
+             href="{{ partial "functions/safe-page-link.html" $currentSection }}"
+             aria-current="{{ if $isGuideContent }}page{{ else }}false{{ end }}">
+            <i class="fa-solid fa-book me-2"></i>{{ i18n "nav_read_guide" | default "Read Guide" }}
+          </a>
+        {{- end }}
+      </li>
+
+      {{/* Translations Link */}}
+      <li class="nav-item">
+        <a class="nav-link{{ if $isTranslations }} active{{ end }}" 
+           href="{{ partial "functions/safe-page-link.html" (path.Join $currentSection "translations") }}"
+           aria-current="{{ if $isTranslations }}page{{ else }}false{{ end }}">
+          <i class="fa-solid fa-language me-2"></i>{{ i18n "translations_button" | default "Translations" }}
+        </a>
+      </li>
+
+      {{/* History Link */}}
+      <li class="nav-item">
+        <a class="nav-link{{ if $isHistory }} active{{ end }}" 
+           href="{{ partial "functions/safe-page-link.html" (path.Join $currentSection "history") }}"
+           aria-current="{{ if $isHistory }}page{{ else }}false{{ end }}">
+          <i class="fa-solid fa-clock-rotate-left me-2"></i>{{ i18n "nav_history" | default "History" }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+.guide-nav-menu .nav-link {
+  color: #6c757d;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin: 0 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.guide-nav-menu .nav-link:hover {
+  color: #135289;
+  background-color: rgba(19, 82, 137, 0.1);
+}
+
+.guide-nav-menu .nav-link.active {
+  color: #fff;
+  background-color: #135289;
+  border-color: #135289;
+}
+
+.guide-nav-menu .nav-link i {
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .guide-nav-menu .nav-pills {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .guide-nav-menu .nav-link {
+    margin: 2px;
+    font-size: 0.9em;
+  }
+}
+</style>
