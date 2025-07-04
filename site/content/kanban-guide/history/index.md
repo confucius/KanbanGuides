@@ -3,4 +3,7 @@ title: "History"
 layout: history
 ---
 
-The Open Guide to Kanban is a fork of the Kanban Guide (May 2025). Previous version are provided here for reference. The Open Guide to Kanban is a community-driven project, and we welcome contributions to improve and expand the guide. If you have suggestions or would like to contribute, please visit our [GitHub repository](https://github.com/KanbanGuides/OpenGuideToKanban).
+Professional Kanban is defined completely in the Kanban Guide that was created by a community of Kanban practitioners.
+
+This guide was (is) developed with the help and support of many Kanban practioners. It is our pledge that we will continue to promote a safe, diverse, and inclusive community so that all who participate can benefit. As a starting point to that end, this guide is offered free to anyone who wishes to use it.
+`
