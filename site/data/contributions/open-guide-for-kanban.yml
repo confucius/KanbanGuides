@@ -1,0 +1,108 @@
+# Contributions Data
+# This file contains information about all contributors to the Open Guide to Kanban
+
+# All contributors in a flat list
+- name: John Coleman
+  githubUsername: ViralGoodAgile
+  url: https://www.linkedin.com/in/johnanthonycoleman/
+  contributions:
+    - "2025.7"
+  role: creator
+  founder: true
+  weight: 1
+
+- name: Martin Hinshelwood
+  gravatarHash: a9a55b4384e0420e376f441384d0c13fdadb9d39e72892ac60c3e89c3079d10d
+  githubUsername: mrhinsh
+  url: https://nkdagility.com/company/people/martin-hinshelwood/
+  contributions:
+    - "2025.7"
+  role: contributor
+  weight: 100
+  founder: true
+
+- name: Andy Carmichael
+  url: https://www.linkedin.com/in/andycarmichael/
+  githubUsername: andycarmichaeluk
+  contributions:
+    - "2025.7"
+  role: contributor
+  weight: 100
+  founder: true
+
+- name: Jim Benson
+  url: https://www.linkedin.com/in/jimbenson/
+  contributions:
+    - "2025.7"
+  role: contributor
+  weight: 100
+  founder: true
+
+- name: Magdalena Firlit
+  url: https://magdalenafirlit.com/
+  githubUsername: Magdalena-Firlit
+  contributions:
+    - "2025.7"
+  role: contributor
+  weight: 2
+  founder: true
+
+- name: Michael Forni
+  url: https://www.linkedin.com/in/Michaelforni/
+  githubUsername: Michaelforni
+  contributions:
+    - "2025.7"
+  role: contributor
+  weight: 100
+  founder: true
+
+- name: Christian Neverdal
+  githubUsername: flyrev
+  contributions:
+    - "2025.7"
+  role: contributor
+  url: https://www.linkedin.com/in/christian-neverdal/
+  weight: 100
+  founder: true
+
+- name: Nader Talai
+  contributions:
+    - "2025.7"
+  role: contributor
+  githubUsername: nadertalai
+  url: https://www.linkedin.com/in/nadertalai/
+  weight: 100
+  founder: true
+
+- name: Steve Tendon
+  contributions:
+    - "2025.7"
+  role: contributor
+  weight: 100
+  founder: true
+
+- name: Nigel Thurlow
+  url: https://www.linkedin.com/in/nigelthurlow/
+  githubUsername: nigelthurlow
+  contributions:
+    - "2025.7"
+  role: contributor
+  weight: 3
+  founder: true
+
+- name: Jose Casal
+  url: https://www.linkedin.com/in/jcasal/
+  githubUsername: darkewok
+  contributions:
+    - "2025.7"
+  role: contributor
+  weight: 4
+  founder: true
+
+- name: Rikard Skelander
+  url: https://www.linkedin.com/in/rikardskelander/
+  githubUsername: skelander
+  contributions:
+    - "2025.7"
+  role: involved
+  founder: true

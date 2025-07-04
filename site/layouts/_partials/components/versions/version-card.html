@@ -1,16 +1,18 @@
 {{/* Versions Card Component
 
-  Usage: {{ partial "components/versions/versions-card.html" (dict "page" $page "isLatest" true)
+  Usage: {{ partial "components/versions/versions-card.html" (dict "page" $page "itemType" "latest")
 }}
 
-Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolean to indicate if this is the latest/current version */}}
+Parameters: - page: The Hugo page object to render - itemType: Type of item - "latest", "history", "forkLatest", or "forkHistory" (default: "history") */}}
 {{- $page := .page }}
-{{- $isLatest := .isLatest | default false }}
+{{- $itemType := .itemType | default "history" }}
+{{- $isLatest := or (eq $itemType "latest") (eq $itemType "forkLatest") }}
+{{- $isFork := (eq $itemType "forkLatest") }}
 
 {{ with $page }}
   <div class="col-12 mx-auto mb-4">
-    <div class="card h-100 shadow-sm {{ if $isLatest }}border-primary border-2{{ else }}border-secondary{{ end }}">
-      {{ if $isLatest }}
+    <div class="card h-100 shadow-sm {{ if $isLatest }}border-primary border-2{{ else if $isFork }}border-warning border-2{{ else }}border-secondary{{ end }}">
+      {{ if eq $itemType "latest" }}
         <div class="card-header bg-primary text-white">
           <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
@@ -23,12 +25,27 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
             </span>
           </div>
         </div>
+      {{ else if eq $itemType "forkLatest" }}
+        <div class="card-header bg-warning text-dark">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-code-branch me-2"></i>
+              <strong>Current Fork</strong>
+            </div>
+            <span class="badge bg-dark text-warning">
+              <i class="fas fa-code-branch me-1"></i>
+              Active Fork
+            </span>
+          </div>
+        </div>
       {{ end }}
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-start mb-3">
-          <h5 class="card-title mb-0 {{ if $isLatest }}text-primary{{ end }}">
-            {{ if not $isLatest }}
+          <h5 class="card-title mb-0 {{ if $isLatest }}text-primary{{ else if $isFork }}text-warning{{ end }}">
+            {{ if eq $itemType "history" }}
               <i class="fas fa-archive me-2 text-muted"></i>
+            {{ else if eq $itemType "forkHistory" }}
+              <i class="fas fa-code-branch me-2 text-warning"></i>
             {{ end }}
             {{ .Title | default "Open Guide to Kanban" }}
           </h5>
@@ -45,12 +62,33 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
           {{ end }}
         {{ end }}
 
+        {{/* Show fork relationship if this is a forked guide */}}
+        {{ if or $isFork (and .Params.forked_from (ne .Params.forked_from "")) }}
+          <div class="alert alert-info border-0 bg-info bg-opacity-10 mb-3">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-code-branch text-info me-2"></i>
+              <small class="mb-0">
+                <strong>{{ if $isFork }}Fork:{{ else }}Forked from:{{ end }}</strong>
+                {{ if and .Params.forked_from (ne .Params.forked_from "") }}
+                  {{ $sourcePage := .Site.GetPage .Params.forked_from }}
+                  {{ if $sourcePage }}
+                    <a href="{{ $sourcePage.Permalink }}" class="text-decoration-none">{{ $sourcePage.Title }}</a>
+                  {{ else }}
+                    {{ .Params.forked_from | title }}
+                  {{ end }}
+                {{ else if $isFork }}
+                  This is a fork
+                {{ end }}
+              </small>
+            </div>
+          </div>
+        {{ end }}
+
 
         <div class="d-flex flex-wrap gap-2 mb-3">
           {{/* Display contributors */}}
-          {{ $contributors := .Params.contributors }}
-          {{ if not $contributors }}
-            {{- $contributors = .Site.Data.contributions -}}
+          {{ $contributors := partial "functions/get-contributors.html" . }}
+          {{ if not .Params.contributors }}
             {{- $contributors = where $contributors "founder" true -}}
             {{- $contributors = where $contributors "role" "in" (slice "contributor" "creator") -}}
           {{ end }}
@@ -133,8 +171,14 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
           <div class="text-muted small">
             <i class="fas fa-calendar me-1"></i>
             {{ if .Date }}
-              {{ if $isLatest }}
+              {{ if eq $itemType "latest" }}
                 Living Document - Updated
+                {{ .Date.Format "January 2, 2006" }}
+              {{ else if eq $itemType "forkLatest" }}
+                Active Fork - Updated
+                {{ .Date.Format "January 2, 2006" }}
+              {{ else if eq $itemType "forkHistory" }}
+                Historical Fork -
                 {{ .Date.Format "January 2, 2006" }}
               {{ else }}
                 Historical Version -
@@ -145,7 +189,7 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
             {{ end }}
           </div>
           <div class="d-flex gap-2">
-            {{ if $isLatest }}
+            {{ if eq $itemType "latest" }}
               <a href="{{ partial "functions/safe-page-link.html" "/guide" }}" class="btn btn-primary btn-sm">
                 <i class="fas fa-book me-1"></i>
                 Read Guide
@@ -154,6 +198,11 @@ Parameters: - page: The Hugo page object to render - isLatest: (optional) Boolea
               <a href="{{ partial "functions/safe-page-link.html" "/translations" }}" class="btn btn-outline-secondary btn-sm">
                 <i class="fas fa-download me-1"></i>
                 Translations
+              </a>
+            {{ else if eq $itemType "forkLatest" }}
+              <a href="{{ .Permalink }}" class="btn btn-warning btn-sm">
+                <i class="fas fa-code-branch me-1"></i>
+                Read Fork
               </a>
             {{ else }}
               <a href="{{ .Permalink }}" class="btn btn-outline-secondary btn-sm">

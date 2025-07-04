@@ -151,12 +151,16 @@
             <div class="content-version mt-2">
               <span class="text-muted">{{ i18n "guide_version_label" }} </span>
               <span class="version-number">
-                {{- if .Params.version }}
-                  {{ .Params.version }}
-                {{- else }}
-                  v#{GitVersion_Major}#.#{GitVersion_Minor}#
-                {{- end }}</span
-              >
+                {{- $pathParts := split .Path "/" -}}
+                {{- $version := "" -}}
+                {{- range $pathParts -}}
+                  {{- if and (ne . "") (findRE `^\d{4}\.\d+$` .) -}}
+                    {{- $version = . -}}
+                    {{- break -}}
+                  {{- end -}}
+                {{- end -}}
+                v{{ $version }}
+              </span>
             </div>
           </header>
           <div class="content-body pt-3">

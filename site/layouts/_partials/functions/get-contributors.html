@@ -1,0 +1,21 @@
+{{- $section := .Section -}}
+
+{{- $pathParts := split .Path "/" -}}
+{{- $version := "" -}}
+{{- range $pathParts -}}
+  {{- if and (ne . "") (findRE `^\d{4}\.\d+$` .) -}}
+    {{- $version = . -}}
+    {{- break -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Try to get guide-specific contributors based on section */ -}}
+{{- $allContributors := index .Site.Data.contributions $section -}}
+
+{{ fmt.Warnf "DEBUG get-contributors:  section=%s version found=%s allContributors found=%t, count=%d" $section $version (ne $allContributors nil) (len ($allContributors | default slice)) -}}
+
+{{ $filtered := where $allContributors "contributions" "intersect" (slice $version) }}
+
+{{ fmt.Warnf "DEBUG get-contributors:  section=%s version found=%s allContributors found=%t, count=%d" $section $version (ne $filtered nil) (len ($filtered | default slice)) -}}
+
+{{- return $allContributors -}}

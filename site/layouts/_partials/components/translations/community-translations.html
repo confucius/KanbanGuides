@@ -1,4 +1,6 @@
-{{- $guidePage := .Site.GetPage (printf "/%s/guide" .Site.Language.Lang) | default (.Site.GetPage "/guide") }}
+{{- $guidePage := . }}
+
+
 <!-- Community Translations -->
 <h2 class="mb-3">{{ i18n "download_community_translations" . }}</h2>
 <p class="text-muted mb-3">
@@ -49,8 +51,7 @@
 <!-- Community Translation Cards/Rows -->
 <div class="mb-4">
   {{ $defaultSite := index site.Sites 0 }}
-  {{ $basePage := $defaultSite.GetPage "guide" }}
-  {{- range $basePage.AllTranslations }}
+  {{- range $guidePage.AllTranslations }}
     {{- if ne .Language.Lang $defaultSite.Language.Lang }}
       {{- $isInProduction := in $productionLanguageCodes .Language.Lang }}
       {{- $isReference := and .Language.Params.status (eq .Language.Params.status "reference") }}

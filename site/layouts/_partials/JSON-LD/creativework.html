@@ -20,7 +20,8 @@
   "url": {{ $pageURL }},
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
-  {{- $foundingContributors := where .Site.Data.contributions "founding" true -}}
+  {{- $foundingContributors := partial "functions/get-contributors.html" . -}}
+  {{- $foundingContributors := where $foundingContributors "founding" true -}}
   "author": [
     {{- range $index, $creator := $foundingContributors -}}
     {{- if $index }},{{ end }}

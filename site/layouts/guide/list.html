@@ -1,0 +1,184 @@
+{{- define "main" }}
+  {{/* Dynamically find the latest guide version in the current section */}}
+  {{- $guidePage := "" }}
+  {{- $latestVersion := "" }}
+
+  {{/* Get all pages in the current section */}}
+  {{- $sectionPages := where .Site.RegularPages "Section" .Section }}
+
+  {{/* Filter for guide pages and sort by date (newest first) */}}
+  {{- $guidePages := where $sectionPages "Type" "guide" }}
+  {{- if $guidePages }}
+    {{- $sortedPages := $guidePages.ByDate.Reverse }}
+    {{- $guidePage = index $sortedPages 0 }}
+  {{- end }}
+
+  {{/* Fallback: try to find by version number in URL path */}}
+  {{- if not $guidePage }}
+    {{- range $sectionPages }}
+      {{/* Extract version from URL path (e.g., /open-guide-for-kanban/2025.7/) */}}
+      {{- $pathParts := split .RelPermalink "/" }}
+      {{- range $pathParts }}
+        {{- if and (ne . "") (findRE `^\d{4}\.\d+` .) }}
+          {{- if or (not $latestVersion) (gt . $latestVersion) }}
+            {{- $latestVersion = . }}
+            {{- $guidePage = $ }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+
+  {{/* Final fallback: get the section page itself */}}
+  {{- if not $guidePage }}
+    {{- $guidePage = .Site.GetPage .Section }}
+  {{- end }}
+
+  {{- if not $guidePage }}
+    {{- $defaultSite := index site.Sites 0 }}
+    {{- $guidePage = $defaultSite.GetPage .Section }}
+  {{- end }}
+
+  {{- if not $guidePage }}
+    {{- fmt.Errorf "No guide page found for section: %s" .Section }}
+  {{- end }}
+  {{- $isComingSoon := and $guidePage $guidePage.Date (lt now $guidePage.Date) (eq hugo.Environment "production") }}
+  {{- $bgColor := .Params.brand.bg_colour | default "#135289" }}
+
+  {{ partial "components/guide-nav-menu.html" . }}
+
+  {{/* Hero Section with Guide Title and Description */}}
+  <section class="py-5" style="background: linear-gradient(135deg, {{ $bgColor }} 0%, {{ $bgColor }}dd 100%);">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-8 text-white">
+          <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
+          <p class="lead mb-4">
+            {{- $guideDescription := .Params.description | default .Summary }}
+            {{- if $guideDescription }}
+              {{ $guideDescription }}
+            {{- else }}
+              {{ i18n "guide_content_not_found" }}
+            {{- end }}
+          </p>
+        </div>
+        <div class="col-12 col-lg-4 text-center">
+          {{- if .Params.brand.image }}
+            <img src="{{ .Params.brand.image }}" class="img-fluid" style="max-height: 200px;" alt="{{ .Title }}" />
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/* Action Cards Section */}}
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center d-flex flex-column">
+              <div class="text-primary mb-3">
+                <i class="fa-solid fa-book-open fa-3x"></i>
+              </div>
+              <h5 class="card-title">{{ i18n "read_online_title" . }}</h5>
+              <p class="card-text flex-grow-1 text-muted">{{ i18n "read_online_description" . }}</p>
+              <div class="mt-auto">
+                {{- $latestVersion := partial "functions/get-latest-version" . }}
+                <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path $latestVersion) }}" class="btn btn-primary">{{ i18n "read_online_button" }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center d-flex flex-column">
+              <div class="text-primary mb-3">
+                <i class="fa-solid fa-language fa-3x"></i>
+              </div>
+              <h5 class="card-title">{{ i18n "translations_title" . }}</h5>
+              <p class="card-text flex-grow-1 text-muted">{{ i18n "translations_description" . }}</p>
+              <div class="mt-auto">
+                <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "translations") }}" class="btn btn-primary">{{ i18n "nav_translations" . }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center d-flex flex-column">
+              <div class="text-primary mb-3">
+                <i class="fa-solid fa-clock-rotate-left fa-3x"></i>
+              </div>
+              <h5 class="card-title">{{ i18n "history_title" . }}</h5>
+              <p class="card-text flex-grow-1 text-muted">{{ i18n "history_description" . }}</p>
+              <div class="mt-auto">
+                <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "history") }}" class="btn btn-primary">{{ i18n "nav_history" . | default "History" }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center d-flex flex-column">
+              <div class="text-primary mb-3">
+                <i class="fa-solid fa-comments fa-3x"></i>
+              </div>
+              <h5 class="card-title">{{ i18n "join_discussion_title" . }}</h5>
+              <p class="card-text flex-grow-1 text-muted">{{ i18n "join_discussion_description" . }}</p>
+              <div class="mt-auto">
+                {{ if $isComingSoon }}
+                  <span class="btn btn-outline-secondary disabled">{{ i18n "coming_soon" | default "Coming Soon" }}</span>
+                {{ else }}
+                  <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary" target="_blank">{{ i18n "join_discussion_button" }}</a>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/* About Section */}}
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+          {{- if .Params.brand.image }}
+            <img src="{{ .Params.brand.image }}" class="img-fluid rounded shadow" alt="{{ .Title }}" />
+          {{- end }}
+        </div>
+        <div class="col-12 col-lg-6">
+          <h2 class="h1 mb-4">{{ i18n "what_is_guide_title" . }}</h2>
+          <div class="lead mb-4">
+            {{- $guideWhatis := partial "functions/get-page-param-with-default.html" (dict "page" $guidePage "param" "guide_whatis" "context" .) }}
+            {{- if $guideWhatis }}
+              {{ $guideWhatis | markdownify }}
+            {{- else }}
+              {{ i18n "guide_content_not_found" | markdownify }}
+            {{- end }}
+          </div>
+
+          <h3 class="h2 mb-3">{{ i18n "open_source_title" }}</h3>
+          <p class="mb-4">
+            {{ i18n "open_source_description" . }}
+          </p>
+
+          <div class="d-grid gap-2 d-md-flex">
+            {{ if $isComingSoon }}
+              <button class="btn btn-outline-primary btn-lg disabled">{{ i18n "join_discussion_button" }}</button>
+            {{ else }}
+              <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary btn-lg" target="_blank">
+                <i class="fa-solid fa-comments me-2"></i>{{ i18n "join_discussion_button" }}
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{- end }}
+{{- define "template" }}
+  guide/list.html
+{{- end }}

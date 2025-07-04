@@ -2,8 +2,11 @@
 - id: and
   translation: "and"
 
+- id: breadcrumb_home
+  translation: "Home"
+
 - id: read_online_title
-  translation: "Read the {{ .Site.Title }} online"
+  translation: "Read Online"
 
 - id: read_online_description
   translation: "Access the complete guide digitally with interactive features and easy navigation."
@@ -11,29 +14,44 @@
 - id: read_online_button
   translation: "Read online"
 
-- id: what_is_guide_title
-  translation: "What is the {{ .Site.Title }}?"
+- id: translations_title
+  translation: "Translations"
+
+- id: translations_description
+  translation: "Access this guide in multiple languages and help with translations."
+
+- id: translations_button
+  translation: "View Translations"
+
+- id: history_title
+  translation: "History"
+
+- id: history_description
+  translation: "Explore the evolution and development history of this guide."
+
+- id: history_button
+  translation: "View History"
+
+- id: what_is_guides_title
+  translation: "What are the Kanban Guides?"
 
 - id: open_source_title
   translation: "Open Source & Community Driven"
 
 - id: open_source_description
-  translation: "This {{ .Site.Title }} is an open source project that thrives on community collaboration. Whether you want to suggest improvements, report issues, or contribute content, we welcome your participation. Together, we can make this resource even more valuable for the Kanban community worldwide."
+  translation: "These Kanban Guides are open source projects that thrive on community collaboration. Whether you want to suggest improvements, report issues, or contribute content, we welcome your participation. Together, we can make these resources even more valuable for the Kanban community worldwide."
 
 - id: join_discussion_button
   translation: "Join the Discussion"
 
 - id: join_discussion_title
-  translation: "Join the {{ .Site.Title }} Discussion"
+  translation: "Join the Kanban Guides Discussion"
 
 - id: join_discussion_description
-  translation: "Engage with the community, share your insights, and help shape the future of the {{ .Site.Title }}. Your contributions are invaluable in making this guide a comprehensive resource for Kanban practitioners."
+  translation: "Engage with the community, share your insights, and help shape the future of the Kanban Guides. Your contributions are invaluable in making these guides comprehensive resources for Kanban practitioners."
 
-- id: translation_title
-  translation: "Translations of the {{ .Site.Title }}"
-
-- id: translation_description
-  translation: "Get the complete {{ .Site.Title }} in other languages or create a community around a new language translation."
+- id: guides_intro_text
+  translation: "Welcome to Kanban Guides - your comprehensive resource for Kanban knowledge and practices. Explore our collection of guides below."
 
 - id: download_button
   translation: "Download PDF"
@@ -71,6 +89,12 @@
 
 - id: nav_faq
   translation: "FAQ"
+
+- id: nav_read_guide
+  translation: "Read Guide"
+
+- id: nav_history
+  translation: "History"
 
 # Guide page PDF download translations
 - id: guide_pdf_download_button
