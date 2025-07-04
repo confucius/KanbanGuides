@@ -457,3 +457,58 @@ li input[type="checkbox"] + * {
     display: none;
   }
 }
+
+/* Breadcrumb styling - Dark header theme */
+.breadcrumb-nav {
+  background-color: transparent;
+  padding: 0.5rem 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  border: none;
+  margin-top: 0.5rem;
+}
+
+.breadcrumb-nav .breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb-nav .breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+}
+
+.breadcrumb-nav .breadcrumb-item a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.breadcrumb-nav .breadcrumb-item a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.breadcrumb-nav .breadcrumb-item.active {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* Responsive breadcrumbs */
+@media (max-width: 576px) {
+  .breadcrumb-nav {
+    padding: 0.25rem 0;
+    margin-top: 0.25rem;
+  }
+
+  .breadcrumb-nav .breadcrumb {
+    font-size: 0.875rem;
+  }
+
+  /* Hide home icon on very small screens */
+  .breadcrumb-nav .fa-home {
+    display: none;
+  }
+}

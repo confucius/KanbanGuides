@@ -2,6 +2,9 @@
 - id: and
   translation: "and"
 
+- id: breadcrumb_home
+  translation: "Home"
+
 - id: read_online_title
   translation: "Read Online"
 

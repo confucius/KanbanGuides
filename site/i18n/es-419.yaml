@@ -2,6 +2,9 @@
 - id: and
   translation: "y"
 
+- id: breadcrumb_home
+  translation: "Inicio"
+
 - id: read_online_title
   translation: "Leer en Línea"
 

@@ -2,6 +2,9 @@
 - id: and
   translation: "je"
 
+- id: breadcrumb_home
+  translation: "juH"
+
 - id: read_online_title
   translation: "HurDaq laD"
 

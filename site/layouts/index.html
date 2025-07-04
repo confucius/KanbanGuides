@@ -17,7 +17,7 @@
           <div class="col-12 col-lg-6 col-xl-6 p-3">
             <div class="card card-dark h-100">
               <div class="card-header">
-                <h5 class="card-title text-center mb-0">{{ .Title }}</h5>
+                <h5 class="card-title text-center mb-0">{{ .Params.short_title | default .Title }}</h5>
                 <div class="m-1 p-2" style="background-color: {{ .Params.brand.bg_colour | default "#135289" }};"></div>
               </div>
               <div class="card-body">
