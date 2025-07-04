@@ -14,9 +14,24 @@
   },
   "routes": [
     {
+      "route": "/wp-content/uploads/2020/07/Kanban-Guide-2020-07.pdf",
+      "redirect": "/the-kanban-guide/2020.7/pdf/kanban-guide.v2020.7.en.pdf",
+      "statusCode": 302
+    },
+    {
+      "route": "/wp-content/uploads/2021/01/Kanban-Guide-2020-12.pdf",
+      "redirect": "/the-kanban-guide/2020.12/pdf/kanban-guide.v2020.12.en.pdf",
+      "statusCode": 302
+    },
+    {
+      "route": "/html-kanban-guide/",
+      "redirect": "/the-kanban-guide/2025.5/",
+      "statusCode": 302
+    },
+    {
       "route": "/english/",
       "redirect": "/the-kanban-guide/2025.5/",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "route": "/wp-content/uploads/2020/10/Definitions-for-Kanban-Guide-1-1.pdf",
