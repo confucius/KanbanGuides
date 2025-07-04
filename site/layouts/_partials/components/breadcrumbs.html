@@ -29,9 +29,8 @@
 
       {{/* Current page (no link) */}}
       <li class="breadcrumb-item active" aria-current="page">
-        {{- if eq .Section "latest" -}}
-          Latest
-        {{- else if (strings.Contains .RelPermalink "/latest/") -}}
+        {{- $latestVersion := partial "functions/get-latest-version" . }}
+        {{- if (strings.Contains .RelPermalink $latestVersion) -}}
           Latest
         {{- else -}}
           {{ .Params.short_title | default .Title }}

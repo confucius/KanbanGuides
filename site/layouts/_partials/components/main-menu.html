@@ -12,7 +12,8 @@
             <ul class="dropdown-menu dropdown-submenu">
               <li><a class="dropdown-item" href="{{ partial "functions/safe-page-link.html" .Path }}">{{ i18n "nav_overview" | default "Overview" }}</a></li>
               <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="{{ partial "functions/safe-page-link.html" (path.Join .Path "latest") }}">{{ i18n "nav_read_online" }}</a></li>
+              {{- $latestVersion := partial "functions/get-latest-version" . }}
+              <li><a class="dropdown-item" href="{{ partial "functions/safe-page-link.html" (path.Join .Path $latestVersion) }}">{{ i18n "nav_read_online" }}</a></li>
               <li><a class="dropdown-item" href="{{ partial "functions/safe-page-link.html"  (path.Join .Path "translations") }}">{{ i18n "translations_button" }}</a></li>
               <li><a class="dropdown-item" href="{{ partial "functions/safe-page-link.html" (path.Join .Path "history") }}">{{ i18n "nav_history" | default "History" }}</a></li>
             </ul>
