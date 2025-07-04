@@ -55,6 +55,8 @@ sansfont: "Arial"
 monofont: "Courier New"
 sitemap:
   priority: 0.6
+aliases:
+  - /kanban-guide/latest/
 ---
 
 ## Preface

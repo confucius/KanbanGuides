@@ -1,14 +1,46 @@
 {{- define "main" }}
-  {{ $targetPath := path.Join .Section "latest" }}
-  {{ $guidePage := site.GetPage $targetPath }}
+  {{/* Dynamically find the latest guide version in the current section */}}
+  {{- $guidePage := "" }}
+  {{- $latestVersion := "" }}
 
-  {{ if not $guidePage }}
-    {{ $defaultSite := index site.Sites 0 }}
-    {{ $guidePage = $defaultSite.GetPage $targetPath }}
-  {{ end }}
+  {{/* Get all pages in the current section */}}
+  {{- $sectionPages := where .Site.RegularPages "Section" .Section }}
+
+  {{/* Filter for guide pages and sort by date (newest first) */}}
+  {{- $guidePages := where $sectionPages "Type" "guide" }}
+  {{- if $guidePages }}
+    {{- $sortedPages := $guidePages.ByDate.Reverse }}
+    {{- $guidePage = index $sortedPages 0 }}
+  {{- end }}
+
+  {{/* Fallback: try to find by version number in URL path */}}
+  {{- if not $guidePage }}
+    {{- range $sectionPages }}
+      {{/* Extract version from URL path (e.g., /open-guide-for-kanban/2025.7/) */}}
+      {{- $pathParts := split .RelPermalink "/" }}
+      {{- range $pathParts }}
+        {{- if and (ne . "") (findRE `^\d{4}\.\d+` .) }}
+          {{- if or (not $latestVersion) (gt . $latestVersion) }}
+            {{- $latestVersion = . }}
+            {{- $guidePage = $ }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+
+  {{/* Final fallback: get the section page itself */}}
+  {{- if not $guidePage }}
+    {{- $guidePage = .Site.GetPage .Section }}
+  {{- end }}
 
   {{- if not $guidePage }}
-    {{- fmt.Errorf "Guide page not found" }}
+    {{- $defaultSite := index site.Sites 0 }}
+    {{- $guidePage = $defaultSite.GetPage .Section }}
+  {{- end }}
+
+  {{- if not $guidePage }}
+    {{- fmt.Errorf "No guide page found for section: %s" .Section }}
   {{- end }}
 
   {{- $now := now }}
