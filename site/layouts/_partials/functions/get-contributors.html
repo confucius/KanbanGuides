@@ -11,11 +11,22 @@
 
 {{- /* Try to get guide-specific contributors based on section */ -}}
 {{- $allContributors := index .Site.Data.contributions $section -}}
+{{- if not $allContributors -}}
+  {{- $allContributors = slice -}}
+{{- end -}}
 
 {{ fmt.Warnf "DEBUG get-contributors:  section=%s version found=%s allContributors found=%t, count=%d" $section $version (ne $allContributors nil) (len ($allContributors | default slice)) -}}
 
-{{ $filtered := where $allContributors "contributions" "intersect" (slice $version) }}
+{{ $filtered := $allContributors -}}
+{{- if and $allContributors $version -}}
+  {{ $filtered = where $allContributors "contributions" "intersect" (slice $version) }}
+{{- end -}}
+
+{{- /* Filter contributors by version if specified */ -}}
+{{- if not $filtered -}}
+  {{- $filtered = slice -}}
+{{- end -}}
 
 {{ fmt.Warnf "DEBUG get-contributors:  section=%s version found=%s allContributors found=%t, count=%d" $section $version (ne $filtered nil) (len ($filtered | default slice)) -}}
 
-{{- return $allContributors -}}
+{{- return $filtered -}}
