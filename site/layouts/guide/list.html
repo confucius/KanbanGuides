@@ -12,7 +12,7 @@
               <p class="card-text flex-grow-1">{{ i18n "read_online_description" . }}</p>
             </div>
             <div class="card-footer">
-              <a href="{{ partial "functions/safe-page-link.html" "/guide" }}" class="btn btn-primary">{{ i18n "read_online_button" }}</a>
+              <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "latest") }}" class="btn btn-primary">{{ i18n "read_online_button" }}</a>
             </div>
           </div>
         </div>
@@ -24,11 +24,23 @@
               <p class="card-text flex-grow-1">{{ i18n "translation_description" . }}</p>
             </div>
             <div class="card-footer">
-              <a href="{{ partial "functions/safe-page-link.html" "/translations" }}" class="btn btn-primary">{{ i18n "nav_translations" . }}</a>
+              <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "translations") }}" class="btn btn-primary">{{ i18n "nav_translations" . }}</a>
             </div>
           </div>
         </div>
         <div class="col-12 col-xl-4 p-3">
+          <div class="card card-dark h-100">
+            <div class="card-body text-center d-flex flex-column">
+              <i class="header-icon fa-solid fa-download"></i>
+              <h5 class="card-title">{{ i18n "history_title" . }}</h5>
+              <p class="card-text flex-grow-1">{{ i18n "history_description" . }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "history") }}" class="btn btn-primary">{{ i18n "nav_history" . | default "History" }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 p-3">
           <div class="card card-dark h-100">
             <div class="card-body text-center d-flex flex-column">
               <i class="header-icon fa-solid fa-comments"></i>

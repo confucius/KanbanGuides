@@ -1,10 +1,28 @@
 <a href="{{ (.Site.GetPage "/").Permalink }}" class="d-flex align-items-center text-white text-decoration-none" title="{{ .Site.Title }}">
-  <img src="/images/open-guide-to-kanban-logo-dark.png" alt="{{ .Site.Title }}" class="d-inline-block align-text-top me-2" style="max-height: 40px;">
+  <img src="/images/open-guide-to-kanban-logo-dark.png" alt="{{ .Site.Title }}" class="d-inline-block align-text-top me-2" style="max-height: 40px;" />
 </a>
 <ul class="nav nav-pills">
-  <li class="nav-item"><a href="{{ partial "functions/safe-page-link.html" "/guide" }}" class="nav-link text-white">{{ i18n "nav_read_online" }}</a></li>
-  <li class="nav-item"><a href="{{ partial "functions/safe-page-link.html" "/translations" }}" class="nav-link text-white">{{ i18n "nav_translations" }}</a></li>
-  <li class="nav-item"><a href="{{ partial "functions/safe-page-link.html" "/history" }}" class="nav-link text-white">{{ i18n "nav_history" | default "History" }}</a></li>
-  {{/*  <li class="nav-item"><a href="/faq" class="nav-link text-white">{{ i18n "nav_faq" }}</a></li>  */}}
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Guides </a>
+    <ul class="dropdown-menu">
+      {{- range .Site.Sections }}
+        {{- if eq .Type "guide" }}
+          <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="{{ partial "functions/safe-page-link.html" .Path }}" data-bs-toggle="dropdown">{{ .Params.short_title | default .Title }}</a>
+            <ul class="dropdown-menu dropdown-submenu">
+              <li><a class="dropdown-item" href="{{ partial "functions/safe-page-link.html" .Path }}">{{ i18n "nav_overview" | default "Overview" }}</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="{{ partial "functions/safe-page-link.html" (path.Join .Path "latest") }}">{{ i18n "nav_read_online" }}</a></li>
+              <li><a class="dropdown-item" href="{{ partial "functions/safe-page-link.html"  (path.Join .Path "translations") }}">{{ i18n "translations_button" }}</a></li>
+              <li><a class="dropdown-item" href="{{ partial "functions/safe-page-link.html" (path.Join .Path "history") }}">{{ i18n "nav_history" | default "History" }}</a></li>
+            </ul>
+          </li>
+        {{- end }}
+      {{- end }}
+    </ul>
+  </li>
+
+  <!-- Generic Dropdown Menu -->
+
   {{ partial "components/language-switcher.html" . }}
 </ul>
