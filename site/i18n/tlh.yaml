@@ -96,6 +96,12 @@
 - id: nav_faq
   translation: "DIch jup"
 
+- id: nav_read_guide
+  translation: "naDev DIch laD"
+
+- id: nav_history
+  translation: "nugh"
+
 # naDev DIch PDF DIch mugh
 - id: guide_pdf_download_button
   translation: "PDF DIch"

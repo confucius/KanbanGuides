@@ -90,6 +90,12 @@
 - id: nav_faq
   translation: "Preguntas Frecuentes"
 
+- id: nav_read_guide
+  translation: "Leer Guía"
+
+- id: nav_history
+  translation: "Historia"
+
 # Guide page PDF download translations
 - id: guide_pdf_download_button
   translation: "Descargar PDF"
