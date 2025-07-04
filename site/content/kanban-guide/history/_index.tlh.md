@@ -1,5 +1,6 @@
 ---
 title: "nugh maH"
+type: history
 ---
 
 **qanban ghojmeH ghantoH le' chu'**

@@ -26,7 +26,6 @@ keywords:
 author:
   - John Coleman
 date: 2025-07-02T09:00:00Z
-slug: open-guide-to-kanban
 type: guide
 lang: en
 mainfont: "Times New Roman"

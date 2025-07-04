@@ -1,5 +1,5 @@
 {{- define "main" }}
-  {{ $targetPath := "guide" }}
+  {{ $targetPath := path.Join .Section "latest" }}
   {{ $guidePage := site.GetPage $targetPath }}
 
   {{ if not $guidePage }}
@@ -68,5 +68,5 @@
   </script>
 {{- end }}
 {{- define "template" }}
-  download/list.html
+  guides/transaltions.html
 {{- end }}

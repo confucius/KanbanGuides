@@ -1,7 +1,8 @@
 ---
-title: Traducciones
+title: Translations
 layout: translations
-description: Originales y Traducciones de la Guía Abierta de Kanban
+type: guide
+description: Originals & Translations of the Kanban Guide
 aliases:
   - /downloads/
   - /download/

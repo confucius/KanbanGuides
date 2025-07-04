@@ -48,7 +48,6 @@ contributors:
     weight: 100
     founder: true
     role: contributor
-slug: kanban-guide-2025
 type: guide
 lang: en
 mainfont: "Times New Roman"

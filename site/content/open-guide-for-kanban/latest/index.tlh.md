@@ -26,7 +26,6 @@ keywords:
 author:
   - John Coleman
 date: 2025-06-11T09:00:00Z
-slug: Kanban-nugh-DIch
 type: guide
 lang: tlh
 mainfont: "Times New Roman"

@@ -68,7 +68,6 @@ contributors:
     weight: 100
     founder: true
     role: contributor
-slug: kanban-guide-2020-07
 type: guide
 lang: en
 mainfont: "Times New Roman"
