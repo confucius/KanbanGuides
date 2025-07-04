@@ -1,7 +1,8 @@
 {{- define "main" }}
   {{- $guidePage := .Site.GetPage "/guide" }}
   {{- $isComingSoon := and $guidePage $guidePage.Date (lt now $guidePage.Date) (eq hugo.Environment "production") }}
-  <section class="section container-fluid main-header">
+  {{- $bgColor := .Params.brand.bg_colour | default "#135289" }}
+  <section class="section container-fluid main-header" style="background-color: {{ $bgColor }} !important;">
     <div class="container my-5">
       <div class="row">
         <div class="col-12 col-xl-4 p-3">

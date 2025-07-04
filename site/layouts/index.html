@@ -1,5 +1,5 @@
 {{- define "main" }}
-  <section class="section container-fluid main-header">
+  <section class="section container-fluid main-header" style="background-color:#135289;">
     <div class="container my-5">
       <div class="row justify-content-center">
         <div class="col-12 text-center mb-4">
@@ -8,15 +8,21 @@
         </div>
       </div>
       <div class="row">
-        {{- range .Site.Sections }}
+        {{ $sections := .Site.Sections }}
+        {{ range .Site.Home.Translations }}
+          {{ $sections = $sections | lang.Merge .Site.Sections }}
+        {{ end }}
+        {{/* {{ $sections = lang.Merge $defaultSite.sections $sections }} */}}
+        {{- range $sections }}
           {{- if eq .Type "guide" }}
-            <div class="col-12 col-lg-6 col-xl-4 p-3">
+            <div class="col-12 col-lg-6 col-xl-6 p-3">
               <div class="card card-dark h-100">
                 <div class="card-header">
                   <h5 class="card-title text-center mb-0">{{ .Title }}</h5>
+                  <div class="m-1 p-2" style="background-color: {{ .Params.brand.bg_colour | default "#135289" }};"></div>
                 </div>
                 <div class="card-body">
-                  <p>{{ .Params.guide_whatis }}</p>
+                  <p>{{ .Params.guide_overview | markdownify }}</p>
                   <div class="row g-2">
                     <div class="col-12">
                       <div class="d-grid">
@@ -82,7 +88,7 @@
               {{- end }}
             {{- end }}
           </div>
-          <a href="{{ partial "functions/safe-page-link.html" "/" }}"><img src="/images/open-guide-to-kanban-logo.png" class="img-fluid mb-3" alt="{{ .Site.Title }} Creators" /></a>
+          <img src="/images/kanban-guides.png" class="img-fluid mb-3" alt="{{ .Site.Title }} Creators" />
         </div>
         <div class="col-12 col-lg-8 col-xl-6">
           <div>

@@ -1,5 +1,17 @@
 {{- define "main" }}
-  {{- $guidePage := .Site.GetPage (printf "/%s/guide" .Site.Language.Lang) | default (.Site.GetPage "/guide") }}
+  {{ $targetPath := path.Join .Section "latest" }}
+  {{ $guidePage := site.GetPage $targetPath }}
+
+  {{ if not $guidePage }}
+    {{ $defaultSite := index site.Sites 0 }}
+    {{ $guidePage = $defaultSite.GetPage $targetPath }}
+  {{ end }}
+
+  {{- if not $guidePage }}
+    {{- fmt.Errorf "Guide page not found" }}
+  {{- end }}
+
+
   <section class="container my-5">
     <div class="row mb-4">
       <div class="col-12">

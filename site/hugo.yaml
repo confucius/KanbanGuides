@@ -44,6 +44,8 @@ params:
   githubUrl: https://github.com/KanbanGuides/OpenGuideToKanban
   previewSiteUrl: https://red-pond-0d8225910-preview.centralus.2.azurestaticapps.net/
   productionSiteUrl: https://kanbanguides.org/
+  brand:
+    bg_colour: "#135289"
 sitemap:
   filename: sitemap.xml
   changefreq: daily
