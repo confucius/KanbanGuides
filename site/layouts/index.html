@@ -20,30 +20,18 @@
                 <h5 class="card-title text-center mb-0">{{ .Params.short_title | default .Title }}</h5>
                 <div class="m-1 p-2" style="background-color: {{ .Params.brand.bg_colour | default "#135289" }};"></div>
               </div>
-              <div class="card-body">
-                <p>{{ .Params.guide_overview | markdownify }}</p>
-                <div class="row g-2">
-                  <div class="col-12">
-                    <div class="d-grid">
-                      <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "latest") }}" class="btn btn-primary btn-sm">
-                        <i class="fa-solid fa-newspaper me-2"></i>{{ i18n "read_online_button" }}
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="d-grid">
-                      <a href="{{ partial "functions/safe-page-link.html"  (path.Join .Path "translations") }}" class="btn btn-outline-light btn-sm">
-                        <i class="fa-solid fa-globe me-2"></i>{{ i18n "translations_button" }}
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="d-grid">
-                      <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "history") }}" class="btn btn-outline-light btn-sm">
-                        <i class="fa-solid fa-clock-rotate-left me-2"></i>{{ i18n "history_button" }}
-                      </a>
-                    </div>
-                  </div>
+              <div class="card-body d-flex flex-column">
+                <p class="flex-grow-1">{{ .Params.guide_overview | markdownify }}</p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "latest") }}" class="btn btn-primary btn-sm text-nowrap">
+                    <i class="fa-solid fa-newspaper me-2"></i>{{ i18n "read_online_button" }}
+                  </a>
+                  <a href="{{ partial "functions/safe-page-link.html"  (path.Join .Path "translations") }}" class="btn btn-outline-light btn-sm text-nowrap">
+                    <i class="fa-solid fa-globe me-2"></i>{{ i18n "translations_button" }}
+                  </a>
+                  <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "history") }}" class="btn btn-outline-light btn-sm text-nowrap">
+                    <i class="fa-solid fa-clock-rotate-left me-2"></i>{{ i18n "history_button" }}
+                  </a>
                 </div>
               </div>
             </div>
