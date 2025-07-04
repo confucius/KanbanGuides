@@ -1,7 +1,7 @@
 {{/* Main JSON-LD wrapper that determines which schema type to render */}}
 {{- $pageType := "" -}}
 {{- $isHomePage := eq .RelPermalink "/" -}}
-{{- $isGuidePage := hasPrefix .RelPermalink "/open-guide-to-kanban/" -}}
+{{- $isGuidePage := and (eq .Kind "page") (eq .Type "guide") (not .Layout) -}}
 
 {{- if $isHomePage -}}
   {{/* Home page gets WebSite schema */}}
