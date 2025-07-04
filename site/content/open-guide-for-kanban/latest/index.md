@@ -27,6 +27,7 @@ author:
   - John Coleman
 date: 2025-07-02T09:00:00Z
 type: guide
+forked_from: kanban-guide/latest
 lang: en
 mainfont: "Times New Roman"
 sansfont: "Arial"

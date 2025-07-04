@@ -1,46 +1,63 @@
 {{- define "main" }}
-  {{- $guidePage := .Site.GetPage "/guide" }}
-  {{- $isComingSoon := and $guidePage $guidePage.Date (lt now $guidePage.Date) (eq hugo.Environment "production") }}
   <section class="section container-fluid main-header">
     <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center mb-4">
+          <h1>{{ .Site.Title }}</h1>
+          <p class="lead">{{ i18n "guides_intro_text" . }}</p>
+        </div>
+      </div>
       <div class="row">
-        <div class="col-12 col-xl-4 p-3">
+        {{- range .Site.Sections }}
+          {{- if eq .Type "guide" }}
+            <div class="col-12 col-lg-6 col-xl-4 p-3">
+              <div class="card card-dark h-100">
+                <div class="card-header">
+                  <h5 class="card-title text-center mb-0">{{ .Title }}</h5>
+                </div>
+                <div class="card-body">
+                  <p>{{ .Params.guide_whatis }}</p>
+                  <div class="row g-2">
+                    <div class="col-12">
+                      <div class="d-grid">
+                        <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "latest") }}" class="btn btn-primary btn-sm">
+                          <i class="fa-solid fa-newspaper me-2"></i>{{ i18n "read_online_button" }}
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-grid">
+                        <a href="{{ partial "functions/safe-page-link.html"  (path.Join .Path "translations") }}" class="btn btn-outline-light btn-sm">
+                          <i class="fa-solid fa-globe me-2"></i>{{ i18n "translations_button" }}
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-grid">
+                        <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "history") }}" class="btn btn-outline-light btn-sm">
+                          <i class="fa-solid fa-clock-rotate-left me-2"></i>{{ i18n "history_button" }}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{- end }}
+        {{- end }}
+        <!-- Discussion Card -->
+        <div class="col-12 p-3">
           <div class="card card-dark h-100">
-            <div class="card-body text-center d-flex flex-column">
-              <i class="header-icon fa-solid fa-newspaper"></i>
-              <h5 class="card-title">{{ i18n "read_online_title" . }}</h5>
-              <p class="card-text flex-grow-1">{{ i18n "read_online_description" . }}</p>
+            <div class="card-header">
+              <h5 class="card-title text-center mb-0">{{ i18n "join_discussion_title" . }}</h5>
             </div>
-            <div class="card-footer">
-              <a href="{{ partial "functions/safe-page-link.html" "/guide" }}" class="btn btn-primary">{{ i18n "read_online_button" }}</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-xl-4 p-3">
-          <div class="card card-dark h-100">
-            <div class="card-body text-center d-flex flex-column">
-              <i class="header-icon fa-solid fa-download"></i>
-              <h5 class="card-title">{{ i18n "translation_title" . }}</h5>
-              <p class="card-text flex-grow-1">{{ i18n "translation_description" . }}</p>
-            </div>
-            <div class="card-footer">
-              <a href="{{ partial "functions/safe-page-link.html" "/translations" }}" class="btn btn-primary">{{ i18n "nav_translations" . }}</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-xl-4 p-3">
-          <div class="card card-dark h-100">
-            <div class="card-body text-center d-flex flex-column">
-              <i class="header-icon fa-solid fa-comments"></i>
-              <h5 class="card-title">{{ i18n "join_discussion_title" . }}</h5>
+            <div class="card-body d-flex flex-column">
               <p class="card-text flex-grow-1">{{ i18n "join_discussion_description" . }}</p>
-            </div>
-            <div class="card-footer">
-              {{ if $isComingSoon }}
-                <a href="#" class="btn btn-primary disabled">coming soon</a>
-              {{ else }}
-                <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary" target="_blank">{{ i18n "join_discussion_button" }}</a>
-              {{ end }}
+              <div class="d-grid mt-auto">
+                <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary" target="_blank">
+                  <i class="fa-solid fa-comments me-2"></i>{{ i18n "join_discussion_button" }}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -65,20 +82,14 @@
               {{- end }}
             {{- end }}
           </div>
-          <a href="{{ partial "functions/safe-page-link.html" "/guide" }}"><img src="/images/open-guide-to-kanban-logo.png" class="img-fluid mb-3" alt="{{ .Site.Title }} Creators" /></a>
+          <a href="{{ partial "functions/safe-page-link.html" "/" }}"><img src="/images/open-guide-to-kanban-logo.png" class="img-fluid mb-3" alt="{{ .Site.Title }} Creators" /></a>
         </div>
         <div class="col-12 col-lg-8 col-xl-6">
           <div>
             <div class="col-12">
-              <h2 class="text-center">{{ i18n "what_is_guide_title" . }}</h2>
+              <h2 class="text-center">{{ i18n "what_is_guides_title" . }}</h2>
               <div class="lead text-center">
-                {{- $guidePage := .Site.GetPage "/guide" }}
-                {{- $guideWhatis := partial "functions/get-page-param-with-default.html" (dict "page" $guidePage "param" "guide_whatis" "context" .) }}
-                {{- if $guideWhatis }}
-                  {{ $guideWhatis | markdownify }}
-                {{- else }}
-                  {{ i18n "guide_content_not_found" | markdownify }}
-                {{- end }}
+                {{ .Site.Params.description | markdownify }}
               </div>
             </div>
             <div class="col-12 mt-4">
@@ -86,11 +97,7 @@
               <p class="lead text-center">
                 {{ i18n "open_source_description" . }}
               </p>
-              {{ if $isComingSoon }}
-                <a href="#" class="btn btn-primary disabled">{{ i18n "join_discussion_button" }}</a>
-              {{ else }}
-                <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary d-block mx-auto" target="_blank">{{ i18n "join_discussion_button" }}</a>
-              {{ end }}
+              <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary d-block mx-auto" target="_blank">{{ i18n "join_discussion_button" }}</a>
             </div>
           </div>
         </div>

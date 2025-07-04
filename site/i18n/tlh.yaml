@@ -3,7 +3,7 @@
   translation: "je"
 
 - id: read_online_title
-  translation: "HurDaq {{ .Site.Title }} laD"
+  translation: "HurDaq laD"
 
 - id: read_online_description
   translation: "naDev nugh DIch HurDaq DIlo'. nugh DIch 'e' naDev."
@@ -11,29 +11,44 @@
 - id: read_online_button
   translation: "HurDaq laD"
 
-- id: what_is_guide_title
-  translation: "nuq 'oH {{ .Site.Title }}'e'?"
+- id: translations_title
+  translation: "mugh"
+
+- id: translations_description
+  translation: "DIch ghuHmeH Hol law' DIch 'ej mugh DIch naDev."
+
+- id: translations_button
+  translation: "mugh cha'"
+
+- id: history_title
+  translation: "DIch maH"
+
+- id: history_description
+  translation: "ghuHmeH DIch choq 'ej chenmoH maH DIch cha'."
+
+- id: history_button
+  translation: "maH cha'"
+
+- id: what_is_guides_title
+  translation: "nuq 'oH Kanban ghuHmoHwI'pu''e'?"
 
 - id: open_source_title
   translation: "nugh DIch 'e' jup chenmoH"
 
 - id: open_source_description
-  translation: "{{ .Site.Title }} 'oH nugh DIch nugh'e' 'e' jup chenmoH. DIch choH 'e' DIlo', Dub DIch 'e' qorDu', pagh DIch chup 'e' DIlo', DIch DIlo' maH. naDev DIch DIch DIch chenmoH 'e' DIch."
+  translation: "Kanban ghuHmoHwI'pu' 'oH nugh DIch nugh'e' 'e' jup chenmoH. DIch choH 'e' DIlo', Dub DIch 'e' qorDu', pagh DIch chup 'e' DIlo', DIch DIlo' maH. naDev DIch DIch DIch chenmoH 'e' DIch."
 
 - id: join_discussion_button
   translation: "jaq DIch"
 
 - id: join_discussion_title
-  translation: "{{ .Site.Title }} jaq DIch"
+  translation: "Kanban ghuHmoHwI'pu' jaq DIch"
 
 - id: join_discussion_description
-  translation: "jup DIch, DIch naDev nugh, 'ej {{ .Site.Title }} naDev DIch choH. DIch nugh DIch chenmoHmeH naDev DIch DIch."
+  translation: "jup DIch, DIch naDev nugh, 'ej Kanban ghuHmoHwI'pu' naDev DIch choH. DIch nugh DIch chenmoHmeH naDev DIch DIch."
 
-- id: translation_title
-  translation: "{{ .Site.Title }} mugh"
-
-- id: translation_description
-  translation: "{{ .Site.Title }} DIch naQ Hol pagh mugh DIch jup chenmoH 'e' DIch."
+- id: guides_intro_text
+  translation: "Kanban ghuHmoHwI'pu' DIch - Kanban nugh DIch naQ naDev. naDev ghuHmeH DIch nugh naDev."
 
 - id: download_title
   translation: "{{ .Site.Title }} DIch"

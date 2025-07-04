@@ -3,7 +3,7 @@
   translation: "y"
 
 - id: read_online_title
-  translation: "Lee la {{ .Site.Title }} en línea"
+  translation: "Leer en Línea"
 
 - id: read_online_description
   translation: "Accede a la guía completa digitalmente con funciones interactivas y navegación fácil."
@@ -11,29 +11,44 @@
 - id: read_online_button
   translation: "Leer en línea"
 
-- id: what_is_guide_title
-  translation: "¿Qué es la {{ .Site.Title }}?"
+- id: translations_title
+  translation: "Traducciones"
+
+- id: translations_description
+  translation: "Accede a esta guía en múltiples idiomas y ayuda con las traducciones."
+
+- id: translations_button
+  translation: "Ver Traducciones"
+
+- id: history_title
+  translation: "Historia"
+
+- id: history_description
+  translation: "Explora la evolución y historia de desarrollo de esta guía."
+
+- id: history_button
+  translation: "Ver Historia"
+
+- id: what_is_guides_title
+  translation: "¿Qué son las Guías de Kanban?"
 
 - id: open_source_title
   translation: "Código Abierto e Impulsado por la Comunidad"
 
 - id: open_source_description
-  translation: "Esta {{ .Site.Title }} es un proyecto de código abierto que prospera con la colaboración comunitaria. Ya sea que quieras sugerir mejoras, reportar problemas o contribuir contenido, damos la bienvenida a tu participación. Juntos, podemos hacer este recurso aún más valioso para la comunidad Kanban mundial."
+  translation: "Estas Guías de Kanban son proyectos de código abierto que prosperan con la colaboración comunitaria. Ya sea que quieras sugerir mejoras, reportar problemas o contribuir contenido, damos la bienvenida a tu participación. Juntos, podemos hacer estos recursos aún más valiosos para la comunidad Kanban mundial."
 
 - id: join_discussion_button
   translation: "Únete a la Discusión"
 
 - id: join_discussion_title
-  translation: "Únete a la Discusión de la {{ .Site.Title }}"
+  translation: "Únete a la Discusión de las Guías de Kanban"
 
 - id: join_discussion_description
-  translation: "Participa con la comunidad, comparte tus conocimientos y ayuda a dar forma al futuro de la {{ .Site.Title }}. Tus contribuciones son invaluables para hacer de esta guía un recurso integral para los practicantes de Kanban."
+  translation: "Participa con la comunidad, comparte tus conocimientos y ayuda a dar forma al futuro de las Guías de Kanban. Tus contribuciones son invaluables para hacer de estas guías recursos integrales para los practicantes de Kanban."
 
-- id: translation_title
-  translation: "Traducciones de la {{ .Site.Title }}"
-
-- id: translation_description
-  translation: "Obtén la {{ .Site.Title }} completa en otros idiomas o crea una comunidad alrededor de una nueva traducción."
+- id: guides_intro_text
+  translation: "Bienvenido a las Guías de Kanban - tu recurso integral para el conocimiento y prácticas de Kanban. Explora nuestra colección de guías a continuación."
 
 - id: download_button
   translation: "Descargar PDF"
