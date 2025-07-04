@@ -2,7 +2,6 @@
 title: Kanban Guide (July 2020)
 description: This document aims to be a unifying reference for the community by offering the minimal guidance for Kanban. Depending on the context, various approaches can complement Kanban, allowing it to accommodate the full spectrum of value delivery and organizational challenges.
 date: 2020-07-01T09:00:00Z
-version: 2020.7
 keywords:
   - Kanban
 author:
