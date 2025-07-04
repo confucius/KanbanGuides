@@ -26,7 +26,6 @@ keywords:
 author:
   - John Coleman
 date: 2025-07-02T09:00:00Z
-slug: guia-abierta-de-kanban
 type: guide
 lang: es-419
 mainfont: "Times New Roman"

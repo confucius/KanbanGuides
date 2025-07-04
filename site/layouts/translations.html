@@ -1,7 +1,9 @@
 {{- define "main" }}
-  {{/* Dynamically find the latest guide version in the current section */}}
+  {{/* Get the latest version using the function */}}
+  {{- $latestVersion := partial "functions/get-latest-version" . }}
+
+  {{/* Dynamically find the latest guide page in the current section */}}
   {{- $guidePage := "" }}
-  {{- $latestVersion := "" }}
 
   {{/* Get all pages in the current section */}}
   {{- $sectionPages := where .Site.RegularPages "Section" .Section }}
@@ -13,18 +15,18 @@
     {{- $guidePage = index $sortedPages 0 }}
   {{- end }}
 
-  {{/* Fallback: try to find by version number in URL path */}}
-  {{- if not $guidePage }}
+  {{/* Fallback: try to find the page with the latest version */}}
+  {{- if and (not $guidePage) $latestVersion }}
     {{- range $sectionPages }}
-      {{/* Extract version from URL path (e.g., /open-guide-for-kanban/2025.7/) */}}
       {{- $pathParts := split .RelPermalink "/" }}
       {{- range $pathParts }}
-        {{- if and (ne . "") (findRE `^\d{4}\.\d+` .) }}
-          {{- if or (not $latestVersion) (gt . $latestVersion) }}
-            {{- $latestVersion = . }}
-            {{- $guidePage = $ }}
-          {{- end }}
+        {{- if eq . $latestVersion }}
+          {{- $guidePage = $ }}
+          {{- break }}
         {{- end }}
+      {{- end }}
+      {{- if $guidePage }}
+        {{- break }}
       {{- end }}
     {{- end }}
   {{- end }}
@@ -64,7 +66,7 @@
         <p class="mb-5">{{ i18n "download_translation_error" $guidePage }} <a target="_blank" href="{{ .Site.Params.githubUrl }}">{{ .Site.Params.githubUrl }}</a></p>
 
         <!-- Official Version -->
-        {{ partial "components/translations/official-version.html" . }}
+        {{ partial "components/translations/official-version.html" $guidePage }}
 
         {{ partial "components/translations/community-translations.html" . }}
 

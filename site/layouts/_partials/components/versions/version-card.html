@@ -87,9 +87,8 @@ Parameters: - page: The Hugo page object to render - itemType: Type of item - "l
 
         <div class="d-flex flex-wrap gap-2 mb-3">
           {{/* Display contributors */}}
-          {{ $contributors := .Params.contributors }}
-          {{ if not $contributors }}
-            {{- $contributors = .Site.Data.contributions -}}
+          {{ $contributors := partial "functions/get-contributors.html" . }}
+          {{ if not .Params.contributors }}
             {{- $contributors = where $contributors "founder" true -}}
             {{- $contributors = where $contributors "role" "in" (slice "contributor" "creator") -}}
           {{ end }}

@@ -1,7 +1,4 @@
-{{ $contributors := .Params.contributors }}
-{{ if not $contributors }}
-  {{- $contributors = .Site.Data.contributions -}}
-{{ end }}
+{{ $contributors := partial "functions/get-contributors.html" . }}
 {{- $contributors = where $contributors "founder" true -}}
 {{- $contributors = where $contributors "role" "in" (slice "contributor" "creator") -}}
 {{ if $contributors }}

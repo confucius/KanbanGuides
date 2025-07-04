@@ -1,0 +1,175 @@
+# Contributors to the Kanban Guide
+# This file contains information about contributors to the original Kanban Guide
+
+# Add contributors specific to the Kanban Guide here
+# Example structure:
+# - name: Contributor Name
+#   githubUsername: username
+#   url: https://www.linkedin.com/in/profile/
+#   contributions:
+#     - 2020.07
+#     - 2020.12
+#     - 2025.5
+#   role: contributor
+#   weight: 100
+# Contributors to the Kanban Guide
+# This file contains information about contributors to the original Kanban Guide
+
+- name: John Coleman
+  githubUsername: ViralGoodAgile
+  url: https://www.linkedin.com/in/johnanthonycoleman/
+  role: creator
+  founder: true
+  contributions:
+    - 2020.7
+    - 2020.12
+    - 2025.5
+  weight: 1
+
+- name: Daniel Vacanti
+  url: https://www.linkedin.com/in/danielvacanti/
+  role: creator
+  founder: true
+  contributions:
+    - 2020.7
+    - 2020.12
+    - 2025.5
+  weight: 2
+
+- name: Julia Wester
+  contributions:
+    - 2020.7
+    - 2020.12
+    - 2025.5
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Colleen Johnson
+  contributions:
+    - 2020.7
+    - 2020.12
+    - 2025.5
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Prateek Singh
+  contributions:
+    - 2020.12
+    - 2025.5
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Christian Neverdal
+  contributions:
+    - 2020.12
+    - 2025.5
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Magdalena Firlit
+  contributions:
+    - 2020.12
+    - 2025.5
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Tom Gilb
+  contributions:
+    - 2020.12
+    - 2025.5
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Steve Tendon
+  contributions:
+    - 2020.12
+    - 2025.5
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Yuval Yeret
+  contributions:
+    - 2020.7
+    - 2020.12
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Steve Porter
+  contributions:
+    - 2020.7
+    - 2020.12
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Emily Coleman
+  contributions:
+    - 2020.7
+    - 2020.12
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Ryan Ripley
+  contributions:
+    - 2020.7
+    - 2020.12
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Todd Miller
+  contributions:
+    - 2020.7
+    - 2020.12
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Jose Casal
+  contributions:
+    - 2020.7
+    - 2020.12
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Jean-Paul Bayley
+  contributions:
+    - 2020.7
+    - 2020.12
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Dave West
+  contributions:
+    - 2020.7
+    - 2020.12
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Eric Naiburg
+  contributions:
+    - 2020.7
+    - 2020.12
+  weight: 100
+  founder: true
+  role: contributor
+
+- name: Deborah Zanke
+  contributions:
+    - 2020.7
+    - 2020.12
+  weight: 100
+  founder: true
+  role: contributor

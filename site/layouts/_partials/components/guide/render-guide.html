@@ -151,7 +151,15 @@
             <div class="content-version mt-2">
               <span class="text-muted">{{ i18n "guide_version_label" }} </span>
               <span class="version-number">
-                v{{ path.Base (path.Dir .Path) }}
+                {{- $pathParts := split .Path "/" -}}
+                {{- $version := "" -}}
+                {{- range $pathParts -}}
+                  {{- if and (ne . "") (findRE `^\d{4}\.\d+$` .) -}}
+                    {{- $version = . -}}
+                    {{- break -}}
+                  {{- end -}}
+                {{- end -}}
+                v{{ $version }}
               </span>
             </div>
           </header>

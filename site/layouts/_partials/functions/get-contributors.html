@@ -1,0 +1,35 @@
+{{- $section := .Section -}}
+
+{{- /* Extract version from URL path structure */ -}}
+{{- $version := "" -}}
+{{- $pathParts := split (strings.TrimSuffix "/" .RelPermalink) "/" -}}
+{{- $pathPartsLen := len $pathParts -}}
+
+{{- /* Look for version pattern in path parts */ -}}
+{{- range $index, $part := $pathParts -}}
+  {{- if and (ne $part "") (findRE `^\d{4}\.\d+$` $part) -}}
+    {{- $version = $part -}}
+    {{- break -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Try to get guide-specific contributors based on section */ -}}
+{{- $allContributors := index .Site.Data.contributions $section -}}
+{{- $contributors := slice -}}
+
+{{- if and $allContributors $version -}}
+  {{- /* Filter contributors for this specific version */ -}}
+  {{- range $allContributors -}}
+    {{- if and .contributions (in .contributions $version) -}}
+      {{- $contributors = $contributors | append . -}}
+    {{- end -}}
+  {{- end -}}
+{{- else if $allContributors -}}
+  {{- /* No version found, return all contributors for the section */ -}}
+  {{- $contributors = $allContributors -}}
+{{- else -}}
+  {{- /* Fallback to global contributions if no guide-specific found */ -}}
+  {{- $contributors = .Site.Data.contributions -}}
+{{- end -}}
+
+{{- return $contributors -}}

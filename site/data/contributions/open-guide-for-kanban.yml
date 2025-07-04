@@ -6,8 +6,7 @@
   githubUsername: ViralGoodAgile
   url: https://www.linkedin.com/in/johnanthonycoleman/
   contributions:
-    - creator
-    - author
+    - 2025.7
   role: creator
   founder: true
   weight: 1
@@ -17,9 +16,7 @@
   githubUsername: mrhinsh
   url: https://nkdagility.com/company/people/martin-hinshelwood/
   contributions:
-    - technical
-    - review
-    - contributor
+    - 2025.7
   role: contributor
   weight: 100
   founder: true
@@ -28,8 +25,7 @@
   url: https://www.linkedin.com/in/andycarmichael/
   githubUsername: andycarmichaeluk
   contributions:
-    - review
-    - contributor
+    - 2025.7
   role: contributor
   weight: 100
   founder: true
@@ -37,9 +33,7 @@
 - name: Jim Benson
   url: https://www.linkedin.com/in/jimbenson/
   contributions:
-    - review
-    - advisor
-    - contributor
+    - 2025.7
   role: contributor
   weight: 100
   founder: true
@@ -48,8 +42,7 @@
   url: https://magdalenafirlit.com/
   githubUsername: Magdalena-Firlit
   contributions:
-    - review
-    - contributor
+    - 2025.7
   role: contributor
   weight: 2
   founder: true
@@ -58,8 +51,7 @@
   url: https://www.linkedin.com/in/Michaelforni/
   githubUsername: Michaelforni
   contributions:
-    - review
-    - contributor
+    - 2025.7
   role: contributor
   weight: 100
   founder: true
@@ -67,8 +59,7 @@
 - name: Christian Neverdal
   githubUsername: flyrev
   contributions:
-    - review
-    - contributor
+    - 2025.7
   role: contributor
   url: https://www.linkedin.com/in/christian-neverdal/
   weight: 100
@@ -76,8 +67,7 @@
 
 - name: Nader Talai
   contributions:
-    - review
-    - contributor
+    - 2025.7
   role: contributor
   githubUsername: nadertalai
   url: https://www.linkedin.com/in/nadertalai/
@@ -86,8 +76,7 @@
 
 - name: Steve Tendon
   contributions:
-    - review
-    - contributor
+    - 2025.7
   role: contributor
   weight: 100
   founder: true
@@ -96,8 +85,7 @@
   url: https://www.linkedin.com/in/nigelthurlow/
   githubUsername: nigelthurlow
   contributions:
-    - review
-    - contributor
+    - 2025.7
   role: contributor
   weight: 3
   founder: true
@@ -106,8 +94,7 @@
   url: https://www.linkedin.com/in/jcasal/
   githubUsername: darkewok
   contributions:
-    - review
-    - contributor
+    - 2025.7
   role: contributor
   weight: 4
   founder: true
@@ -116,6 +103,6 @@
   url: https://www.linkedin.com/in/rikardskelander/
   githubUsername: skelander
   contributions:
-    - testing
+    - 2025.7
   role: involved
   founder: true

@@ -1,6 +1,5 @@
-{{- $englishSite := index (where .Site.Sites "Language.Lang" "en") 0 }}
-{{- $guidePage := $englishSite.GetPage "/guide" }}
-{{- $foundingContributors := .Site.Data.contributions -}}
+{{- $guidePage := . }}
+{{- $foundingContributors := partial "functions/get-contributors.html" . -}}
 {{- $foundingContributors = where $foundingContributors "founder" true -}}
 {{- $foundingContributors = where $foundingContributors "role" "in" (slice "contributor" "creator") -}}
 
