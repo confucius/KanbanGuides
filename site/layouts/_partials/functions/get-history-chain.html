@@ -1,0 +1,57 @@
+{{/* History Chain Function
+
+  This partial helps build a complete history chain for guides, including fork relationships.
+
+  Usage: {{ partial "functions/get-history-chain.html" .
+}}
+
+Returns: A structured object with the complete evolution chain */}}
+{{- $currentPage := . }}
+{{- $result := dict "current" $currentPage "history" slice "forkSource" nil "forkHistory" slice }}
+
+{{- /* Get current section (kanban-guide or open-guide-for-kanban) */ -}}
+{{- $currentSection := "" }}
+{{- if strings.Contains $currentPage.RelPermalink "kanban-guide" }}
+  {{- $currentSection = "kanban-guide" }}
+{{- else if strings.Contains $currentPage.RelPermalink "open-guide-for-kanban" }}
+  {{- $currentSection = "open-guide-for-kanban" }}
+{{- end }}
+
+{{- if $currentSection }}
+  {{- /* Get history page for current section */ -}}
+  {{- $historyPage := .Site.GetPage (printf "/%s/history" $currentSection) }}
+  {{- if $historyPage }}
+    {{- $result = merge $result (dict "history" $historyPage.Pages.ByDate) }}
+  {{- end }}
+
+  {{- /* Get current latest page */ -}}
+  {{- $latestPage := .Site.GetPage (printf "/%s/latest" $currentSection) }}
+  {{- if $latestPage }}
+    {{- $result = merge $result (dict "current" $latestPage) }}
+
+    {{- /* Check if this guide is forked from another */ -}}
+    {{- with $latestPage.Params.forked_from }}
+      {{- $forkSourcePage := $.Site.GetPage . }}
+      {{- if $forkSourcePage }}
+        {{- $result = merge $result (dict "forkSource" $forkSourcePage) }}
+
+        {{- /* Get history of the fork source */ -}}
+        {{- $forkSourceSection := "" }}
+        {{- if strings.Contains . "kanban-guide" }}
+          {{- $forkSourceSection = "kanban-guide" }}
+        {{- else if strings.Contains . "open-guide-for-kanban" }}
+          {{- $forkSourceSection = "open-guide-for-kanban" }}
+        {{- end }}
+
+        {{- if $forkSourceSection }}
+          {{- $forkHistoryPage := $.Site.GetPage (printf "/%s/history" $forkSourceSection) }}
+          {{- if $forkHistoryPage }}
+            {{- $result = merge $result (dict "forkHistory" $forkHistoryPage.Pages.ByDate) }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- return $result }}

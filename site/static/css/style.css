@@ -301,6 +301,69 @@ li input[type="checkbox"] + * {
   box-shadow: 0 2px 8px rgba(29, 127, 213, 0.3);
 }
 
+/* History Timeline Styles */
+.timeline-container {
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-connector {
+  opacity: 0.6;
+  margin: 0.5rem 0;
+}
+
+.timeline-connector i {
+  font-size: 0.9rem;
+}
+
+/* Fork visualization styles */
+.timeline-connector .border-end,
+.timeline-connector .border-start {
+  width: 20px;
+}
+
+/* Responsive timeline adjustments */
+@media (max-width: 768px) {
+  .timeline-item .d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .timeline-icon {
+    margin-bottom: 10px;
+    margin-right: 0 !important;
+  }
+
+  .timeline-connector {
+    margin-left: 20px;
+  }
+}
+
+/* Enhanced version card styles for timeline context */
+.timeline-item .card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.timeline-item .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .version-timeline::before {
