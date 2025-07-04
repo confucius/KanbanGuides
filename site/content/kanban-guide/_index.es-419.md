@@ -1,12 +1,12 @@
 ---
-title: "The Kanban Guide"
+title: "La Guía de Kanban"
 Type: "guide"
 Layout: "root"
 brand:
   bg_colour: "#b10002"
 guide_whatis: |
-  The [Kanban Guide (2025)](/history/kanban-guide-2025/) is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems.
+  La [Guía de Kanban (2025)](/history/kanban-guide-2025/) es una referencia práctica y curada por la comunidad para usar Kanban en el trabajo del conocimiento. Define las prácticas esenciales, medidas y lenguaje para diseñar, ejecutar y mejorar los sistemas Kanban.
 guide_overview: |
-  The [Kanban Guide (2025)](/history/kanban-guide-2025/) is a practical, community-curated reference for using Kanban in knowledge work.
+  La [Guía de Kanban (2025)](/history/kanban-guide-2025/) es una referencia práctica y curada por la comunidad para usar Kanban en el trabajo del conocimiento.
 guide_logo: "open-guide-to-kanban-logo.png"
 ---

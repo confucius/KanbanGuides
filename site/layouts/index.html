@@ -14,42 +14,40 @@
         {{ end }}
         {{/* {{ $sections = lang.Merge $defaultSite.sections $sections }} */}}
         {{- range $sections }}
-          {{- if eq .Type "guide" }}
-            <div class="col-12 col-lg-6 col-xl-6 p-3">
-              <div class="card card-dark h-100">
-                <div class="card-header">
-                  <h5 class="card-title text-center mb-0">{{ .Title }}</h5>
-                  <div class="m-1 p-2" style="background-color: {{ .Params.brand.bg_colour | default "#135289" }};"></div>
-                </div>
-                <div class="card-body">
-                  <p>{{ .Params.guide_overview | markdownify }}</p>
-                  <div class="row g-2">
-                    <div class="col-12">
-                      <div class="d-grid">
-                        <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "latest") }}" class="btn btn-primary btn-sm">
-                          <i class="fa-solid fa-newspaper me-2"></i>{{ i18n "read_online_button" }}
-                        </a>
-                      </div>
+          <div class="col-12 col-lg-6 col-xl-6 p-3">
+            <div class="card card-dark h-100">
+              <div class="card-header">
+                <h5 class="card-title text-center mb-0">{{ .Title }}</h5>
+                <div class="m-1 p-2" style="background-color: {{ .Params.brand.bg_colour | default "#135289" }};"></div>
+              </div>
+              <div class="card-body">
+                <p>{{ .Params.guide_overview | markdownify }}</p>
+                <div class="row g-2">
+                  <div class="col-12">
+                    <div class="d-grid">
+                      <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "latest") }}" class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-newspaper me-2"></i>{{ i18n "read_online_button" }}
+                      </a>
                     </div>
-                    <div class="col-12">
-                      <div class="d-grid">
-                        <a href="{{ partial "functions/safe-page-link.html"  (path.Join .Path "translations") }}" class="btn btn-outline-light btn-sm">
-                          <i class="fa-solid fa-globe me-2"></i>{{ i18n "translations_button" }}
-                        </a>
-                      </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-grid">
+                      <a href="{{ partial "functions/safe-page-link.html"  (path.Join .Path "translations") }}" class="btn btn-outline-light btn-sm">
+                        <i class="fa-solid fa-globe me-2"></i>{{ i18n "translations_button" }}
+                      </a>
                     </div>
-                    <div class="col-12">
-                      <div class="d-grid">
-                        <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "history") }}" class="btn btn-outline-light btn-sm">
-                          <i class="fa-solid fa-clock-rotate-left me-2"></i>{{ i18n "history_button" }}
-                        </a>
-                      </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-grid">
+                      <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path "history") }}" class="btn btn-outline-light btn-sm">
+                        <i class="fa-solid fa-clock-rotate-left me-2"></i>{{ i18n "history_button" }}
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          {{- end }}
+          </div>
         {{- end }}
         <!-- Discussion Card -->
         <div class="col-12 p-3">
