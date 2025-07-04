@@ -15,7 +15,7 @@ languages:
     weight: 1
     title: Kanban Guides
     params:
-      description: Kanban Guides is the home of the Open Guide to Kanban, The Kanban Guide, and the Kanban Method. It is a free, community-driven reference for applying Kanban in knowledge work. The guides define the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches.
+      description: Kanban Guides is the home of the Open Guide to Kanban, and The Kanban Guide. It is a free, community-driven reference for applying Kanban in knowledge work. The guides define the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches.
       keywords: Kanban, Open Guide to Kanban, kanban guide, kanban method, knowledge work, flow optimisation, WIP limits, value delivery, agile, lean, continuous improvement, service level expectation, cumulative flow, throughput, metrics, work item age, flow efficiency, visualisation, work in progress, process improvement, kanban board, definition of workflow, outcome-oriented delivery
   tlh:
     languageName: Klingon
@@ -31,12 +31,12 @@ languages:
     weight: 3
     title: Guías de Kanban
     params:
-      description: Kanban Guides es el hogar de la Guía Abierta de Kanban, la Guía de Kanban y el Método Kanban. Es una referencia gratuita y comunitaria para aplicar Kanban en el trabajo del conocimiento. Las guías definen las prácticas, métricas y principios fundamentales necesarios para mejorar el flujo, optimizar la entrega de valor y mejorar la sostenibilidad del equipo. Esta guía apoya implementaciones escalables de Kanban en diversas industrias y complementa otros enfoques ágiles, lean y basados en el flujo.
+      description: Kanban Guides es el hogar de la Guía Abierta de Kanban, y la Guía de Kanban. Es una referencia gratuita y comunitaria para aplicar Kanban en el trabajo del conocimiento. Las guías definen las prácticas, métricas y principios fundamentales necesarios para mejorar el flujo, optimizar la entrega de valor y mejorar la sostenibilidad del equipo. Esta guía apoya implementaciones escalables de Kanban en diversas industrias y complementa otros enfoques ágiles, lean y basados en el flujo.
       keywords: Kanban, Guía Abierta de Kanban, guía de kanban, método kanban, trabajo del conocimiento, optimización del flujo, límites de WIP, entrega de valor, ágil, lean, mejora continua, expectativa de nivel de servicio, flujo acumulativo, rendimiento, métricas, antigüedad de ítems de trabajo, eficiencia de flujo, visualización, trabajo en curso, mejora de procesos, tablero kanban, definición de flujo de trabajo, entrega orientada a resultados
       status: AI
 
 params:
-  description: Kanban Guides is the home of the Open Guide to Kanban, The Kanban Guide, and the Kanban Method. It is a free, community-driven reference for applying Kanban in knowledge work. The guides define the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches.
+  description: Kanban Guides is the home of the Open Guide to Kanban, & The Kanban Guide. It is a free, community-driven reference for applying Kanban in knowledge work. The guides define the core practices, metrics, and principles necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban implementations across diverse industries and complements other agile, lean, and flow-based approaches.
   keywords: Kanban, Open Guide to Kanban, kanban guide, kanban method, knowledge work, flow optimisation, WIP limits, value delivery, agile, lean, continuous improvement, service level expectation, cumulative flow, throughput, metrics, work item age, flow efficiency, visualisation, work in progress, process improvement, kanban board, definition of workflow, outcome-oriented delivery
   og_image: /images/open-guide-to-kanban-logo-512.png
   siteProdUrl: https://kanbanguides.org
