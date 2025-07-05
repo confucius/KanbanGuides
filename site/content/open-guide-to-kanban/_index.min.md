@@ -10,7 +10,6 @@ description: >
 
 brand:
   bg_colour: "#38761d"
-  image: "images/open-guide-to-kanban-logo.png"
 
 guide_whatis: |
   [Open Banana Booky da Kanban](/min/open-guide-to-kanban/latest) = practical, banana-filled, team-huggy book.  
