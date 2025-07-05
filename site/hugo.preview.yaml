@@ -3,7 +3,5 @@ Environment: "preview"
 minifyOutput: true
 
 languages:
-  tlh:
-    disabled: true
   es-419:
     disabled: true
