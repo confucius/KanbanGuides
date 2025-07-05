@@ -10,50 +10,50 @@ Parameters: - page: The Hugo page object to render - itemType: Type of item - "l
 {{- $isFork := (eq $itemType "forkLatest") }}
 
 {{ with $page }}
-  <div class="col-12 mx-auto mb-4">
-    <div class="card h-100 shadow-sm {{ if $isLatest }}border-primary border-2{{ else if $isFork }}border-warning border-2{{ else }}border-secondary{{ end }}">
-      {{ if eq $itemType "latest" }}
-        <div class="card-header bg-primary text-white">
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-              <i class="fas fa-star me-2"></i>
-              <strong>Current Open Guide</strong>
-            </div>
-            <span class="badge bg-light text-primary">
-              <i class="fas fa-code-branch me-1"></i>
-              Active
-            </span>
+  <div class="card h-100 shadow-sm {{ if $isLatest }}border-primary border-2{{ else if $isFork }}border-warning border-2{{ else }}border-secondary{{ end }}">
+    {{ if eq $itemType "latest" }}
+      <div class="card-header bg-primary text-white">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-star me-2"></i>
+            <strong>{{ i18n "current_open_guide_label" . }}</strong>
           </div>
+          <span class="badge bg-light text-primary">
+            <i class="fas fa-code-branch me-1"></i>
+            {{ i18n "active_status_label" . }}
+          </span>
         </div>
-      {{ else if eq $itemType "forkLatest" }}
-        <div class="card-header bg-warning text-dark">
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-              <i class="fas fa-code-branch me-2"></i>
-              <strong>Current Fork</strong>
-            </div>
-            <span class="badge bg-dark text-warning">
-              <i class="fas fa-code-branch me-1"></i>
-              Active Fork
-            </span>
+      </div>
+    {{ else if eq $itemType "forkLatest" }}
+      <div class="card-header bg-warning text-dark">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-code-branch me-2"></i>
+            <strong>{{ i18n "current_fork_label" . }}</strong>
           </div>
+          <span class="badge bg-dark text-warning">
+            <i class="fas fa-code-branch me-1"></i>
+            {{ i18n "active_fork_label" . }}
+          </span>
         </div>
-      {{ end }}
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-start mb-3">
-          <h5 class="card-title mb-0 {{ if $isLatest }}text-primary{{ else if $isFork }}text-warning{{ end }}">
-            {{ if eq $itemType "history" }}
-              <i class="fas fa-archive me-2 text-muted"></i>
-            {{ else if eq $itemType "forkHistory" }}
-              <i class="fas fa-code-branch me-2 text-warning"></i>
-            {{ end }}
-            {{ .Title | default "Open Guide to Kanban" }}
-          </h5>
-          {{ if not $isLatest }}
-            <span class="badge bg-secondary">{{ .Date.Format "Jan 2006" }}</span>
+      </div>
+    {{ end }}
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between align-items-start mb-3">
+        <h5 class="card-title mb-0 {{ if $isLatest }}text-primary{{ else if $isFork }}text-warning{{ end }}">
+          {{ if eq $itemType "history" }}
+            <i class="fas fa-archive me-2 text-muted"></i>
+          {{ else if eq $itemType "forkHistory" }}
+            <i class="fas fa-code-branch me-2 text-warning"></i>
           {{ end }}
-        </div>
+          {{ .Title | default "Open Guide to Kanban" }}
+        </h5>
+        {{ if not $isLatest }}
+          <span class="badge bg-secondary">{{ .Date.Format "Jan 2006" }}</span>
+        {{ end }}
+      </div>
 
+      <div class="flex-grow-1">
         {{ with .Params.description }}
           <p class="card-text text-muted mb-3">{{ . }}</p>
         {{ else }}
@@ -68,7 +68,7 @@ Parameters: - page: The Hugo page object to render - itemType: Type of item - "l
             <div class="d-flex align-items-center">
               <i class="fas fa-code-branch text-info me-2"></i>
               <small class="mb-0">
-                <strong>{{ if $isFork }}Fork:{{ else }}Forked from:{{ end }}</strong>
+                <strong>{{ if $isFork }}{{ i18n "fork_indicator" . }}{{ else }}{{ i18n "forked_from_indicator" . }}{{ end }}</strong>
                 {{ if and .Params.forked_from (ne .Params.forked_from "") }}
                   {{ $sourcePage := .Site.GetPage .Params.forked_from }}
                   {{ if $sourcePage }}
@@ -77,7 +77,7 @@ Parameters: - page: The Hugo page object to render - itemType: Type of item - "l
                     {{ .Params.forked_from | title }}
                   {{ end }}
                 {{ else if $isFork }}
-                  This is a fork
+                  {{ i18n "this_is_fork_label" . }}
                 {{ end }}
               </small>
             </div>
@@ -110,20 +110,32 @@ Parameters: - page: The Hugo page object to render - itemType: Type of item - "l
         {{/* Language buttons section */}}
         {{ $translations := .AllTranslations }}
         {{ $currentLang := .Language.Lang }}
-        {{ if gt (len $translations) 0 }}
+        {{/* Filter translations to only include those with substantial content */}}
+        {{ $translationsWithContent := slice }}
+        {{ range $translations }}
+          {{/* Check if translation has substantial content (more than 500 characters) */}}
+          {{ if and .Content (gt (len .Content) 500) }}
+            {{ $translationsWithContent = $translationsWithContent | append . }}
+          {{ end }}
+        {{ end }}
+        {{/* Also check current page has content */}}
+        {{ $currentHasContent := and .Content (gt (len .Content) 500) }}
+        {{ if or (gt (len $translationsWithContent) 0) $currentHasContent }}
           <div class="mb-3">
             <div class="text-muted small mb-2">
               <i class="fas fa-globe me-1"></i>
-              Available Languages:
+              {{ i18n "available_languages_label" . }}
             </div>
             <div class="d-flex flex-wrap gap-1">
-              {{/* Current language button */}}
-              <a href="{{ .Permalink }}" class="btn btn-primary btn-sm">
-                <i class="fas fa-eye me-1"></i>
-                {{ .Language.LanguageName }}
-              </a>
-              {{/* Other language buttons */}}
-              {{ range $translations }}
+              {{/* Current language button - only show if it has content */}}
+              {{ if $currentHasContent }}
+                <a href="{{ .Permalink }}" class="btn btn-primary btn-sm">
+                  <i class="fas fa-eye me-1"></i>
+                  {{ .Language.LanguageName }}
+                </a>
+              {{ end }}
+              {{/* Other language buttons - only those with content */}}
+              {{ range $translationsWithContent }}
                 {{ if ne .Language.Lang $currentLang }}
                   <a href="{{ .Permalink }}" class="btn btn-outline-primary btn-sm">
                     {{ .Language.LanguageName }}
@@ -139,7 +151,7 @@ Parameters: - page: The Hugo page object to render - itemType: Type of item - "l
           <div class="mb-3">
             <div class="text-muted small mb-2">
               <i class="fas fa-file-pdf me-1"></i>
-              PDF Downloads:
+              {{ i18n "pdf_downloads_label" . }}
             </div>
             <div class="d-flex flex-wrap gap-1">
               {{/* PDF language buttons */}}
@@ -165,49 +177,50 @@ Parameters: - page: The Hugo page object to render - itemType: Type of item - "l
             </div>
           </div>
         {{ end }}
+      </div>
 
-
+      <div class="mt-auto pt-3">
         <div class="d-flex justify-content-between align-items-center">
           <div class="text-muted small">
             <i class="fas fa-calendar me-1"></i>
             {{ if .Date }}
               {{ if eq $itemType "latest" }}
-                Living Document - Updated
+                {{ i18n "living_document_updated_label" . }}
                 {{ .Date.Format "January 2, 2006" }}
               {{ else if eq $itemType "forkLatest" }}
-                Active Fork - Updated
+                {{ i18n "active_fork_updated_label" . }}
                 {{ .Date.Format "January 2, 2006" }}
               {{ else if eq $itemType "forkHistory" }}
-                Historical Fork -
+                {{ i18n "historical_fork_label" . }}
                 {{ .Date.Format "January 2, 2006" }}
               {{ else }}
-                Historical Version -
+                {{ i18n "historical_version_label" . }}
                 {{ .Date.Format "January 2, 2006" }}
               {{ end }}
             {{ else }}
-              Current Version
+              {{ i18n "current_version_label" . }}
             {{ end }}
           </div>
           <div class="d-flex gap-2">
             {{ if eq $itemType "latest" }}
               <a href="{{ partial "functions/safe-page-link.html" "/guide" }}" class="btn btn-primary btn-sm">
                 <i class="fas fa-book me-1"></i>
-                Read Guide
+                {{ i18n "read_guide_button" . }}
               </a>
 
               <a href="{{ partial "functions/safe-page-link.html" "/translations" }}" class="btn btn-outline-secondary btn-sm">
                 <i class="fas fa-download me-1"></i>
-                Translations
+                {{ i18n "translations_button_small" . }}
               </a>
             {{ else if eq $itemType "forkLatest" }}
               <a href="{{ .Permalink }}" class="btn btn-warning btn-sm">
                 <i class="fas fa-code-branch me-1"></i>
-                Read Fork
+                {{ i18n "read_fork_button" . }}
               </a>
             {{ else }}
               <a href="{{ .Permalink }}" class="btn btn-outline-secondary btn-sm">
                 <i class="fas fa-archive me-1"></i>
-                View Archive
+                {{ i18n "view_archive_button" . }}
               </a>
             {{ end }}
           </div>

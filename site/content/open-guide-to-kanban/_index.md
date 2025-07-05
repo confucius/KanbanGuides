@@ -1,5 +1,5 @@
 ---
-title: "Open Guide to Kanban | In the Context of Knowledge Work"
+title: "Open Guide to Kanban - In the Context of Knowledge Work"
 short_title: "Open Guide to Kanban"
 slug: "open-guide-for-kanban"
 Type: "guide"
@@ -9,10 +9,12 @@ brand:
   bg_colour: "#38761d"
   image: "images/open-guide-to-kanban-logo.png"
 guide_whatis: |
-  The [Open Guide to Kanban](/open-guide-to-kanban/) is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems. Built on the foundations of the [Kanban Guide (2025)](/history/kanban-guide-2025/), this guide expands its applicability across industries and team contexts, while remaining open and adaptable. It is intended to support organisations seeking clarity, consistency, and effectiveness in how they manage the flow of value.
+  The [Open Guide to Kanban](/open-guide-to-kanban/latest) is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems. Built on the foundations of the [Kanban Guide (2025)](/open-guide-to-kanban/latest), this guide expands its applicability across industries and team contexts, while remaining open and adaptable. It is intended to support organisations seeking clarity, consistency, and effectiveness in how they manage the flow of value.
 guide_overview: |
-  The [Open Guide to Kanban](/open-guide-to-kanban/) is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems.
+  The [Open Guide to Kanban](/open-guide-to-kanban/latest) is a practical, community-curated reference for using Kanban in knowledge work. It defines the essential practices, measures, and language for designing, running, and improving Kanban systems.
 weight: 2
+guide_license: |
+  This work, Open Guide to Kanban, is an adaptation of the [Kanban Guide (May 2025 version)](https://kanbanguides.org/history/kanban-guide-2025/), which is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). The original guide is © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc. Changes were made to the original. Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). _Portions highlighted in italic are © 2025_ Orderly Disruption Limited, licensed under CC BY-SA 4.0. All other content is from © 2019-2025 Orderly Disruption Limited, Daniel S. Vacanti, Inc., also licensed under CC BY-SA 4.0.
 guide_comparison:
   purpose: "Community-expanded handbook"
   ethos: "Inclusive, evolving, collaborative"
