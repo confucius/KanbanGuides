@@ -18,11 +18,25 @@
 {{- $isHistory := false }}
 {{- $isOverview := false }}
 
-{{- if hasPrefix .RelPermalink (printf "/%s/translations" $currentSection) }}
+{{/* Build language-aware URL patterns */}}
+{{- $langPrefix := "" }}
+{{- if ne .Site.Language.Lang "en" }}
+  {{- $langPrefix = printf "/%s" .Site.Language.Lang }}
+{{- end }}
+
+{{/* Pattern matching for different page types */}}
+{{- $translationsPattern := printf "%s/%s/translations" $langPrefix $currentSection }}
+{{- $historyPattern := printf "%s/%s/history" $langPrefix $currentSection }}
+{{- $overviewPattern := printf "%s/%s/" $langPrefix $currentSection }}
+
+{{/* Alternative patterns without trailing slash for overview */}}
+{{- $overviewPatternAlt := printf "%s/%s" $langPrefix $currentSection }}
+
+{{- if hasPrefix .RelPermalink $translationsPattern }}
   {{- $isTranslations = true }}
-{{- else if hasPrefix .RelPermalink (printf "/%s/history" $currentSection) }}
+{{- else if hasPrefix .RelPermalink $historyPattern }}
   {{- $isHistory = true }}
-{{- else if eq .RelPermalink (printf "/%s/" $currentSection) }}
+{{- else if or (eq .RelPermalink $overviewPattern) (eq .RelPermalink $overviewPatternAlt) }}
   {{- $isOverview = true }}
 {{- else if eq .Type "guide" }}
   {{- $isGuideContent = true }}

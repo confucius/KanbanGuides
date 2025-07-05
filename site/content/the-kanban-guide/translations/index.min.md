@@ -1,7 +1,7 @@
 ---
-title: mugh
+title: "Talky-Talks"
 layout: translations
-description: Kanban nugh DIch DIch nugh je mugh
+description: "Original Banana & Talky-Talk Copies of da Kanban Booky"
 aliases:
   - /downloads/
   - /download/

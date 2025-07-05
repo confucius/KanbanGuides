@@ -4,76 +4,28 @@
       <i class="fa-solid fa-globe"></i> {{ .Site.Language.LanguageName }}
     </a>
     <ul class="dropdown-menu">
-      {{- $defaultLang := .Site.Home.Language.Lang | default "en" }}
-      {{- range .Site.Languages }}
-        {{- if ne .Lang $.Site.Language.Lang }}
+      {{- range $langCode, $language := $.Site.Languages }}
+        {{- if ne $language.Lang $.Site.Language.Lang }}
           {{- $langUrl := "" }}
-          {{- if $.IsHome }}
-            {{- $langUrl = printf "/%s/" .Lang }}
-            {{- if eq .Lang $defaultLang }}
-              {{- $langUrl = "/" }}
-            {{- end }}
-          {{- else }}
-            {{- $langUrl := "" }}
-            {{- $foundTranslation := false }}
-            {{- $targetLang := .Lang }}
-            {{- /* First, try to find an existing translation */ -}}
+          {{- /* Check if current page has a translation */ -}}
+          {{- if $.IsTranslated }}
             {{- range $.Translations }}
-              {{- if eq .Language.Lang $targetLang }}
+              {{- if eq .Lang $language.Lang }}
                 {{- $langUrl = .Permalink }}
-                {{- $foundTranslation = true }}
-                {{- break }}
               {{- end }}
             {{- end }}
-            {{- /* If no translation found, check if page exists in target language */ -}}
-            {{- if not $foundTranslation }}
-              {{- $targetSite := index site.Sites 0 }}
-              {{- range site.Sites }}
-                {{- if eq .Language.Lang $targetLang }}
-                  {{- $targetSite = . }}
-                  {{- break }}
-                {{- end }}
-              {{- end }}
-              {{- /* Try to get the same page path in the target language */ -}}
-              {{- $currentPath := $.RelPermalink }}
-              {{- if ne $.Site.Language.Lang $defaultLang }}
-                {{- $langPrefix := printf "/%s" $.Site.Language.Lang }}
-                {{- $currentPath = strings.TrimPrefix $langPrefix $.RelPermalink }}
-              {{- end }}
-              {{- $currentPath = strings.TrimSuffix "/" $currentPath }}
-              {{- if eq $currentPath "" }}
-                {{- $currentPath = "/" }}
-              {{- end }}
-              {{- $targetPage := $targetSite.GetPage $currentPath }}
-              {{- if $targetPage }}
-                {{- $langUrl = $targetPage.Permalink }}
-                {{- $foundTranslation = true }}
-              {{- else }}
-                {{- /* Fallback to default language page with target language base URL */ -}}
-                {{- $defaultSite := index site.Sites 0 }}
-                {{- range site.Sites }}
-                  {{- if eq .Language.Lang $defaultLang }}
-                    {{- $defaultSite = . }}
-                    {{- break }}
-                  {{- end }}
-                {{- end }}
-                {{- $defaultPage := $defaultSite.GetPage $currentPath }}
-                {{- if $defaultPage }}
-                  {{- $langUrl = $defaultPage.Permalink }}
-                {{- else }}
-                  {{- /* Final fallback to home page of target language */ -}}
-                  {{- if eq $targetLang $defaultLang }}
-                    {{- $langUrl = "/" }}
-                  {{- else }}
-                    {{- $langUrl = printf "/%s/" $targetLang }}
-                  {{- end }}
-                {{- end }}
-              {{- end }}
+          {{- end }}
+          {{- /* If no translation found, use home page of target language */ -}}
+          {{- if eq $langUrl "" }}
+            {{- if eq $language.Lang "en" }}
+              {{- $langUrl = "/" }}
+            {{- else }}
+              {{- $langUrl = printf "/%s/" $language.Lang }}
             {{- end }}
           {{- end }}
           <li>
             <a class="dropdown-item" href="{{ $langUrl }}">
-              {{ .LanguageName }}
+              {{ $language.LanguageName }}
             </a>
           </li>
         {{- end }}
