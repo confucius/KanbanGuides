@@ -14,11 +14,6 @@
       </div>
     </div>
     <h6 class="card-title mb-1 fw-bold">{{ .name }}</h6>
-    {{- if .founder }}
-      <span class="badge bg-primary mb-2"> <i class="fas fa-star me-1"></i>Founder </span>
-    {{- end }}
-    {{- if .role }}
-      <p class="card-text small text-muted mb-0">{{ .role }}</p>
-    {{- end }}
+    <span class="badge bg-{{- if eq .role "creator" }}primary{{- else }}secondary{{- end }} mb-2"> {{- if .founder }}<i class="fas fa-star me-1"></i>{{- end }}{{ .role | title }} </span>
   </div>
 </div>

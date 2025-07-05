@@ -17,7 +17,13 @@
       })(window, document, "script", "dataLayer", "GTM-T2KD2BNT");
     </script>
     <!-- End Google Tag Manager -->
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ if .Site.Home }}
+      <title>{{ .Site.Title }} | {{ .Site.Params.Description }}</title>
+    {{ else }}
+      <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ end }}
+
+
     <meta name="description" content="{{ ( .Page.Params.description | default  .Site.Params.description) | plainify }}" />
     <meta name="keywords" content="{{ .Keywords | default .Site.Params.keywords }}" />
     <link rel="canonical" href="{{ .Site.Params.siteProdUrl }}{{ .RelPermalink }}" />
@@ -105,7 +111,10 @@
 
     {{ block "footer" . }}
       <footer class="footer bg-dark text-white p-4 mt-auto">
-        <div class="container text-center">v#{GitVersion.SemVer}# | © {{ now.Format "2006" }} Orderly Disruption Limited. All rights reserved.</div>
+        <div class="container text-center">
+          v#{GitVersion.SemVer}# | Website design & theme © {{ now.Format "2006" }} <a href="https://orderlydisruption.com/" target="_blank">Orderly Disruption Limited</a> & <a href="https://nkdagility.com" target="_blank">NKDAgility.com</a>. All rights
+          reserved.
+        </div>
       </footer>
     {{ end }}
 

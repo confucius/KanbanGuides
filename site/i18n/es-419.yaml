@@ -41,6 +41,9 @@
 - id: open_source_description
   translation: "Estas Guías de Kanban son proyectos de código abierto que prosperan con la colaboración comunitaria. Ya sea que quieras sugerir mejoras, reportar problemas o contribuir contenido, damos la bienvenida a tu participación. Juntos, podemos hacer estos recursos aún más valiosos para la comunidad Kanban mundial."
 
+- id: at_a_glance_title
+  translation: "De un Vistazo"
+
 - id: join_discussion_button
   translation: "Únete a la Discusión"
 
@@ -52,6 +55,12 @@
 
 - id: guides_intro_text
   translation: "Bienvenido a las Guías de Kanban - tu recurso integral para el conocimiento y prácticas de Kanban. Explora nuestra colección de guías a continuación."
+
+- id: download_title
+  translation: "Descargar {{ .Site.Title }}"
+
+- id: download_description
+  translation: "Descarga la {{ .Site.Title }} completa como archivo PDF para lectura sin conexión y referencia."
 
 - id: download_button
   translation: "Descargar PDF"
@@ -192,6 +201,9 @@
 - id: download_community_contributors
   translation: "Contribuidores de la Comunidad"
 
+- id: contributors_description
+  translation: "Los contribuidores que se enumeran a continuación son una colección de todos los contribuidores de todas las guías y versiones."
+
 - id: read_online_action
   translation: "Leer en Línea"
 
@@ -284,3 +296,6 @@
 
 - id: guide_back_to_home
   translation: "← Volver al Inicio"
+
+- id: not_sure_which_to_use_title
+  translation: "¿No Estás Seguro de Cuál Usar?"

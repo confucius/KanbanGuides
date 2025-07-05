@@ -39,7 +39,10 @@
   translation: "Open Source & Community Driven"
 
 - id: open_source_description
-  translation: "The Open Guide to Kanban is an open source project that thrives on community collaboration. Whether you want to suggest improvements, report issues, or contribute content, we welcome your participation. The Kanban Guide is not open to contributions here, but is included here for reference. Together, we can make these resources even more valuable for the Kanban community worldwide."
+  translation: "The Open Guide to Kanban is an open source project that thrives on community collaboration. Whether you want to suggest improvements, report issues, or contribute content, we welcome your participation. The Kanban Guide is not open to contributions here, but is included here for reference. Together, we can make these resources even more valuable for the Kanban community worldwide and anyone wishing to improve the flow of value (potential and actual realized value)."
+
+- id: at_a_glance_title
+  translation: "At a Glance"
 
 - id: join_discussion_button
   translation: "Join the Discussion"
@@ -52,6 +55,12 @@
 
 - id: guides_intro_text
   translation: "Welcome to Kanban Guides - your comprehensive resource for Kanban knowledge and practices. Explore our collection of guides below."
+
+- id: download_title
+  translation: "Download {{ .Site.Title }}"
+
+- id: download_description
+  translation: "Download the complete {{ .Site.Title }} as a PDF file for offline reading and reference."
 
 - id: download_button
   translation: "Download PDF"
@@ -192,6 +201,9 @@
 - id: download_community_contributors
   translation: "Community Contributors"
 
+- id: contributors_description
+  translation: "The contributors listed below are a collection of all contributors across all guides and versions."
+
 - id: read_online_action
   translation: "Read Online"
 
@@ -243,6 +255,9 @@
 - id: guide_coming_soon
   translation: "This guide is coming soon! Stay tuned for updates."
 
+- id: guide_no_content_available
+  translation: "Content not yet available for this language."
+
 - id: guide_pdf_en
   translation: "PDF (EN)"
 
@@ -284,3 +299,6 @@
 
 - id: guide_back_to_home
   translation: "← Back to Home"
+
+- id: not_sure_which_to_use_title
+  translation: "Not Sure Which to Use?"

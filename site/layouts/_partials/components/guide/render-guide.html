@@ -29,10 +29,21 @@
 
         <!-- Collapsible TOC content -->
         <div class="collapse d-md-block overflow-auto flex-grow-1" id="tocCollapse">
-          {{- if $isComingSoon }}
-            <div class="alert alert-warning" role="alert">{{ i18n "guide_coming_soon" }}</div>
-          {{ else }}
+          {{- if and .Page.Content (gt (len .Page.Content) 100) }}
             {{ .Page.TableOfContents }}
+          {{ else }}
+            {{- /* Get the default guide content as fallback */ -}}
+            {{ $defaultSite := index site.Sites 0 }}
+            {{ $thisPageDefault := $defaultSite.GetPage .Path }}
+
+            {{- if not $thisPageDefault }}
+              {{- fmt.Errorf "thisPageDefault page not found" }}
+            {{- end }}
+            {{- if $thisPageDefault.Content }}
+              {{ $thisPageDefault.TableOfContents }}
+            {{- else }}
+              <div class="alert alert-info" role="alert">{{ i18n "guide_no_content_available" | default "Content not yet available for this language." }}</div>
+            {{- end }}
           {{- end }}
         </div>
       </nav>
