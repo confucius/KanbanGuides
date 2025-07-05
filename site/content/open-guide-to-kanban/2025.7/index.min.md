@@ -1,6 +1,6 @@
 ---
-title: "Big Banana Kanban Book – For Smart Worky Stuff"
-short_title: "Open Banana Guide"
+title: "Open Banana Booky da Kanban – For Smart Worky Stuff"
+short_title: "Open Banana Booky da Kanban"
 description: >
   Da Open Banana Guide = free! Made by da banana gang for smarty brain work.  
   It show how to Kanban like a boss: flow go zoom, value go boom, team go yay!  
