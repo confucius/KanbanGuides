@@ -19,8 +19,7 @@ guide_comparison:
   content: "Clear, lightweight, and essential"
   update_model: "Periodic, curated"
 which_to_use_summary: >
-  Choose  [The Kanban Guide](/the-kanban-guide/latest) if you're new to Kanban or need a stable, minimal reference. It's ideal for Kanban system members who want to start simple and build understanding
-  before exploring broader options.
+  Choose  [The Kanban Guide](/the-kanban-guide/latest) if you're new to Kanban or need a stable, minimal reference. It's ideal for Kanban system members who want to start simple and build understanding.
 layman_description: >
   [The Kanban Guide](/the-kanban-guide/latest) is a short and clear handbook that explains how to use Kanban to manage work. It helps Kanban system members visualise what they're working on, avoid multitasking, and deliver more reliably. It's written to be easy to follow, with just the essentials. Perfect for any team that wants a simple way to organise work and improve flow.
 practitioner_description: >
