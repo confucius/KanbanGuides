@@ -39,7 +39,7 @@
   translation: "Open Source & Community Driven"
 
 - id: open_source_description
-  translation: "The Open Guide to Kanban is an open source project that thrives on community collaboration. Whether you want to suggest improvements, report issues, or contribute content, we welcome your participation. The Kanban Guide is not open to contributions here, but is included here for reference. Together, we can make these resources even more valuable for the Kanban community worldwide and anyone wishing to improve the flow of value."
+  translation: "The Open Guide to Kanban is an open source project that thrives on community collaboration. Whether you want to suggest improvements, report issues, or contribute content, we welcome your participation. The Kanban Guide is not open to contributions here, but is included here for reference. Together, we can make these resources even more valuable for the Kanban community worldwide and anyone wishing to improve the flow of value (potential and actual realized value)."
 
 - id: at_a_glance_title
   translation: "At a Glance"
