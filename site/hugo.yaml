@@ -25,7 +25,7 @@ languages:
       description: Kanban Guides es el hogar de la Guía Abierta de Kanban, y la Guía de Kanban. Es una referencia gratuita y comunitaria para aplicar Kanban en el trabajo del conocimiento. Las guías definen las prácticas, métricas y principios fundamentales necesarios para mejorar el flujo, optimizar la entrega de valor y mejorar la sostenibilidad del equipo. Esta guía apoya implementaciones escalables de Kanban en diversas industrias y complementa otros enfoques ágiles, lean y basados en el flujo.
       keywords: Kanban, Guía Abierta de Kanban, guía de kanban, método kanban, trabajo del conocimiento, optimización del flujo, límites de WIP, entrega de valor, ágil, lean, mejora continua, expectativa de nivel de servicio, flujo acumulativo, rendimiento, métricas, antigüedad de ítems de trabajo, eficiencia de flujo, visualización, trabajo en curso, mejora de procesos, tablero kanban, definición de flujo de trabajo, entrega orientada a resultados
       status: AI
-  x-minionese:
+  min:
     languageName: Minionese
     weight: 1001
     title: Banana Kanban Guides
