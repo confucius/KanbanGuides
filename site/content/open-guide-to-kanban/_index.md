@@ -21,10 +21,9 @@ guide_comparison:
   content: "Rich with examples and extensions"
   update_model: "Community-driven, iterative"
 which_to_use_summary: >
-  Choose the [Open Guide to Kanban](/open-guide-to-kanban/latest) if you're working across approaches or want more context and flexibility. It's well-suited to those with Agile or Scrum experience who want to adapt Kanban to their environment.
+  Choose the [Open Guide to Kanban](/open-guide-to-kanban/latest) if you're working across approaches or want more context and flexibility. It's well-suited to those with Lean, Agile, Scrum, or Product Management experience who want to adapt Kanban to their environment.
 layman_description: >
-  The [Open Guide to Kanban](/open-guide-to-kanban/latest) explains how to use Kanban and improve it over time. It gives more examples, tools, and ideas than the basic guide, and works well with other methods like Scrum. It’s made by a wider community and helps people apply Kanban in different situations, especially where teams or organisations want more than just the basics.
+  The [Open Guide to Kanban](/open-guide-to-kanban/latest) explains how to use Kanban and improve it over time. It gives more examples, tools, and ideas than the basic guide, and works well with other approaches like Scrum. It’s made by a wider community and helps people apply Kanban in different situations, especially where teams or organisations want more than just the basics.
 practitioner_description: >
-  The [Open Guide to Kanban](/open-guide-to-kanban/latest) is a community-curated reference that expands on the core
-  Kanban Guide. It preserves the essentials but adds greater depth — optional practices,   richer metrics, and practical integration with other methods like Scrum and Lean. Designed for practitioners applying Kanban in real-world, cross-method scenarios, it offers adaptable guidance to improve flow, outcomes, and collaboration. It’s particularly useful for coaches, consultants, and teams working in complex, evolving systems.
+  The [Open Guide to Kanban](/open-guide-to-kanban/latest) is a community-curated reference that expands on the core Kanban Guide. It preserves the essentials but adds greater depth — optional practices,   richer metrics, and practical integration with other approaches like Scrum and Lean. Designed for practitioners applying Kanban in real-world, cross-method scenarios, it offers adaptable guidance to improve flow, outcomes, and collaboration. It’s particularly useful for coaches, consultants, and teams working in complex, evolving systems.
 ---
