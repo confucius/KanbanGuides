@@ -63,6 +63,7 @@
   role: contributor
 
 - name: Christian Neverdal
+  githubUsername: flyrev
   contributions:
     - "2020.12"
     - "2025.5"
@@ -71,6 +72,7 @@
   role: contributor
 
 - name: Magdalena Firlit
+  githubUsername: Magdalena-Firlit
   contributions:
     - "2020.12"
     - "2025.5"
@@ -95,6 +97,7 @@
   role: contributor
 
 - name: Yuval Yeret
+  githubUsername: yyeret
   contributions:
     - "2020.7"
     - "2020.12"
@@ -103,6 +106,7 @@
   role: contributor
 
 - name: Steve Porter
+  githubUsername: stevevrporter
   contributions:
     - "2020.7"
     - "2020.12"
@@ -119,6 +123,7 @@
   role: contributor
 
 - name: Ryan Ripley
+  githubUsername: ryanripley
   contributions:
     - "2020.7"
     - "2020.12"
@@ -127,6 +132,7 @@
   role: contributor
 
 - name: Todd Miller
+  githubUsername: agiletodd
   contributions:
     - "2020.7"
     - "2020.12"
@@ -135,6 +141,7 @@
   role: contributor
 
 - name: Jose Casal
+  githubUsername: darkewok
   contributions:
     - "2020.7"
     - "2020.12"
@@ -151,6 +158,7 @@
   role: contributor
 
 - name: Dave West
+  githubUsername: bigdavewest
   contributions:
     - "2020.7"
     - "2020.12"
@@ -159,6 +167,7 @@
   role: contributor
 
 - name: Eric Naiburg
+  githubUsername: enaiburg12
   contributions:
     - "2020.7"
     - "2020.12"

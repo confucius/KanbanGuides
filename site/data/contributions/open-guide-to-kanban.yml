@@ -30,7 +30,16 @@
   weight: 100
   founder: true
 
+- name: Emily Coleman
+  contributions:
+    - "2020.7"
+    - "2020.12"
+  weight: 100
+  founder: true
+  role: contributor
+
 - name: Jim Benson
+  githubUsername: ourfounder
   url: https://www.linkedin.com/in/jimbenson/
   contributions:
     - "2025.7"

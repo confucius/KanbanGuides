@@ -41,6 +41,9 @@
 - id: open_source_description
   translation: "Estas Guías de Kanban son proyectos de código abierto que prosperan con la colaboración comunitaria. Ya sea que quieras sugerir mejoras, reportar problemas o contribuir contenido, damos la bienvenida a tu participación. Juntos, podemos hacer estos recursos aún más valiosos para la comunidad Kanban mundial."
 
+- id: at_a_glance_title
+  translation: "De un Vistazo"
+
 - id: join_discussion_button
   translation: "Únete a la Discusión"
 

@@ -41,6 +41,9 @@
 - id: open_source_description
   translation: "Kanban ghuHmoHwI'pu' 'oH nugh DIch nugh'e' 'e' jup chenmoH. DIch choH 'e' DIlo', Dub DIch 'e' qorDu', pagh DIch chup 'e' DIlo', DIch DIlo' maH. naDev DIch DIch DIch chenmoH 'e' DIch."
 
+- id: at_a_glance_title
+  translation: "naDev legh"
+
 - id: join_discussion_button
   translation: "jaq DIch"
 
