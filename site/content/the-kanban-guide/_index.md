@@ -16,7 +16,7 @@ guide_comparison:
   ethos: "Focused, stable, canonical"
   audience: "Teams wanting a clear baseline"
   use_case: "What is Kanban at its core?"
-  content: "Concise, principle-based"
+  content: "Clear, lightweight, and essential"
   update_model: "Periodic, curated"
 which_to_use_summary: >
   Choose  [The Kanban Guide](/the-kanban-guide/latest) if you're new to Kanban or need a stable, minimal

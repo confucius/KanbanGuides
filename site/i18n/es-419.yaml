@@ -192,6 +192,9 @@
 - id: download_community_contributors
   translation: "Contribuidores de la Comunidad"
 
+- id: contributors_description
+  translation: "Los contribuidores que se enumeran a continuación son una colección de todos los contribuidores de todas las guías y versiones."
+
 - id: read_online_action
   translation: "Leer en Línea"
 

@@ -198,6 +198,9 @@
 - id: download_community_contributors
   translation: "jup DIch nugh"
 
+- id: contributors_description
+  translation: "naDev DIch nugh Hoch mI' DIch nugh je."
+
 - id: read_online_action
   translation: "HurDaq laD"
 

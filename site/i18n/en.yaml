@@ -192,6 +192,9 @@
 - id: download_community_contributors
   translation: "Community Contributors"
 
+- id: contributors_description
+  translation: "The contributors listed below are a collection of all contributors across all guides and versions."
+
 - id: read_online_action
   translation: "Read Online"
 
