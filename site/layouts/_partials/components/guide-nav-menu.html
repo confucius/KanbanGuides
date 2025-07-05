@@ -16,11 +16,14 @@
 {{- $isGuideContent := false }}
 {{- $isTranslations := false }}
 {{- $isHistory := false }}
+{{- $isOverview := false }}
 
 {{- if hasPrefix .RelPermalink (printf "/%s/translations" $currentSection) }}
   {{- $isTranslations = true }}
 {{- else if hasPrefix .RelPermalink (printf "/%s/history" $currentSection) }}
   {{- $isHistory = true }}
+{{- else if eq .RelPermalink (printf "/%s/" $currentSection) }}
+  {{- $isOverview = true }}
 {{- else if eq .Type "guide" }}
   {{- $isGuideContent = true }}
 {{- end }}
@@ -29,6 +32,13 @@
 <nav class="guide-nav-menu bg-light border-bottom py-2" aria-label="Guide navigation">
   <div class="container">
     <ul class="nav nav-pills justify-content-center">
+      {{/* Overview Link */}}
+      <li class="nav-item">
+        <a class="nav-link {{ if $isOverview }}active{{ end }}" href="{{ partial "functions/safe-page-link.html" $currentSection }}" aria-current="{{ if $isOverview }}page{{ else }}false{{ end }}">
+          <i class="fa-solid fa-house me-2"></i>{{ i18n "nav_overview" | default "Overview" }}
+        </a>
+      </li>
+
       {{/* Guide Content Link */}}
       <li class="nav-item">
         {{- if $latestVersion }}
