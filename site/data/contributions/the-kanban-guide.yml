@@ -34,7 +34,7 @@
     - "2020.7"
     - "2020.12"
     - "2025.5"
-  weight: 2
+  weight: 1
 
 - name: Julia Wester
   contributions:
@@ -50,7 +50,7 @@
     - "2020.7"
     - "2020.12"
     - "2025.5"
-  weight: 100
+  weight: 2
   founder: true
   role: contributor
 
@@ -58,7 +58,7 @@
   contributions:
     - "2020.12"
     - "2025.5"
-  weight: 100
+  weight: 2
   founder: true
   role: contributor
 

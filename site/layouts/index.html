@@ -92,6 +92,18 @@
               </p>
               <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary d-block mx-auto" target="_blank">{{ i18n "join_discussion_button" }}</a>
             </div>
+            <div class="col-12 mt-4">
+              <h2 class="text-center">{{ i18n "contributors_title" | default "Contributors" }}</h2>
+              {{- $contributors := partial "functions/get-contributors.html" . -}}
+              {{- $contributors = where $contributors "role" "in" (slice "contributor" "creator") -}}
+              {{- if $contributors -}}
+                <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                  {{ range sort $contributors "weight" "asc" }}
+                    {{ partial "components/guide/guide-author.html" . }}
+                  {{ end }}
+                </div>
+              {{- end -}}
+            </div>
           </div>
         </div>
       </div>
