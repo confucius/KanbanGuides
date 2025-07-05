@@ -30,7 +30,7 @@
     },
     {
       "route": "/wp-content/uploads/2020/07/Kanban-Guide-2020-07.pdf",
-      "redirect": "/the-kanban-guide/2020.7/pdf/kanban-guide.v2020.7.en.pdf",
+      "redirect": "/the-kanban-guide/2020.07/pdf/kanban-guide.v2020.7.en.pdf",
       "statusCode": 302
     },
     {
