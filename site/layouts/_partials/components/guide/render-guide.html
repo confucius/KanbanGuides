@@ -32,7 +32,18 @@
           {{- if and .Page.Content (gt (len .Page.Content) 100) }}
             {{ .Page.TableOfContents }}
           {{ else }}
-            <div class="alert alert-info" role="alert">{{ i18n "guide_no_content_available" | default "Content not yet available for this language." }}</div>
+            {{- /* Get the default guide content as fallback */ -}}
+            {{ $defaultSite := index site.Sites 0 }}
+            {{ $thisPageDefault := $defaultSite.GetPage .Path }}
+
+            {{- if not $thisPageDefault }}
+              {{- fmt.Errorf "thisPageDefault page not found" }}
+            {{- end }}
+            {{- if $thisPageDefault.Content }}
+              {{ $thisPageDefault.TableOfContents }}
+            {{- else }}
+              <div class="alert alert-info" role="alert">{{ i18n "guide_no_content_available" | default "Content not yet available for this language." }}</div>
+            {{- end }}
           {{- end }}
         </div>
       </nav>
