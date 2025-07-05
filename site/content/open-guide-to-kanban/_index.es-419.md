@@ -18,11 +18,11 @@ guide_comparison:
   use_case: "¿Cómo aplicamos Kanban en *nuestro* contexto?"
   content: "Rico en ejemplos y extensiones"
   update_model: "Iterativo y dirigido por la comunidad"
-which_to_use_summary: >
+which_to_use_summary: |
   Elige la [Guía Abierta de Kanban](/es-419/open-guide-to-kanban/latest) si estás trabajando con múltiples enfoques o quieres más contexto y flexibilidad. Es adecuada para quienes tienen experiencia en Lean, Agile, Scrum o gestión de productos y desean adaptar Kanban a su entorno.
-layman_description: >
+layman_description: |
   La [Guía Abierta de Kanban](/es-419/open-guide-to-kanban/latest) explica cómo usar Kanban y mejorarlo con el tiempo. Ofrece más ejemplos, herramientas e ideas que la guía básica, y funciona bien junto con otros enfoques como Scrum. Está creada por una comunidad amplia y ayuda a aplicar Kanban en distintas situaciones, especialmente cuando los equipos u organizaciones buscan algo más que lo básico.
-practitioner_description: >
+practitioner_description: |
   La [Guía Abierta de Kanban](/es-419/open-guide-to-kanban/latest) es una referencia curada por la comunidad que amplía la Guía de Kanban básica. Conserva lo esencial, pero añade mayor profundidad — prácticas opcionales, métricas más completas e integración práctica con enfoques como Scrum y Lean. Diseñada para profesionales que aplican Kanban en contextos reales y combinados, ofrece una guía adaptable para mejorar el flujo, los resultados y la colaboración. Es especialmente útil para coaches, consultores y equipos que trabajan en sistemas complejos y en evolución.
 weight: 2
 ---

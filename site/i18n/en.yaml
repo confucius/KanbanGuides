@@ -255,6 +255,9 @@
 - id: guide_coming_soon
   translation: "This guide is coming soon! Stay tuned for updates."
 
+- id: guide_no_content_available
+  translation: "Content not yet available for this language."
+
 - id: guide_pdf_en
   translation: "PDF (EN)"
 
