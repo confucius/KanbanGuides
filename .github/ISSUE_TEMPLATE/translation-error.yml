@@ -29,7 +29,7 @@ body:
     attributes:
       label: Page URL
       description: What page did you find the error on?
-      placeholder: "https://kanbanguides.org/tlh/open-guide-to-kanban/"
+      placeholder: "https://kanbanguides.org/min/open-guide-to-kanban/"
     validations:
       required: true
   - type: dropdown
