@@ -14,6 +14,8 @@ sansfont: "Arial"
 monofont: "Courier New"
 sitemap:
   priority: 0.6
+aliases:
+  - /the-kanban-guide/2020.07/
 ---
 
 # The Kanban Guide

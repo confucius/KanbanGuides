@@ -399,7 +399,7 @@
       {{- if $historicalPages }}
         <div class="row g-4 justify-content-center">
           {{- range $historicalPages.ByDate.Reverse }}
-            <div class="col-12 col-md-6 col-xl-4">
+            <div class="col-12 col-md-6 col-xl-6">
               {{ partial "components/versions/version-card.html" (dict "page" . "itemType" "history") }}
             </div>
           {{- end }}
