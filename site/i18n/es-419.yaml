@@ -56,6 +56,12 @@
 - id: guides_intro_text
   translation: "Bienvenido a las Guías de Kanban - tu recurso integral para el conocimiento y prácticas de Kanban. Explora nuestra colección de guías a continuación."
 
+- id: download_title
+  translation: "Descargar {{ .Site.Title }}"
+
+- id: download_description
+  translation: "Descarga la {{ .Site.Title }} completa como archivo PDF para lectura sin conexión y referencia."
+
 - id: download_button
   translation: "Descargar PDF"
 

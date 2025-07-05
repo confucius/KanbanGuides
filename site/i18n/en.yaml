@@ -56,6 +56,12 @@
 - id: guides_intro_text
   translation: "Welcome to Kanban Guides - your comprehensive resource for Kanban knowledge and practices. Explore our collection of guides below."
 
+- id: download_title
+  translation: "Download {{ .Site.Title }}"
+
+- id: download_description
+  translation: "Download the complete {{ .Site.Title }} as a PDF file for offline reading and reference."
+
 - id: download_button
   translation: "Download PDF"
 
