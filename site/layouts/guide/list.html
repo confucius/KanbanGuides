@@ -55,12 +55,7 @@
           <h1 class="display-4 fw-bold mb-2">{{ .Title }}</h1>
           <div class="mb-4" style="height: 8px; width: 40%; background-color: {{ $bgColor }};"></div>
           <p class="lead mb-4 text-muted">
-            {{- $guideDescription := .Params.description | default .Summary }}
-            {{- if $guideDescription }}
-              {{ $guideDescription }}
-            {{- else }}
-              {{ i18n "guide_content_not_found" }}
-            {{- end }}
+            {{ .Params.guide_overview | default .Summary | markdownify }}
           </p>
         </div>
         <div class="col-12 col-lg-4 text-center">
@@ -173,36 +168,34 @@
           <h2 class="display-6 fw-bold">Guide Overview</h2>
           <p class="lead text-muted">Key characteristics of this guide</p>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-10">
-            <div class="row g-4">
-              <div class="col-12 col-md-6">
-                <div class="card h-100 shadow-sm border-0 border-start border-primary border-4">
-                  <div class="card-body">
-                    <h6 class="card-title text-primary fw-bold"><i class="fa-solid fa-bullseye me-2"></i>Purpose</h6>
-                    <p class="card-text mb-0">{{ .Params.guide_comparison.purpose }}</p>
-                  </div>
-                </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <div class="card h-100 shadow-sm border-0 border-start border-primary border-4">
+              <div class="card-body">
+                <h6 class="card-title text-primary fw-bold"><i class="fa-solid fa-bullseye me-2"></i>Purpose</h6>
+                <p class="card-text mb-0">{{ .Params.guide_comparison.purpose }}</p>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="card h-100 shadow-sm border-0 border-start border-success border-4">
-                  <div class="card-body">
-                    <h6 class="card-title text-success fw-bold"><i class="fa-solid fa-heart me-2"></i>Ethos</h6>
-                    <p class="card-text mb-0">{{ .Params.guide_comparison.ethos }}</p>
-                  </div>
-                </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="card h-100 shadow-sm border-0 border-start border-success border-4">
+              <div class="card-body">
+                <h6 class="card-title text-success fw-bold"><i class="fa-solid fa-heart me-2"></i>Ethos</h6>
+                <p class="card-text mb-0">{{ .Params.guide_comparison.ethos }}</p>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="card h-100 shadow-sm border-0 border-start border-warning border-4">
-                  <div class="card-body">
-                    <h6 class="card-title text-warning fw-bold"><i class="fa-solid fa-users me-2"></i>Audience</h6>
-                    <p class="card-text mb-0">{{ .Params.guide_comparison.audience }}</p>
-                  </div>
-                </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="card h-100 shadow-sm border-0 border-start border-warning border-4">
+              <div class="card-body">
+                <h6 class="card-title text-warning fw-bold"><i class="fa-solid fa-users me-2"></i>Audience</h6>
+                <p class="card-text mb-0">{{ .Params.guide_comparison.audience }}</p>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="card h-100 shadow-sm border-0 border-start border-info border-4">
-                  <div class="card-body">
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="card h-100 shadow-sm border-0 border-start border-info border-4">
+              <div class="card-body">
                     <h6 class="card-title text-info fw-bold"><i class="fa-solid fa-lightbulb me-2"></i>Use Case</h6>
                     <p class="card-text mb-0">{{ .Params.guide_comparison.use_case }}</p>
                   </div>
@@ -426,35 +419,58 @@
   {{/* About Section */}}
   <section class="py-5 bg-light">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12 col-lg-6 mb-4 mb-lg-0">
-          {{- if .Params.brand.image }}
-            <img src="{{ .Params.brand.image }}" class="img-fluid rounded shadow" alt="{{ .Title }}" />
-          {{- end }}
-        </div>
-        <div class="col-12 col-lg-6">
-          <h2 class="h1 mb-4">{{ i18n "what_is_guide_title" . }}</h2>
-          <div class="lead mb-4">
-            {{- $guideWhatis := partial "functions/get-page-param-with-default.html" (dict "page" $guidePage "param" "guide_whatis" "context" .) }}
-            {{- if $guideWhatis }}
-              {{ $guideWhatis | markdownify }}
+      <div class="text-center mb-4">
+        {{- if .Params.brand.image }}
+          <img src="{{ .Params.brand.image }}" class="img-fluid rounded shadow mb-4" style="max-height: 150px;" alt="{{ .Title }}" />
+        {{- end }}
+        <h2 class="h1 mb-4">{{ i18n "what_is_guide_title" . }}</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="lead mb-4 text-center">
+            {{- if .Params.guide_whatis }}
+              {{ .Params.guide_whatis | markdownify }}
             {{- else }}
               {{ i18n "guide_content_not_found" | markdownify }}
             {{- end }}
           </div>
 
-          <h3 class="h2 mb-3">{{ i18n "open_source_title" }}</h3>
-          <p class="mb-4">
-            {{ i18n "open_source_description" . }}
-          </p>
+          <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-6">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h5 text-primary mb-3">
+                    <i class="fas fa-open-source me-2"></i>{{ i18n "open_source_title" }}
+                  </h3>
+                  <p class="mb-0">{{ i18n "open_source_description" . }}</p>
+                </div>
+              </div>
+            </div>
 
-          <div class="d-grid gap-2 d-md-flex">
+            {{- if .Params.guide_license }}
+              <div class="col-12 col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body">
+                    <h3 class="h5 text-primary mb-3">
+                      <i class="fas fa-balance-scale me-2"></i>License
+                    </h3>
+                    <p class="mb-0">{{ .Params.guide_license }}</p>
+                  </div>
+                </div>
+              </div>
+            {{- end }}
+          </div>
+
+          <div class="text-center mt-5">
             {{ if $isComingSoon }}
-              <button class="btn btn-outline-primary btn-lg disabled">{{ i18n "join_discussion_button" }}</button>
+              <button class="btn btn-outline-primary btn-lg disabled me-3">{{ i18n "join_discussion_button" }}</button>
+              <button class="btn btn-outline-secondary btn-lg disabled"><i class="fab fa-github me-2"></i>View on GitHub</button>
             {{ else }}
-              <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary btn-lg" target="_blank">
+              <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary btn-lg me-3" target="_blank">
                 <i class="fa-solid fa-comments me-2"></i>{{ i18n "join_discussion_button" }}
               </a>
+              <a href="{{ .Site.Params.githubUrl }}" class="btn btn-outline-primary btn-lg" target="_blank"> <i class="fab fa-github me-2"></i>View on GitHub </a>
             {{ end }}
           </div>
         </div>

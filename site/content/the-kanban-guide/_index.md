@@ -11,6 +11,8 @@ guide_overview: |
   The [Kanban Guide (2025)](/history/kanban-guide-2025/) is a practical, community-curated reference for using Kanban in knowledge work.
 guide_logo: "open-guide-to-kanban-logo.png"
 weight: 1
+guide_license: |
+  This work is licensed by Orderly Disruption Limited and Daniel S. Vacanti, Inc. under a Creative Commons Attribution 4.0 International License.
 guide_comparison:
   purpose: "Minimal, official reference"
   ethos: "Focused, stable, canonical"
