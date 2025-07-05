@@ -10,4 +10,5 @@ guide_whatis: |
 guide_overview: |
   The [Kanban Guide (2025)](/history/kanban-guide-2025/) is a practical, community-curated reference for using Kanban in knowledge work.
 guide_logo: "open-guide-to-kanban-logo.png"
+weight: 1
 ---
