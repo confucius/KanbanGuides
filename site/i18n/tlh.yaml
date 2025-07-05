@@ -290,3 +290,6 @@
 
 - id: guide_back_to_home
   translation: "← DIch naDev"
+
+- id: not_sure_which_to_use_title
+  translation: "DIch DIch lo' DIch?"

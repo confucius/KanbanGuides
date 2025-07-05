@@ -284,3 +284,6 @@
 
 - id: guide_back_to_home
   translation: "← Back to Home"
+
+- id: not_sure_which_to_use_title
+  translation: "Not Sure Which to Use?"

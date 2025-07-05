@@ -284,3 +284,6 @@
 
 - id: guide_back_to_home
   translation: "← Volver al Inicio"
+
+- id: not_sure_which_to_use_title
+  translation: "¿No Estás Seguro de Cuál Usar?"

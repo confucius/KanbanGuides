@@ -8,6 +8,19 @@
         </div>
       </div>
       <div class="row">
+        <!-- Which to Use Card -->
+        <div class="col-12 p-3">
+          <div class="card card-dark h-100">
+            <div class="card-header">
+              <h5 class="card-title text-center mb-0">{{ i18n "not_sure_which_to_use_title" . }}</h5>
+            </div>
+            <div class="card-body">
+              <div class="mb-0">
+                {{ .Params.not_sure_which_to_use | markdownify }}
+              </div>
+            </div>
+          </div>
+        </div>
         {{ $sections := .Site.Sections }}
         {{ range .Site.Home.Translations }}
           {{ $sections = $sections | lang.Merge .Site.Sections }}
@@ -21,8 +34,8 @@
                 <div class="m-1 p-2" style="background-color: {{ .Params.brand.bg_colour | default "#135289" }};"></div>
               </div>
               <div class="card-body d-flex flex-column">
-                <p class="flex-grow-1">{{ .Params.guide_overview | markdownify }}</p>
-                <div class="d-flex flex-wrap gap-2 mt-auto justify-content-center">
+                <p class="flex-grow-1">{{ .Params.which_to_use_summary | markdownify }}</p>
+                <div class="d-flex flex-wrap gap-2 mt-auto justify-content-center py-2">
                   {{- $latestVersion := partial "functions/get-latest-version" . }}
                   <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path $latestVersion) }}" class="btn btn-primary btn-sm text-nowrap">
                     <i class="fa-solid fa-newspaper me-2"></i>{{ i18n "read_online_button" }}
@@ -34,10 +47,43 @@
                     <i class="fa-solid fa-clock-rotate-left me-2"></i>{{ i18n "history_button" }}
                   </a>
                 </div>
+                {{- if .Params.guide_comparison }}
+                  <div class="mt-3">
+                    <div class="small">
+                      <div class="row mb-1">
+                        <div class="col-6 text-end fw-bold">Purpose:</div>
+                        <div class="col-6 text-start">{{ .Params.guide_comparison.purpose }}</div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col-6 text-end fw-bold">Ethos:</div>
+                        <div class="col-6 text-start">{{ .Params.guide_comparison.ethos }}</div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col-6 text-end fw-bold">Audience:</div>
+                        <div class="col-6 text-start">{{ .Params.guide_comparison.audience }}</div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col-6 text-end fw-bold">Use Case:</div>
+                        <div class="col-6 text-start">{{ .Params.guide_comparison.use_case }}</div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col-6 text-end fw-bold">Content:</div>
+                        <div class="col-6 text-start">{{ .Params.guide_comparison.content }}</div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col-6 text-end fw-bold">Updates:</div>
+                        <div class="col-6 text-start">{{ .Params.guide_comparison.update_model }}</div>
+                      </div>
+                    </div>
+                  </div>
+                {{- end }}
+                <p class="flex-grow-1"></p>
               </div>
             </div>
           </div>
         {{- end }}
+
+
         <!-- Discussion Card -->
         <div class="col-12 p-3">
           <div class="card card-dark h-100">
