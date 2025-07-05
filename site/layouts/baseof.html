@@ -17,7 +17,7 @@
       })(window, document, "script", "dataLayer", "GTM-T2KD2BNT");
     </script>
     <!-- End Google Tag Manager -->
-    {{ if .Site.Home }}
+    {{ if .IsHome }}
       <title>{{ .Site.Title }} | {{ .Site.Params.Description }}</title>
     {{ else }}
       <title>{{ .Title }} | {{ .Site.Title }}</title>
