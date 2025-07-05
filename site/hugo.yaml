@@ -17,15 +17,6 @@ languages:
     params:
       description: Kanban Guides is the home of the Open Guide to Kanban, and The Kanban Guide. It is a free, community-driven reference for applying Kanban in knowledge work. The guides define the core practices, and metrics  necessary to improve flow, optimise value delivery, and enhance team sustainability. This guide supports scalable Kanban adoptions across diverse industries and complements other agile, lean, and flow-based approaches.
       keywords: Kanban, Open Guide to Kanban, kanban guide, kanban method, knowledge work, flow optimisation, WIP limits, value delivery, agile, lean, continuous improvement, service level expectation, cumulative flow, throughput, metrics, work item age, flow efficiency, visualisation, work in progress, process improvement, kanban board, definition of workflow, outcome-oriented delivery
-  tlh:
-    languageName: Klingon
-    weight: 1000
-    title: Kanban ghuHmoHwI'
-    params:
-      description: Kanban ghuHmoHwI' 'oH QIpyuS pa'Daq jIbuS, Kanban ghuHmoHwI', Kanban mIw'e'. ngoqvam DIS pongHa' Hoch ghomwIj'e' Qel Kanban lo'laHghach SuyDuj vIghro'. nap, ghomtaHghach, je paQDI'norghmey DelmeH ngoQmey'e' wIpoQbogh vItu'. QeDvam tlhaw'DI' QapmeH Qu'na' lo'laHghach, 'ej yIlo' SuvwI'pu' je 'e' HIQoy. ghantoHvam Qutlh Kanban QInvam wabmey Hoch DIvI' Hol Daq'a' SepmeyDaq, 'ej Qutlh Hoch agile, lean, je wab-based mIwQeD.
-      keywords: Kanban, QIpyuS pa'Daq jIbuS, Kanban ghuHmoHwI', Kanban mIw, Qel Qu', wab QorghHa', WIP vuDmey, lo'laHghach HInob, agile, lean, taHHa' Dub, SeHmeH pat, ngaQHa' wab, Qu'meH Do, paQDI'norghmey, Qu' poH nI', wab lI', leQ, QapHa' Qu', QIn mIw, mIw QIn, Qutlh outcome
-
-      status: reference
   es-419:
     languageName: Spanish (Latin America)
     weight: 3
@@ -34,6 +25,14 @@ languages:
       description: Kanban Guides es el hogar de la Guía Abierta de Kanban, y la Guía de Kanban. Es una referencia gratuita y comunitaria para aplicar Kanban en el trabajo del conocimiento. Las guías definen las prácticas, métricas y principios fundamentales necesarios para mejorar el flujo, optimizar la entrega de valor y mejorar la sostenibilidad del equipo. Esta guía apoya implementaciones escalables de Kanban en diversas industrias y complementa otros enfoques ágiles, lean y basados en el flujo.
       keywords: Kanban, Guía Abierta de Kanban, guía de kanban, método kanban, trabajo del conocimiento, optimización del flujo, límites de WIP, entrega de valor, ágil, lean, mejora continua, expectativa de nivel de servicio, flujo acumulativo, rendimiento, métricas, antigüedad de ítems de trabajo, eficiencia de flujo, visualización, trabajo en curso, mejora de procesos, tablero kanban, definición de flujo de trabajo, entrega orientada a resultados
       status: AI
+  x-minionese:
+    languageName: Minionese
+    weight: 1001
+    title: Banana Kanban Guides
+    params:
+      description: Bello! Kanban Guides para banana work! Poopaye me want open guide to kanban, banana kanban guide! Gelato work, banana flow optimizzazione, WIP-ay limitazione, banana delivery, agile banana, lean banana, continuo improvement-o! Bananaaaa!
+      keywords: Kanban, banana, gelato, poopaye, bello, work banana, flow banana, WIP banana, value banana, agile banana, lean banana, improvement banana, kanban board banana, workflow banana, delivery banana
+      status: reference
 
 params:
   description: Authoritative and Open Resources for Flow-Based Work
