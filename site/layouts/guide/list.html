@@ -70,7 +70,7 @@
   {{/* Action Cards Section - Moved to top for immediate action */}}
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center mb-5">Get Started</h2>
+      <h2 class="text-center mb-5">{{ i18n "get_started_title" . }}</h2>
       <div class="row g-4">
         {{/* Primary Action - Read Guide */}}
         <div class="col-12 col-md-6">
@@ -108,13 +108,13 @@
                 </div>
                 <div>
                   <h5 class="card-title mb-1">{{ i18n "join_discussion_title" . }}</h5>
-                  <small class="text-muted">Community Driven</small>
+                  <small class="text-muted">{{ i18n "community_driven_label" . }}</small>
                 </div>
               </div>
               <p class="card-text flex-grow-1 text-muted">{{ i18n "join_discussion_description" . }}</p>
               <div class="mt-auto">
                 {{ if $isComingSoon }}
-                  <span class="btn btn-outline-secondary btn-lg w-100 disabled">{{ i18n "coming_soon" | default "Coming Soon" }}</span>
+                  <span class="btn btn-outline-secondary btn-lg w-100 disabled">{{ i18n "coming_soon" . }}</span>
                 {{ else }}
                   <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-success btn-lg w-100" target="_blank">
                     <i class="fa-solid fa-users me-2"></i>{{ i18n "join_discussion_button" }}
@@ -165,14 +165,14 @@
     <section class="py-5 bg-light">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="display-6 fw-bold">Guide Overview</h2>
-          <p class="lead text-muted">Key characteristics of this guide</p>
+          <h2 class="display-6 fw-bold">{{ i18n "guide_overview_title" . }}</h2>
+          <p class="lead text-muted">{{ i18n "guide_overview_description" . }}</p>
         </div>
         <div class="row g-4">
           <div class="col-12 col-md-6">
             <div class="card h-100 shadow-sm border-0 border-start border-primary border-4">
               <div class="card-body">
-                <h6 class="card-title text-primary fw-bold"><i class="fa-solid fa-bullseye me-2"></i>Purpose</h6>
+                <h6 class="card-title text-primary fw-bold"><i class="fa-solid fa-bullseye me-2"></i>{{ i18n "purpose_title" . }}</h6>
                 <p class="card-text mb-0">{{ .Params.guide_comparison.purpose }}</p>
               </div>
             </div>
@@ -180,7 +180,7 @@
           <div class="col-12 col-md-6">
             <div class="card h-100 shadow-sm border-0 border-start border-success border-4">
               <div class="card-body">
-                <h6 class="card-title text-success fw-bold"><i class="fa-solid fa-heart me-2"></i>Ethos</h6>
+                <h6 class="card-title text-success fw-bold"><i class="fa-solid fa-heart me-2"></i>{{ i18n "ethos_title" . }}</h6>
                 <p class="card-text mb-0">{{ .Params.guide_comparison.ethos }}</p>
               </div>
             </div>
@@ -188,7 +188,7 @@
           <div class="col-12 col-md-6">
             <div class="card h-100 shadow-sm border-0 border-start border-warning border-4">
               <div class="card-body">
-                <h6 class="card-title text-warning fw-bold"><i class="fa-solid fa-users me-2"></i>Audience</h6>
+                <h6 class="card-title text-warning fw-bold"><i class="fa-solid fa-users me-2"></i>{{ i18n "audience_title" . }}</h6>
                 <p class="card-text mb-0">{{ .Params.guide_comparison.audience }}</p>
               </div>
             </div>
@@ -196,7 +196,7 @@
           <div class="col-12 col-md-6">
             <div class="card h-100 shadow-sm border-0 border-start border-info border-4">
               <div class="card-body">
-                    <h6 class="card-title text-info fw-bold"><i class="fa-solid fa-lightbulb me-2"></i>Use Case</h6>
+                    <h6 class="card-title text-info fw-bold"><i class="fa-solid fa-lightbulb me-2"></i>{{ i18n "use_case_title" . }}</h6>
                     <p class="card-text mb-0">{{ .Params.guide_comparison.use_case }}</p>
                   </div>
                 </div>
@@ -204,7 +204,7 @@
               <div class="col-12 col-md-6">
                 <div class="card h-100 shadow-sm border-0 border-start border-secondary border-4">
                   <div class="card-body">
-                    <h6 class="card-title text-secondary fw-bold"><i class="fa-solid fa-book me-2"></i>Content</h6>
+                    <h6 class="card-title text-secondary fw-bold"><i class="fa-solid fa-book me-2"></i>{{ i18n "content_title" . }}</h6>
                     <p class="card-text mb-0">{{ .Params.guide_comparison.content }}</p>
                   </div>
                 </div>
@@ -212,7 +212,7 @@
               <div class="col-12 col-md-6">
                 <div class="card h-100 shadow-sm border-0 border-start border-dark border-4">
                   <div class="card-body">
-                    <h6 class="card-title text-dark fw-bold"><i class="fa-solid fa-sync me-2"></i>Update Model</h6>
+                    <h6 class="card-title text-dark fw-bold"><i class="fa-solid fa-sync me-2"></i>{{ i18n "update_model_title" . }}</h6>
                     <p class="card-text mb-0">{{ .Params.guide_comparison.update_model }}</p>
                   </div>
                 </div>
@@ -229,8 +229,8 @@
     <section class="py-5">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="display-6 fw-bold">When to Use This Guide</h2>
-          <p class="lead text-muted">Choose the right approach for your context</p>
+          <h2 class="display-6 fw-bold">{{ i18n "when_to_use_title" . }}</h2>
+          <p class="lead text-muted">{{ i18n "when_to_use_description" . }}</p>
         </div>
         <div class="row g-4">
           {{- if .Params.which_to_use_summary }}
@@ -242,7 +242,7 @@
                       <i class="fa-solid fa-compass fa-2x"></i>
                     </div>
                     <div>
-                      <h4 class="card-title text-primary fw-bold mb-3">Quick Decision Guide</h4>
+                      <h4 class="card-title text-primary fw-bold mb-3">{{ i18n "quick_decision_guide_title" . }}</h4>
                       <div class="card-text fs-6">
                         {{ .Params.which_to_use_summary | markdownify }}
                       </div>
@@ -263,7 +263,7 @@
                       <div class="text-success me-3">
                         <i class="fa-solid fa-seedling fa-2x"></i>
                       </div>
-                      <h5 class="card-title text-success fw-bold mb-0">Getting Started</h5>
+                      <h5 class="card-title text-success fw-bold mb-0">{{ i18n "getting_started_title" . }}</h5>
                     </div>
                     <div class="card-text">
                       {{ .Params.layman_description | markdownify }}
@@ -281,7 +281,7 @@
                       <div class="text-warning me-3">
                         <i class="fa-solid fa-graduation-cap fa-2x"></i>
                       </div>
-                      <h5 class="card-title text-warning fw-bold mb-0">For Practitioners</h5>
+                      <h5 class="card-title text-warning fw-bold mb-0">{{ i18n "for_practitioners_title" . }}</h5>
                     </div>
                     <div class="card-text">
                       {{ .Params.practitioner_description | markdownify }}
@@ -300,8 +300,8 @@
   <section class="py-5 bg-light">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="display-6 fw-bold">Current Information</h2>
-        <p class="lead text-muted">Version details and community contributors</p>
+        <h2 class="display-6 fw-bold">{{ i18n "current_information_title" . }}</h2>
+        <p class="lead text-muted">{{ i18n "current_information_description" . }}</p>
       </div>
       <div class="row g-4">
         {{/* Current Version Box */}}
@@ -311,22 +311,22 @@
               <div class="text-primary mb-3">
                 <i class="fa-solid fa-code-branch fa-3x"></i>
               </div>
-              <h4 class="card-title text-primary fw-bold">Current Version</h4>
+              <h4 class="card-title text-primary fw-bold">{{ i18n "current_version_title" . }}</h4>
               {{- $latestVersion := partial "functions/get-latest-version" . }}
               {{- if $latestVersion }}
                 <div class="my-4">
                   <span class="badge bg-primary fs-3 px-4 py-2">{{ $latestVersion }}</span>
                   {{- if $guidePage.Date }}
                     <p class="text-muted mt-3 mb-0">
-                      <i class="fa-solid fa-calendar me-2"></i>Updated
+                      <i class="fa-solid fa-calendar me-2"></i>{{ i18n "current_version_updated_label" . }}
                       {{ $guidePage.Date.Format "January 2, 2006" }}
                     </p>
                   {{- end }}
                 </div>
-                <p class="text-muted mb-4">This is the current active version of the guide.</p>
-                <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path $latestVersion) }}" class="btn btn-primary btn-lg"> <i class="fa-solid fa-book-open me-2"></i>Read Current Version </a>
+                <p class="text-muted mb-4">{{ i18n "current_version_description" . }}</p>
+                <a href="{{ partial "functions/safe-page-link.html" (path.Join .Path $latestVersion) }}" class="btn btn-primary btn-lg"> <i class="fa-solid fa-book-open me-2"></i>{{ i18n "read_current_version_button" . }} </a>
               {{- else }}
-                <p class="text-muted">Version information not available</p>
+                <p class="text-muted">{{ i18n "version_info_not_available" . }}</p>
               {{- end }}
             </div>
           </div>
@@ -340,8 +340,8 @@
                 <div class="text-success mb-3">
                   <i class="fa-solid fa-users fa-3x"></i>
                 </div>
-                <h4 class="card-title text-success fw-bold">Contributors</h4>
-                <p class="text-muted">Community members who shape this guide</p>
+                <h4 class="card-title text-success fw-bold">{{ i18n "contributors_title" . }}</h4>
+                <p class="text-muted">{{ i18n "contributors_description_card" . }}</p>
               </div>
 
               {{- $contributors := partial "functions/get-contributors.html" . }}
@@ -354,12 +354,12 @@
                   {{- end }}
                 </div>
                 <div class="text-center">
-                  <p class="text-muted mb-3">Thank you to all contributors who help make this guide better.</p>
-                  <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-success" target="_blank"> <i class="fa-solid fa-plus me-2"></i>Join the Community </a>
+                  <p class="text-muted mb-3">{{ i18n "contributors_thank_you" . }}</p>
+                  <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-success" target="_blank"> <i class="fa-solid fa-plus me-2"></i>{{ i18n "join_community_button" . }} </a>
                 </div>
               {{- else }}
                 <div class="text-center">
-                  <p class="text-muted">No contributors found</p>
+                  <p class="text-muted">{{ i18n "no_contributors_found" . }}</p>
                 </div>
               {{- end }}
             </div>
@@ -370,12 +370,11 @@
   </section>
 
   {{/* Historical Versions Section */}}
-  <section class="py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="display-6 fw-bold">Version History</h2>
-        <p class="lead text-muted">Previous versions and their evolution</p>
-      </div>
+  <section class="py-5">      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold">{{ i18n "version_history_title" . }}</h2>
+          <p class="lead text-muted">{{ i18n "version_history_description" . }}</p>
+        </div>
       {{- $sectionPages := where .Site.RegularPages "Section" .Section }}
       {{- $guidePages := where $sectionPages "Type" "guide" }}
       {{- $latestVersion := partial "functions/get-latest-version" . }}
@@ -409,8 +408,8 @@
           <div class="text-muted mb-4">
             <i class="fa-solid fa-clock fa-3x"></i>
           </div>
-          <h4 class="text-muted">No Previous Versions</h4>
-          <p class="text-muted">This guide is just getting started. Check back later for historical versions.</p>
+          <h4 class="text-muted">{{ i18n "no_previous_versions_title" . }}</h4>
+          <p class="text-muted">{{ i18n "no_previous_versions_description" . }}</p>
         </div>
       {{- end }}
     </div>
@@ -453,7 +452,7 @@
                 <div class="card h-100 border-0 shadow-sm">
                   <div class="card-body">
                     <h3 class="h5 text-primary mb-3">
-                      <i class="fas fa-balance-scale me-2"></i>License
+                      <i class="fas fa-balance-scale me-2"></i>{{ i18n "license_title" . }}
                     </h3>
                     <p class="mb-0">{{ .Params.guide_license }}</p>
                   </div>
@@ -470,7 +469,7 @@
               <a href="{{ .Site.Params.githubUrl }}/discussions" class="btn btn-primary btn-lg me-3" target="_blank">
                 <i class="fa-solid fa-comments me-2"></i>{{ i18n "join_discussion_button" }}
               </a>
-              <a href="{{ .Site.Params.githubUrl }}" class="btn btn-outline-primary btn-lg" target="_blank"> <i class="fab fa-github me-2"></i>View on GitHub </a>
+              <a href="{{ .Site.Params.githubUrl }}" class="btn btn-outline-primary btn-lg" target="_blank"> <i class="fab fa-github me-2"></i>{{ i18n "view_on_github_button" . }} </a>
             {{ end }}
           </div>
         </div>

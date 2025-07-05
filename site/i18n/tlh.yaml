@@ -301,4 +301,165 @@
   translation: "← DIch naDev"
 
 - id: not_sure_which_to_use_title
-  translation: "DIch DIch lo' DIch?"
+  translation: "DIch wuq DIch DIlo' Dub?"
+
+# Additional translations for guide/list.html
+- id: get_started_title
+  translation: "nugh"
+
+- id: community_driven_label
+  translation: "nugh chenmoH"
+
+- id: coming_soon
+  translation: "tugh DIch"
+
+- id: purpose_title
+  translation: "nugh"
+
+- id: ethos_title
+  translation: "valwI'"
+
+- id: audience_title
+  translation: "DIch nugh"
+
+- id: use_case_title
+  translation: "DIlo' DIch"
+
+- id: content_title
+  translation: "DIch naDev"
+
+- id: update_model_title
+  translation: "choH DIch"
+
+- id: guide_overview_title
+  translation: "ghuHmeH DIch cha'"
+
+- id: guide_overview_description
+  translation: "ghuHmeH DIch nugh DIch"
+
+- id: when_to_use_title
+  translation: "DIch DIlo' poQ"
+
+- id: when_to_use_description
+  translation: "DIch nugh DIch wuq"
+
+- id: quick_decision_guide_title
+  translation: "nom DIch ghuHmoH"
+
+- id: getting_started_title
+  translation: "nugh DIch"
+
+- id: for_practitioners_title
+  translation: "DIlo'wI'pu' DIch"
+
+- id: current_information_title
+  translation: "DaH DIch naDev"
+
+- id: current_information_description
+  translation: "DIch DIch 'ej nugh chenmoHwI'pu' DIch"
+
+- id: current_version_title
+  translation: "DaH DIch"
+
+- id: current_version_updated_label
+  translation: "choH"
+
+- id: current_version_description
+  translation: "'e' DaH DIch DIch."
+
+- id: read_current_version_button
+  translation: "DaH DIch laD"
+
+- id: version_info_not_available
+  translation: "DIch naDev DIch DIch"
+
+- id: contributors_title
+  translation: "chenmoHwI'pu'"
+
+- id: contributors_description_card
+  translation: "ghuHmeH DIch chenmoH nugh DIch"
+
+- id: contributors_thank_you
+  translation: "ghuHmeH DIch DIch chenmoHwI'pu' DIch DIch qatlh."
+
+- id: join_community_button
+  translation: "nugh DIch"
+
+- id: no_contributors_found
+  translation: "chenmoHwI'pu' DIch DIch"
+
+- id: version_history_title
+  translation: "DIch maH"
+
+- id: version_history_description
+  translation: "DIch DIch 'ej choq DIch"
+
+- id: no_previous_versions_title
+  translation: "DIch DIch DIch"
+
+- id: no_previous_versions_description
+  translation: "ghuHmeH DIch nugh. tugh DIch maH DIch."
+
+- id: what_is_guide_title
+  translation: "nuq 'oH ghuHmeH DIch'e'?"
+
+- id: license_title
+  translation: "DIch chup"
+
+- id: view_on_github_button
+  translation: "GitHub DIch cha'"
+
+# Additional translations for version-card.html
+- id: current_open_guide_label
+  translation: "DaH DIch ghuHmeH DIch"
+
+- id: active_status_label
+  translation: "DIch"
+
+- id: current_fork_label
+  translation: "DaH DIch"
+
+- id: active_fork_label
+  translation: "DIch DIch"
+
+- id: fork_indicator
+  translation: "DIch:"
+
+- id: forked_from_indicator
+  translation: "DIch vo':"
+
+- id: this_is_fork_label
+  translation: "'e' DIch DIch"
+
+- id: available_languages_label
+  translation: "Hol DIch:"
+
+- id: pdf_downloads_label
+  translation: "PDF DIch DIch:"
+
+- id: living_document_updated_label
+  translation: "yap naDev - choH"
+
+- id: active_fork_updated_label
+  translation: "DIch DIch - choH"
+
+- id: historical_fork_label
+  translation: "maH DIch -"
+
+- id: historical_version_label
+  translation: "maH DIch -"
+
+- id: current_version_label
+  translation: "DaH DIch"
+
+- id: read_guide_button
+  translation: "ghuHmeH laD"
+
+- id: translations_button_small
+  translation: "mugh"
+
+- id: read_fork_button
+  translation: "DIch laD"
+
+- id: view_archive_button
+  translation: "polmeH DIch cha'"

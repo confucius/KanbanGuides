@@ -301,4 +301,165 @@
   translation: "← Volver al Inicio"
 
 - id: not_sure_which_to_use_title
-  translation: "¿No Estás Seguro de Cuál Usar?"
+  translation: "¿No estás seguro cuál usar?"
+
+# Additional translations for guide/list.html
+- id: get_started_title
+  translation: "Comenzar"
+
+- id: community_driven_label
+  translation: "Impulsado por la Comunidad"
+
+- id: coming_soon
+  translation: "Próximamente"
+
+- id: purpose_title
+  translation: "Propósito"
+
+- id: ethos_title
+  translation: "Ethos"
+
+- id: audience_title
+  translation: "Audiencia"
+
+- id: use_case_title
+  translation: "Caso de Uso"
+
+- id: content_title
+  translation: "Contenido"
+
+- id: update_model_title
+  translation: "Modelo de Actualización"
+
+- id: guide_overview_title
+  translation: "Resumen de la Guía"
+
+- id: guide_overview_description
+  translation: "Características clave de esta guía"
+
+- id: when_to_use_title
+  translation: "Cuándo Usar Esta Guía"
+
+- id: when_to_use_description
+  translation: "Elige el enfoque correcto para tu contexto"
+
+- id: quick_decision_guide_title
+  translation: "Guía de Decisión Rápida"
+
+- id: getting_started_title
+  translation: "Comenzando"
+
+- id: for_practitioners_title
+  translation: "Para Practicantes"
+
+- id: current_information_title
+  translation: "Información Actual"
+
+- id: current_information_description
+  translation: "Detalles de versión y contribuidores de la comunidad"
+
+- id: current_version_title
+  translation: "Versión Actual"
+
+- id: current_version_updated_label
+  translation: "Actualizada"
+
+- id: current_version_description
+  translation: "Esta es la versión activa actual de la guía."
+
+- id: read_current_version_button
+  translation: "Leer Versión Actual"
+
+- id: version_info_not_available
+  translation: "Información de versión no disponible"
+
+- id: contributors_title
+  translation: "Contribuidores"
+
+- id: contributors_description_card
+  translation: "Miembros de la comunidad que dan forma a esta guía"
+
+- id: contributors_thank_you
+  translation: "Gracias a todos los contribuidores que ayudan a hacer esta guía mejor."
+
+- id: join_community_button
+  translation: "Únete a la Comunidad"
+
+- id: no_contributors_found
+  translation: "No se encontraron contribuidores"
+
+- id: version_history_title
+  translation: "Historial de Versiones"
+
+- id: version_history_description
+  translation: "Versiones anteriores y su evolución"
+
+- id: no_previous_versions_title
+  translation: "No Hay Versiones Anteriores"
+
+- id: no_previous_versions_description
+  translation: "Esta guía apenas está comenzando. Vuelve más tarde para versiones históricas."
+
+- id: what_is_guide_title
+  translation: "¿Qué es esta Guía?"
+
+- id: license_title
+  translation: "Licencia"
+
+- id: view_on_github_button
+  translation: "Ver en GitHub"
+
+# Additional translations for version-card.html
+- id: current_open_guide_label
+  translation: "Guía Abierta Actual"
+
+- id: active_status_label
+  translation: "Activa"
+
+- id: current_fork_label
+  translation: "Fork Actual"
+
+- id: active_fork_label
+  translation: "Fork Activo"
+
+- id: fork_indicator
+  translation: "Fork:"
+
+- id: forked_from_indicator
+  translation: "Fork de:"
+
+- id: this_is_fork_label
+  translation: "Este es un fork"
+
+- id: available_languages_label
+  translation: "Idiomas Disponibles:"
+
+- id: pdf_downloads_label
+  translation: "Descargas PDF:"
+
+- id: living_document_updated_label
+  translation: "Documento Vivo - Actualizada"
+
+- id: active_fork_updated_label
+  translation: "Fork Activo - Actualizada"
+
+- id: historical_fork_label
+  translation: "Fork Histórico -"
+
+- id: historical_version_label
+  translation: "Versión Histórica -"
+
+- id: current_version_label
+  translation: "Versión Actual"
+
+- id: read_guide_button
+  translation: "Leer Guía"
+
+- id: translations_button_small
+  translation: "Traducciones"
+
+- id: read_fork_button
+  translation: "Leer Fork"
+
+- id: view_archive_button
+  translation: "Ver Archivo"

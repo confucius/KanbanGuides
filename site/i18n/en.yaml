@@ -305,3 +305,164 @@
 
 - id: not_sure_which_to_use_title
   translation: "Not Sure Which to Use?"
+
+# Additional translations for guide/list.html
+- id: get_started_title
+  translation: "Get Started"
+
+- id: community_driven_label
+  translation: "Community Driven"
+
+- id: coming_soon
+  translation: "Coming Soon"
+
+- id: purpose_title
+  translation: "Purpose"
+
+- id: ethos_title
+  translation: "Ethos"
+
+- id: audience_title
+  translation: "Audience"
+
+- id: use_case_title
+  translation: "Use Case"
+
+- id: content_title
+  translation: "Content"
+
+- id: update_model_title
+  translation: "Update Model"
+
+- id: guide_overview_title
+  translation: "Guide Overview"
+
+- id: guide_overview_description
+  translation: "Key characteristics of this guide"
+
+- id: when_to_use_title
+  translation: "When to Use This Guide"
+
+- id: when_to_use_description
+  translation: "Choose the right approach for your context"
+
+- id: quick_decision_guide_title
+  translation: "Quick Decision Guide"
+
+- id: getting_started_title
+  translation: "Getting Started"
+
+- id: for_practitioners_title
+  translation: "For Practitioners"
+
+- id: current_information_title
+  translation: "Current Information"
+
+- id: current_information_description
+  translation: "Version details and community contributors"
+
+- id: current_version_title
+  translation: "Current Version"
+
+- id: current_version_updated_label
+  translation: "Updated"
+
+- id: current_version_description
+  translation: "This is the current active version of the guide."
+
+- id: read_current_version_button
+  translation: "Read Current Version"
+
+- id: version_info_not_available
+  translation: "Version information not available"
+
+- id: contributors_title
+  translation: "Contributors"
+
+- id: contributors_description_card
+  translation: "Community members who shape this guide"
+
+- id: contributors_thank_you
+  translation: "Thank you to all contributors who help make this guide better."
+
+- id: join_community_button
+  translation: "Join the Community"
+
+- id: no_contributors_found
+  translation: "No contributors found"
+
+- id: version_history_title
+  translation: "Version History"
+
+- id: version_history_description
+  translation: "Previous versions and their evolution"
+
+- id: no_previous_versions_title
+  translation: "No Previous Versions"
+
+- id: no_previous_versions_description
+  translation: "This guide is just getting started. Check back later for historical versions."
+
+- id: what_is_guide_title
+  translation: "What is this Guide?"
+
+- id: license_title
+  translation: "License"
+
+- id: view_on_github_button
+  translation: "View on GitHub"
+
+# Additional translations for version-card.html
+- id: current_open_guide_label
+  translation: "Current Open Guide"
+
+- id: active_status_label
+  translation: "Active"
+
+- id: current_fork_label
+  translation: "Current Fork"
+
+- id: active_fork_label
+  translation: "Active Fork"
+
+- id: fork_indicator
+  translation: "Fork:"
+
+- id: forked_from_indicator
+  translation: "Forked from:"
+
+- id: this_is_fork_label
+  translation: "This is a fork"
+
+- id: available_languages_label
+  translation: "Available Languages:"
+
+- id: pdf_downloads_label
+  translation: "PDF Downloads:"
+
+- id: living_document_updated_label
+  translation: "Living Document - Updated"
+
+- id: active_fork_updated_label
+  translation: "Active Fork - Updated"
+
+- id: historical_fork_label
+  translation: "Historical Fork -"
+
+- id: historical_version_label
+  translation: "Historical Version -"
+
+- id: current_version_label
+  translation: "Current Version"
+
+- id: read_guide_button
+  translation: "Read Guide"
+
+- id: translations_button_small
+  translation: "Translations"
+
+- id: read_fork_button
+  translation: "Read Fork"
+
+- id: view_archive_button
+  translation: "View Archive"
