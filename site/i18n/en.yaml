@@ -54,7 +54,7 @@
   translation: "Engage with the community, share your insights, and help shape the future of the Kanban Guides. Your contributions are invaluable in making these guides comprehensive resources for Kanban practitioners."
 
 - id: guides_intro_text
-  translation: "Learn what Kanban is and how to apply it to optimise the flow of value through a process. Welcome to Kanban Guides - your comprehensive resource for Kanban knowledge and practices. Explore our collection of guides below."
+  translation: "Learn what Kanban is and how to apply it to optimise the flow of value through a process. This is your comprehensive resource for Kanban knowledge and practices. Kanban Guides is the home of the Open Guide to Kanban, and The Kanban Guide. It is a free, community-driven reference for applying Kanban in knowledge work. The guides define the core practices, and metrics  necessary to improve flow, optimise value delivery, and enhance team sustainability. These guides support scalable Kanban adoptions across diverse industries and complement other agile, lean, and flow-based approaches."
 
 - id: download_title
   translation: "Download {{ .Site.Title }}"
