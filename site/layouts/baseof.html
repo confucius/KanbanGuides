@@ -68,7 +68,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="{{ .RelPermalink }}" />
     <meta name="twitter:title" content="{{ $title }}" />
-    <meta name="twitter:description" content="{{ ( .Page.Params.description | default  .Site.Params.description) | plainify }}" />
+    <meta name="twitter:description" content="{{ ( .Description | default .Site.Params.description) | plainify }}" />
     <meta name="twitter:image" content="/images/open-guide-to-kanban-logo-512.png" />
     <meta name="twitter:image:alt" content="{{ .Site.Title }} Logo" />
 
