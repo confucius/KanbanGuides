@@ -162,14 +162,7 @@
             <div class="content-version mt-2">
               <span class="text-muted">{{ i18n "guide_version_label" }} </span>
               <span class="version-number">
-                {{- $pathParts := split .Path "/" -}}
-                {{- $version := "" -}}
-                {{- range $pathParts -}}
-                  {{- if and (ne . "") (findRE `^\d{4}\.\d+$` .) -}}
-                    {{- $version = . -}}
-                    {{- break -}}
-                  {{- end -}}
-                {{- end -}}
+                {{- $version := partial "functions/get-guide-version.html" . -}}
                 v{{ $version }}
               </span>
             </div>
