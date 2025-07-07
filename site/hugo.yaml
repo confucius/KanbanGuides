@@ -59,6 +59,7 @@ outputs:
     - json
     - rss
     - languages
+    - translations
   section:
     - html
     - rss
@@ -75,6 +76,9 @@ outputFormats:
   json:
     mediaType: application/json
     baseName: pages
+  translations:
+    mediaType: application/json
+    baseName: translations
   languages:
     mediaType: application/json
     baseName: languages
