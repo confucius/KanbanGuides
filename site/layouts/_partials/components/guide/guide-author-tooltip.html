@@ -14,6 +14,12 @@
       </div>
     </div>
     <h6 class="card-title mb-1 fw-bold">{{ .name }}</h6>
-    <span class="badge bg-{{- if eq .role "creator" }}primary{{- else }}secondary{{- end }} mb-2"> {{- if .founder }}<i class="fas fa-star me-1"></i>{{- end }}{{ .role | title }} </span>
+    {{- $badgeType := "light" }}
+    {{- if eq .role "creator" }}
+      {{- $badgeType = "primary" }}
+    {{- else if eq .role "contributor" }}
+      {{- $badgeType = "secondary" }}
+    {{- end }}
+    <span class="badge text-bg-{{- $badgeType }} mb-2"> {{- if .founder }}<i class="fas fa-star me-1"></i>{{- end }}{{ .role | title }} </span>
   </div>
 </div>
