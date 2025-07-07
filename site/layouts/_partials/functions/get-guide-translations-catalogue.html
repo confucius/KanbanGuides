@@ -27,8 +27,7 @@
 {{ $guideInfo := slice }}
 {{ range $uniqueSections.ByWeight }}
   {{/* Get all guide versions for this section */}}
-  {{ $sectionPages := where $.Site.RegularPages "Section" .Section }}
-  {{ $guidePages := where $sectionPages "Type" "guide" }}
+  {{ $guidePages := where .Pages "Type" "guide" }}
 
   {{/* Get the latest version for this section using the dedicated function */}}
   {{ $latestVersionNumber := partial "functions/get-latest-version" . }}
@@ -50,12 +49,21 @@
       {{/* Get available translations for this version using the dedicated function */}}
       {{ $versionTranslations := partial "functions/get-guide-translations-for-version" . }}
 
+      {{/* Construct the bundle path based on section and version */}}
+      {{ $bundlePath := "" }}
+      {{ if .Path }}
+        {{ $bundlePath = .Path }}
+      {{ else }}
+        {{/* Construct path from section and version if .Path is empty */}}
+        {{ $bundlePath = printf "content/%s/%s/" .Section $version }}
+      {{ end }}
+
       {{ $versionInfo := dict
         "Version" $version
         "Title" .Title
         "Date" .Date
         "RelPermalink" .RelPermalink
-        "Path" .Path
+        "Path" $bundlePath
         "Description" .Description
         "Latest" (eq $version $latestVersionNumber)
         "Translations" $versionTranslations

@@ -115,6 +115,7 @@
     "Title" $title
     "RelPermalink" $relPermalink
     "Path" $path
+    "VersionPath" $guideVersionPage.Path
     "Date" $date
     "Status" (cond (and $hasContent $hasPDF) "published" (cond $hasContent "online-only" (cond $hasPDF "pdf-only" "unavailable")))
     "ReadOnline" (cond $hasContent true false)
