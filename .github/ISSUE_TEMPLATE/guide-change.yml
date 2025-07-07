@@ -9,7 +9,7 @@ body:
       value: |
         Thanks for your interest in improving the Open Guide to Kanban! 
 
-        Before proposing content changes, we encourage following our [collaborative workflow](https://github.com/KanbanGuides/OpenGuideToKanban/blob/main/readme.md#encouraged-contribution-workflow):
+        Before proposing content changes, we encourage following our [collaborative workflow](https://github.com/KanbanGuides/KanbanGuides/blob/main/readme.md#encouraged-contribution-workflow):
         1. **Create a Discussion** first to build consensus
         2. **Create this Issue** after reaching agreement
         3. **Submit a Pull Request** with the implementation
@@ -100,7 +100,7 @@ body:
     attributes:
       label: Discussion Link (if applicable)
       description: Link to the GitHub Discussion thread about this change
-      placeholder: https://github.com/KanbanGuides/OpenGuideToKanban/discussions/###
+      placeholder: https://github.com/KanbanGuides/KanbanGuides/discussions/###
 
   - type: dropdown
     id: urgency
@@ -159,7 +159,7 @@ body:
         ---
 
         **Next Steps:**
-        1. If not already done, consider creating a [GitHub Discussion](https://github.com/KanbanGuides/OpenGuideToKanban/discussions) to build community consensus
+        1. If not already done, consider creating a [GitHub Discussion](https://github.com/KanbanGuides/KanbanGuides/discussions) to build community consensus
         2. Project maintainers will review your proposal
         3. If approved, you may be asked to submit a Pull Request with the implementation
         4. The change will be reviewed by the original creators (John Coleman) or their delegates
@@ -167,6 +167,6 @@ body:
         Thank you for helping improve the Open Guide to Kanban! 🎉
 
         **Resources:**
-        - [Contributing Guidelines](https://github.com/KanbanGuides/OpenGuideToKanban/blob/main/docs/contributing.md)
-        - [Content Management Guide](https://github.com/KanbanGuides/OpenGuideToKanban/blob/main/docs/content-management.md)
-        - [GitHub Discussions](https://github.com/KanbanGuides/OpenGuideToKanban/discussions)
+        - [Contributing Guidelines](https://github.com/KanbanGuides/KanbanGuides/blob/main/docs/contributing.md)
+        - [Content Management Guide](https://github.com/KanbanGuides/KanbanGuides/blob/main/docs/content-management.md)
+        - [GitHub Discussions](https://github.com/KanbanGuides/KanbanGuides/discussions)

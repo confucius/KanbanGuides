@@ -66,7 +66,7 @@ The Open Guide to Kanban is a multilingual static website built with Hugo. The p
 ## Project Structure
 
 ```text
-OpenGuideToKanban/
+KanbanGuides/
 ├── docs/                           # 📚 Documentation
 ├── site/                           # 🏗️ Hugo site source
 │   ├── content/                    # 📝 Content files
@@ -86,8 +86,8 @@ OpenGuideToKanban/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/KanbanGuides/OpenGuideToKanban.git
-   cd OpenGuideToKanban
+   git clone https://github.com/KanbanGuides/KanbanGuides.git
+   cd KanbanGuides
    ```
 
 2. **Install Hugo**

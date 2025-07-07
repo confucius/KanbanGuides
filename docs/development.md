@@ -42,8 +42,8 @@ hugo env
 
 ```powershell
 # Clone the repository
-git clone https://github.com/KanbanGuides/OpenGuideToKanban.git
-cd OpenGuideToKanban
+git clone https://github.com/KanbanGuides/KanbanGuides.git
+cd KanbanGuides
 
 # Navigate to the Hugo site directory
 cd site

@@ -71,7 +71,7 @@ params:
   author: "Ralph Jocham, John Coleman, Jeff Sutherland"
 
   # Social media
-  github: "https://github.com/KanbanGuides/OpenGuideToKanban"
+  github: "https://github.com/KanbanGuides/KanbanGuides"
 
   # Analytics
   googleAnalytics: "G-XXXXXXXXXX"

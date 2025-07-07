@@ -138,11 +138,11 @@ body:
       label: Community Agreement
       description: By submitting this request, the translation community agrees to the following terms
       options:
-        - label: Our community has read and agrees to the [Translation Guide](https://github.com/KanbanGuides/OpenGuideToKanban/blob/main/docs/translations.md)
+        - label: Our community has read and agrees to the [Translation Guide](https://github.com/KanbanGuides/KanbanGuides/blob/main/docs/translations.md)
           required: true
-        - label: Our community has read and agrees to the [Code of Conduct for Translators](https://github.com/KanbanGuides/OpenGuideToKanban/blob/main/docs/translations-code-of-conduct.md)
+        - label: Our community has read and agrees to the [Code of Conduct for Translators](https://github.com/KanbanGuides/KanbanGuides/blob/main/docs/translations-code-of-conduct.md)
           required: true
-        - label: Our community has read and agrees to the [Community Code of Conduct](https://github.com/KanbanGuides/OpenGuideToKanban/blob/main/CODE_OF_CONDUCT.md)
+        - label: Our community has read and agrees to the [Community Code of Conduct](https://github.com/KanbanGuides/KanbanGuides/blob/main/CODE_OF_CONDUCT.md)
           required: true
         - label: We understand that the community owns the translation, not individuals or groups, and that others may contribute or take over maintenance over time
           required: true
