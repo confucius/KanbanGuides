@@ -1,2 +1,2 @@
-{{- $translations := partial "functions/get-guide-translations" . -}}
+{{- $translations := partial "functions/get-guide-translations-catalogue" . -}}
 {{- $translations | jsonify -}}

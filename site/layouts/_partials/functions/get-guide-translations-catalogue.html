@@ -48,7 +48,7 @@
 
     {{ if $version }}
       {{/* Get available translations for this version using the dedicated function */}}
-      {{ $versionTranslations := partial "functions/get-guide-translations-web" . }}
+      {{ $versionTranslations := partial "functions/get-guide-translations-for-version" . }}
 
       {{ $versionInfo := dict
         "Version" $version
