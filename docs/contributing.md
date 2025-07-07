@@ -64,7 +64,7 @@ We welcome and appreciate contributions from the community! This guide outlines 
 
 Before contributing, please read:
 
-- [Code of Conduct](https://github.com/KanbanGuides/OpenGuideToKanban/blob/main/CODE_OF_CONDUCT.md)
+- [Code of Conduct](https://github.com/KanbanGuides/KanbanGuides/blob/main/CODE_OF_CONDUCT.md)
 - [License Information](../LICENSE)
 - This contributing guide
 
@@ -74,7 +74,7 @@ Follow the [Getting Started Guide](./getting-started.md) to set up your developm
 
 ### 3. Find an Issue
 
-- Browse [open issues](https://github.com/KanbanGuides/OpenGuideToKanban/issues)
+- Browse [open issues](https://github.com/KanbanGuides/KanbanGuides/issues)
 - Look for issues labeled `good first issue` for beginners
 - Check issues labeled `help wanted` for priority items
 - Create a new issue if you find a bug or have a feature request
@@ -90,11 +90,11 @@ Follow the [Getting Started Guide](./getting-started.md) to set up your developm
 
 ```bash
 # Fork the repository on GitHub, then clone your fork
-git clone https://github.com/KanbanGuides/OpenGuideToKanban.git
-cd OpenGuideToKanban
+git clone https://github.com/KanbanGuides/KanbanGuides.git
+cd KanbanGuides
 
 # Add the original repository as a remote
-git remote add upstream https://github.com/KanbanGuides/OpenGuideToKanban.git
+git remote add upstream https://github.com/KanbanGuides/KanbanGuides.git
 ```
 
 ### 2. Create a Branch
@@ -419,4 +419,4 @@ All contributors are recognized in:
 
 Your contributions help make the Open Guide to Kanban a valuable resource for the global Kanban community. Every contribution, no matter how small, makes a difference.
 
-**Ready to contribute?** Check out the [open issues](https://github.com/KanbanGuides/OpenGuideToKanban/issues) or start by improving this documentation!
+**Ready to contribute?** Check out the [open issues](https://github.com/KanbanGuides/KanbanGuides/issues) or start by improving this documentation!

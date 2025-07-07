@@ -68,13 +68,13 @@ To add a new language to the site, you'll need to translate:
 ### Step 1: Set Up Your Fork
 
 1. **Fork the repository**
-   - Go to [OpenGuideToKanban](https://github.com/KanbanGuides/OpenGuideToKanban)
+   - Go to [KanbanGuides](https://github.com/KanbanGuides/KanbanGuides)
    - Click "Fork" button
    - Clone your fork locally
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/OpenGuideToKanban.git
-cd OpenGuideToKanban
+git clone https://github.com/YOUR-USERNAME/KanbanGuides.git
+cd KanbanGuides
 ```
 
 ### Step 2: Create Translation Branch
@@ -234,8 +234,8 @@ git push origin translation/add-{LANG}-language
 
 1. **Download files to translate:**
 
-   - [Main Guide Template](https://raw.githubusercontent.com/KanbanGuides/OpenGuideToKanban/main/site/content/guide/index.md)
-   - [UI Translations Template](https://raw.githubusercontent.com/KanbanGuides/OpenGuideToKanban/main/site/i18n/en.yaml)
+   - [Main Guide Template](https://raw.githubusercontent.com/KanbanGuides/KanbanGuides/main/site/content/guide/index.md)
+   - [UI Translations Template](https://raw.githubusercontent.com/KanbanGuides/KanbanGuides/main/site/i18n/en.yaml)
 
 2. **Save locally** with your language code:
    - `index.{LANG}.md` (e.g., `index.pt.md`)
@@ -265,7 +265,7 @@ git push origin translation/add-{LANG}-language
 
 1. **Create GitHub Issue:**
 
-   - Go to [Issues page](https://github.com/KanbanGuides/OpenGuideToKanban/issues)
+   - Go to [Issues page](https://github.com/KanbanGuides/KanbanGuides/issues)
    - Click "New Issue"
    - Title: "Translation Submission: {Language Name}"
 
@@ -372,7 +372,7 @@ For using the automated translation setup script:
 
 - **GitHub Users:** Comment on your Pull Request
 - **Community Contributors:** Comment on your submission issue
-- **General Questions:** Create a [new issue](https://github.com/KanbanGuides/OpenGuideToKanban/issues)
+- **General Questions:** Create a [new issue](https://github.com/KanbanGuides/KanbanGuides/issues)
 
 ### Translation Communities
 

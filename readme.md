@@ -28,7 +28,7 @@ The Kanban community thrives on shared knowledge and collaborative improvement.
 
 ### Contributing to Discussions
 
-- **Share practical insights** - [Start a new discussion](https://github.com/KanbanGuides/OpenGuideToKanban/discussions).
+- **Share practical insights** - [Start a new discussion](https://github.com/KanbanGuides/KanbanGuides/discussions).
 - **Address implementation challenges** - Help others overcome obstacles.
 - **Propose refinements** - Suggest improvements.
 - **Document lessons learned** - Share your discoveries.
@@ -41,7 +41,7 @@ Making Kanban knowledge accessible globally is essential.
 - **Refine translations**
 - **Review content**
 
-[Open a discussion](https://github.com/KanbanGuides/OpenGuideToKanban/discussions) to connect with the community.
+[Open a discussion](https://github.com/KanbanGuides/KanbanGuides/discussions) to connect with the community.
 
 ## Access the Guide
 
@@ -105,8 +105,8 @@ See [LICENSE](./LICENSE) for complete terms.
 
 1. **[Read the guide](https://kanbanguides.org)** - Production site
 2. **[Test latest changes](https://red-pond-0d8225910-preview.centralus.2.azurestaticapps.net/)** - Preview site
-3. **[Engage with the community](https://github.com/KanbanGuides/OpenGuideToKanban/discussions)**
-4. **[Support translations](https://github.com/KanbanGuides/OpenGuideToKanban/discussions)**
+3. **[Engage with the community](https://github.com/KanbanGuides/KanbanGuides/discussions)**
+4. **[Support translations](https://github.com/KanbanGuides/KanbanGuides/discussions)**
 5. **[Review contribution guidelines](./docs/contributing.md)**
 
 **Together, we're advancing Kanban practice for modern product development challenges.**

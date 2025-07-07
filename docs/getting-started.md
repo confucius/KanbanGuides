@@ -49,10 +49,10 @@ Before you begin, ensure you have the following installed on your system:
 
 ```bash
 # Clone the repository
-git clone https://github.com/KanbanGuides/OpenGuideToKanban.git
+git clone https://github.com/KanbanGuides/KanbanGuides.git
 
 # Navigate to the project directory
-cd OpenGuideToKanban
+cd KanbanGuides
 ```
 
 ### 2. Verify Hugo Installation
@@ -244,7 +244,7 @@ hugo server -D
 ## Project Structure Overview
 
 ```
-OpenGuideToKanban/
+KanbanGuides/
 ├── site/                    # Hugo site source
 │   ├── content/            # Markdown content files
 │   │   ├── _index.md      # Homepage content
@@ -278,9 +278,9 @@ Now that you have the project running locally, you can:
 If you encounter issues during setup:
 
 1. Check the [Troubleshooting Guide](./troubleshooting.md)
-2. Search existing [GitHub Issues](https://github.com/KanbanGuides/OpenGuideToKanban/issues)
+2. Search existing [GitHub Issues](https://github.com/KanbanGuides/KanbanGuides/issues)
 3. Create a new issue with detailed information about your environment and the problem
-4. Join the [GitHub Discussions](https://github.com/KanbanGuides/OpenGuideToKanban/discussions)
+4. Join the [GitHub Discussions](https://github.com/KanbanGuides/KanbanGuides/discussions)
 
 ---
 
