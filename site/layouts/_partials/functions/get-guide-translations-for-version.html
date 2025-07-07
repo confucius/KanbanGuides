@@ -74,7 +74,10 @@
 
   {{/* Check if content is available for reading online */}}
   {{ $hasContent := false }}
+  {{ $hasPage := false }}
   {{ if $page }}
+    {{ $hasPage = true }}
+    {{/* Check if page has content */}}
     {{ $hasContent = and $page.Content (ne (trim $page.Content " \n\r\t") "") }}
   {{ end }}
 
@@ -106,6 +109,12 @@
     {{ $path = $page.Path }}
     {{ $date = $page.Date }}
     {{ $description = $page.Description | default $page.Summary }}
+  {{ else }}
+    {{ $title = $guideVersionPage.Title }}
+    {{ $relPermalink = $guideVersionPage.RelPermalink }}
+    {{ $path = $guideVersionPage.Path }}
+    {{ $date = $guideVersionPage.Date }}
+    {{ $description = $guideVersionPage.Description | default $guideVersionPage.Summary }}
   {{ end }}
 
   {{ $translationInfo := dict
@@ -119,6 +128,7 @@
     "Date" $date
     "Status" (cond (and $hasContent $hasPDF) "published" (cond $hasContent "online-only" (cond $hasPDF "pdf-only" "unavailable")))
     "ReadOnline" (cond $hasContent true false)
+    "ReadOnlineStub" (cond $hasPage true false)
     "ReadPDF" (cond $hasPDF true false)
     "PathPdf" $pdfPath
   }}
@@ -126,7 +136,7 @@
 {{ end }}
 
 {{/* Sort translations by weight and language */}}
-{{ $translations = sort $translations "Weight" }}
+{{ $translations = sort $translations "Version" }}
 
 {{/* Return just the translations array */}}
 {{ return $translations }}

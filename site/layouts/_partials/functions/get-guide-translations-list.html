@@ -5,14 +5,13 @@
 */}}
 
 {{/* Get all versions for this guide */}}
-{{ $sectionPages := where $.Site.RegularPages "Section" .Section }}
-{{ $guidePages := where $sectionPages "Type" "guide" }}
+{{ $guidePages := where .Pages "Type" "guide" }}
 
 {{/* Map to track latest version for each language */}}
 {{ $languageMap := dict }}
 
 {{/* Process all versions to find the latest for each language */}}
-{{ range $guidePages.ByDate.Reverse }}
+{{ range $guidePages }}
   {{/* Extract version from URL path */}}
   {{ $pathParts := split .RelPermalink "/" }}
   {{ $version := "" }}
@@ -34,8 +33,9 @@
       {{/* Check if we already have this language or if this version is newer */}}
       {{ $existing := index $languageMap $langCode }}
       {{ if not $existing }}
-        {{/* First time seeing this language, add it */}}
-        {{ $languageMap = merge $languageMap (dict $langCode .) }}
+        {{/* First time seeing this language, add it with version info */}}
+        {{ $translationWithVersion := merge . (dict "Version" $version) }}
+        {{ $languageMap = merge $languageMap (dict $langCode $translationWithVersion) }}
       {{ else }}
         {{/* Compare versions to see if this one is newer */}}
         {{ $currentVersion := $version }}
@@ -58,7 +58,7 @@
         {{ end }}
 
         {{ if $isNewer }}
-          {{/* Update with newer version, but include version info */}}
+          {{/* Update with newer version */}}
           {{ $updatedTranslation := merge . (dict "Version" $currentVersion) }}
           {{ $languageMap = merge $languageMap (dict $langCode $updatedTranslation) }}
         {{ end }}
@@ -70,9 +70,9 @@
 {{/* Convert map to sorted slice */}}
 {{ $translationsList := slice }}
 {{ range $langCode, $translation := $languageMap }}
-  {{/* Ensure version is included in the final object */}}
+  {{/* Ensure all required fields are present */}}
   {{ if not $translation.Version }}
-    {{/* Try to extract version from the translation's path or RelPermalink */}}
+    {{/* Try to extract version from the translation's path */}}
     {{ $pathParts := split $translation.RelPermalink "/" }}
     {{ $extractedVersion := "" }}
     {{ range $pathParts }}
@@ -81,11 +81,16 @@
         {{ break }}
       {{ end }}
     {{ end }}
-    {{ $translation = merge $translation (dict "Version" $extractedVersion) }}
+    {{ if $extractedVersion }}
+      {{ $translation = merge $translation (dict "Version" $extractedVersion) }}
+    {{ end }}
   {{ end }}
 
   {{ $translationsList = $translationsList | append $translation }}
 {{ end }}
 
-{{/* Return the flat list of latest translations without sorting for now */}}
+{{/* Sort by weight then by language name for consistent output */}}
+{{ $translationsList = sort $translationsList "Weight" "asc" }}
+
+{{/* Return the flat list of latest translations */}}
 {{ return $translationsList }}
