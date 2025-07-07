@@ -38,6 +38,7 @@
   weight: 1
 
 - name: Julia Wester
+  githubUsername: julia-wester
   contributions:
     - "2020.7"
     - "2020.12"
@@ -82,11 +83,12 @@
   role: contributor
 
 - name: Tom Gilb
+  githubUsername: Tom-Gilb
   contributions:
     - "2020.12"
     - "2025.5"
   weight: 100
-  founder: true
+  founder: true``
   role: contributor
 
 - name: Steve Tendon
