@@ -62,9 +62,11 @@
 {{ range $allLanguages }}
   {{ $lang := . }}
   {{ $langConfig := $guideVersionPage.Site.Language }}
+  {{ $langConfigFound := false }}
   {{ range $guideVersionPage.Site.Languages }}
     {{ if eq .Lang $lang }}
       {{ $langConfig = . }}
+      {{ $langConfigFound = true }}
     {{ end }}
   {{ end }}
   {{ $page := index $translationsByLang $lang }}
@@ -83,12 +85,20 @@
     {{ $pdfPath = $pdfResource.RelPermalink }}
   {{ end }}
 
+  {{/* Get language display name - use site config if available, otherwise use lookup function */}}
+  {{ $languageName := "" }}
+  {{ if $langConfigFound }}
+    {{ $languageName = $langConfig.LanguageName | default $lang }}
+  {{ else }}
+    {{ $languageName = partial "functions/get-language-display-name.html" $lang }}
+  {{ end }}
+
   {{/* Use page data if available, otherwise create fallback */}}
   {{ $title := printf "Open Guide to Kanban %s" $guideVersion }}
   {{ $relPermalink := "" }}
   {{ $path := "" }}
   {{ $date := now }}
-  {{ $description := printf "Guide available in %s" ($langConfig.LanguageName | default $lang) }}
+  {{ $description := printf "Guide available in %s" $languageName }}
 
   {{ if $page }}
     {{ $title = $page.Title }}
@@ -100,13 +110,12 @@
 
   {{ $translationInfo := dict
     "Language" $lang
-    "LanguageName" ($langConfig.LanguageName | default $lang)
+    "LanguageName" $languageName
     "Weight" ($langConfig.Weight | default 999)
     "Title" $title
     "RelPermalink" $relPermalink
     "Path" $path
     "Date" $date
-    "Description" $description
     "Status" (cond (and $hasContent $hasPDF) "published" (cond $hasContent "online-only" (cond $hasPDF "pdf-only" "unavailable")))
     "ReadOnline" (cond $hasContent true false)
     "ReadPDF" (cond $hasPDF true false)
