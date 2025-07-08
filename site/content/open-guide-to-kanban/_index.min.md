@@ -9,7 +9,7 @@ description: >
   Got practices! Got real stuff! Got big wow!
 
 brand:
-  bg_colour: "#38761d"
+  bg_colour: "#0072B2"
 
 guide_whatis: |
   [Open Banana Booky da Kanban](/min/open-guide-to-kanban/latest) = practical, banana-filled, team-huggy book.  
