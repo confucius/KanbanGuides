@@ -136,7 +136,17 @@
 {{ end }}
 
 {{/* Sort translations by weight and language */}}
-{{ $translations = sort $translations "Version" }}
+{{/* Parse year and month from Version and add them to each translation */}}
+{{ $translations = slice }}
+{{ range $translations }}
+  {{ $version := .Version }}
+  {{ $year := (index (split $version ".") 0) | int }}
+  {{ $month := (index (split $version ".") 1) | int }}
+  {{ $translationWithParsedVersion := merge . (dict "Year" $year "Month" $month) }}
+  {{ $translations = $translations | append $translationWithParsedVersion }}
+{{ end }}
 
+{{/* Sort translations by Year and Month */}}
+{{ $translations = sort $translations "Year" "Month" }}
 {{/* Return just the translations array */}}
 {{ return $translations }}
