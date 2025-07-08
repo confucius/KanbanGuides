@@ -42,20 +42,20 @@
         {{- $pdfResource := $guidePage.Resources.GetMatch $pdfPattern }}
         {{- if $pdfResource }}
           <a href="{{ $pdfResource.RelPermalink }}" class="btn btn-primary btn-sm pdf-download" download data-language="English" data-language-code="en" data-type="Official" data-filename="{{ $pdfResource.Name }}">
-            <i class="fa-solid fa-download me-1"></i>{{ i18n "download_button_text" . }}
+            <i class="fa-solid fa-download me-1"></i>EN
           </a>
         {{- else }}
-          <a href="#" class="btn btn-primary btn-sm disabled" title="PDF not available at {{ $pdfPattern }}"> <i class="fa-solid fa-ban me-1"></i>{{ i18n "download_button_text" . }} </a>
+          <a href="#" class="btn btn-primary btn-sm disabled" title="PDF not available at {{ $pdfPattern }}"> <i class="fa-solid fa-ban me-1"></i>EN </a>
         {{- end }}
         <!-- PDF Download Link -->
         {{- $pdfPattern := printf "pdf/*.en-us.pdf" }}
         {{- $pdfResource := $guidePage.Resources.GetMatch $pdfPattern }}
         {{- if $pdfResource }}
           <a href="{{ $pdfResource.RelPermalink }}" class="btn btn-primary btn-sm pdf-download" download data-language="English (US)" data-language-code="en-us" data-type="Official" data-filename="{{ $pdfResource.Name }}">
-            <i class="fa-solid fa-download me-1"></i>{{ i18n "download_button_text" . }}
+            <i class="fa-solid fa-download me-1"></i>EN (US)
           </a>
         {{- else }}
-          <a href="#" class="btn btn-primary btn-sm disabled" title="PDF not available at {{ $pdfPattern }}"> <i class="fa-solid fa-ban me-1"></i>{{ i18n "download_button_text" . }} </a>
+          <a href="#" class="btn btn-primary btn-sm disabled" title="PDF not available at {{ $pdfPattern }}"> <i class="fa-solid fa-ban me-1"></i>EN (US) </a>
         {{- end }}
       </div>
     </div>
