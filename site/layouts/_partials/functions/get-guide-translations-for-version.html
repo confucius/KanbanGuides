@@ -126,7 +126,7 @@
     "Path" $path
     "VersionPath" $guideVersionPage.Path
     "Date" $date
-    "Status" (cond (and $hasContent $hasPDF) "published" (cond $hasContent "online-only" (cond $hasPDF "pdf-only" "unavailable")))
+    "Status" (cond (and $hasContent $hasPDF) "published" (cond $hasContent "online-only" (cond $hasPDF "pdf-only" "site-only")))
     "ReadOnline" (cond $hasContent true false)
     "ReadOnlineStub" (cond $hasPage true false)
     "ReadPDF" (cond $hasPDF true false)

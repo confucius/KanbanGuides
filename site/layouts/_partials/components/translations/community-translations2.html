@@ -62,6 +62,8 @@
     {{- $sortedTranslations = sort $sortedTranslations "Version" "desc" }}
   {{- end }}
   {{- range $sortedTranslations }}
+      {{- if or (eq .ReadOnline true) (eq .ReadPDF true) }}
+    
     {{/* Skip English and US English languages */}}
     {{- if and (ne .Language "en") (ne .Language "en-us") }}
       {{- $isInProduction := in $productionLanguageCodes .Language }}
@@ -212,6 +214,7 @@
         </div>
       </div>
     {{- end }}
+    {{- end}}
   {{- end }}
 
 
