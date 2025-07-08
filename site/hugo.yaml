@@ -63,6 +63,7 @@ outputs:
   section:
     - html
     - rss
+    - guide-translations
   taxonomy:
     - html
     - rss
@@ -82,6 +83,10 @@ outputFormats:
   languages:
     mediaType: application/json
     baseName: languages
+    isPlainText: true
+  guide-translations:
+    mediaType: application/json
+    baseName: guide-translations
     isPlainText: true
 markup:
   goldmark:
