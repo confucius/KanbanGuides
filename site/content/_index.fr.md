@@ -1,5 +1,5 @@
 ---
-title: "Kanban Guides"
+title: " Guides Kanban"
 url: "/"
 not_sure_which_to_use: |
   New to Kanban? Start with [The Kanban Guide](/the-kanban-guide/latest).
