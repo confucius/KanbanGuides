@@ -1,5 +1,5 @@
 ---
-title: "Open Guide to Kanban - In the Context of Knowledge Work"
+title: "Open Guide to Kanban - Dans le contexte du travail de la connaissance"
 short_title: "Open Guide to Kanban"
 slug: "open-guide-for-kanban"
 Type: "guide"
